@@ -45,6 +45,7 @@ gem 'uikit2-rails'
 gem 'wysiwyg-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'wicked'
+gem 'font-awesome-rails'
 
 group :development do
   gem "better_errors"
