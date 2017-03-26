@@ -51,6 +51,7 @@
       =t('dilemma.icon_common.linkBack')
     .direction
       ="#{ t :dir}"
+  = f.input :task_id, :as => :hidden
   .uk-form-row
     label.control-label = "#{t('dilemma.media')}"
   - if @dilemma.errors.has_key?(:media)
