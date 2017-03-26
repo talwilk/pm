@@ -207,7 +207,8 @@ class UsersController < ApplicationController
   end
   
   def set_env
-	if Rails.env = "production"
-	  redirect_to root_url
+  	if Rails.env = "production"
+  	  redirect_to root_url
+    end
   end
 end
