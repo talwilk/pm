@@ -1,0 +1,49 @@
+@import "globals";
+
+.uk-subnav {
+  margin:0;
+  width:100%;
+  align-content:space-between
+}
+
+.uk-subnav li {
+  -webkit-box-flex:1 0 50%;
+  -ms-flex:1 0 50%;
+  flex:1 0 50%;
+  width:50%;
+}
+
+.uk-subnav li {
+  background:#fff;
+  font-family:$book;
+  font-size:1.8rem;
+  color:#2d3344;
+  padding:25px 20px;
+  cursor:pointer;
+  text-align:center;
+  margin:0;
+}
+
+.uk-subnav li + li {
+  border-left:0;
+}
+
+.uk-subnav li a {
+  padding:0;
+}
+
+.uk-subnav-pill li.uk-active {
+  background:#2d3344;
+}
+
+.uk-subnav-pill > .uk-active > a {
+  background:none;
+  color:#2d3344;
+}
+
+.uk-subnav-pill li a:hover {
+  background:none;
+}
+.uk-subnav-pill > .uk-active > a {
+  color:#fff;
+}

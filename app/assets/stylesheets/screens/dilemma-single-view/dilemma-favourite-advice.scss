@@ -1,0 +1,61 @@
+@import "globals";
+
+.dilemma-favourite-advice {
+  background:#e9eaf3;
+  padding:10px 40px 20px;
+  @include r(phone-max) {
+    padding-left:7px;
+    padding-right:7px;
+  }
+  &__icon {
+    display: inline-block;
+    margin-right:20px;
+  }
+  &__title {
+    font-family:$book;
+    font-size:1.8rem;
+    color:#2d3344;
+    display:inline-block;
+    word-wrap: break-word;
+  }
+  .dilemma-item {
+    margin-top:10px;
+  }
+  &__inner {
+    padding:25px 30px;
+    @include r(phone-max) {
+      padding:25px 20px;
+    }
+  }
+}
+
+.mark-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:#e9eaf3;
+  border:1px dashed $border-color;
+  padding:50px;
+  margin:0 auto;
+  margin-bottom:15px;
+  cursor:pointer;
+  .mark-advice-icon{
+    display: block;
+    margin-right:20px;
+  }
+  span {
+    text-align:center;
+    font-family:$regular;
+    color:#aab1c2;
+  }
+}
+
+h3 span {
+  padding-left:5px;
+}
+
+
+.dashboard-dilemma-item-fav-advice__right-section img {
+  display:block;
+  margin-bottom:5px;
+}

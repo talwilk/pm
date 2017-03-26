@@ -1,0 +1,66 @@
+@import "globals";
+
+.uk-modal {
+  z-index:9999999!important;
+}
+
+.uk-modal-dialog {
+  width:50%;
+  padding:40px;
+  @include r(tablet-max) {
+    width:90%!important;
+  }
+  p {
+    color:#5a5a5a;
+    font-size:1.8rem;
+  }
+}
+
+.uk-close {
+  color:#333;
+  opacity:1!important;
+  &:hover {
+    color:#333!important;
+    opacity:1!important;
+  }
+}
+
+.uk-modal-header {
+  margin-top: 15px;
+  &:after {
+    font-size:1.8rem;
+  }
+}
+
+.uk-close:after {
+  font-size:1.8rem;
+}
+
+#freeUserModal .uk-modal-dialog,
+#paymentModal .uk-modal-dialog {
+  width:80%;
+  padding-top:40px;
+  padding-bottom: 60px;
+  .uk-grid-buttons {
+    margin-top:50px;
+  }
+}
+
+.uk-modal-dialog > .uk-close:first-child {
+  margin: -25px -25px 0 0;
+}
+
+#share-modal .uk-modal-dialog {
+  padding-bottom:80px;
+}
+
+#share-modal .copy-link {
+  margin: 25px 0 5px;
+  padding-left: 5px;
+}
+
+.uk-modal-dialog-lightbox > .uk-close:first-child {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+}

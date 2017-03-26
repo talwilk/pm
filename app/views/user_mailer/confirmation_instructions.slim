@@ -1,0 +1,10 @@
+- if @user.signup_way == 'regular'
+  - if Country.find(@user.country_iso).enabled_at.nil?
+    = render 'confirm_out_of_region'
+  - else
+    = render 'confirm_with_free_dilemma'
+- elsif @user.signup_way == 'guru'
+  - if Country.find(@user.country_iso).enabled_at.nil?
+    = render 'guru_confirm_out_of_region'
+  - else
+    = render 'guru_confirm_with_free_dilemma'

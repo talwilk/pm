@@ -1,0 +1,19 @@
+.container
+  .col-md-10
+    .row
+      = render partial: 'form'
+      = link_to _('Back'), super_admin_dilemma_advices_path
+  .col-md-2
+    - if @dilemma_advice.deleted_at
+      .text-danger
+        h4= _('Deleted at:')
+        p= @dilemma_advice.deleted_at
+    h4= _('User:')
+    p= @dilemma_advice.user
+    h4= _('Dilemma:')
+    p
+      = link_to @dilemma_advice.dilemma.title.truncate(20), edit_super_admin_dilemma_path(@dilemma_advice.dilemma)
+    h4= _('Created at:')
+    p= @dilemma_advice.created_at
+    - if @dilemma_advice.deleted_at.nil?
+      = link_to _('Remove dilemma advice'), super_admin_dilemma_advice_path(@dilemma_advice), class: 'btn btn-danger', data: { confirm: _('Are you sure?') }, method: :delete

@@ -1,0 +1,17 @@
+<% if params[:dilemma_page].present? %>
+  $("#pagination-dilemmas-links").before("<%= escape_javascript render(partial: 'dilemmas') %>");
+  <% if @user_dilemmas.last_page? %>
+    $('#pagination-dilemmas-links').html("");
+  <% else %>
+    $('#pagination-dilemmas-links').html("<%= escape_javascript link_to_next_page(@user_dilemmas, '', remote: true, param_name: :dilemma_page, class:'i load-more') %>");
+  <% end %>
+<% elsif params[:advice_page].present? %>
+  $("#pagination-advices-links").before("<%= escape_javascript render(partial: 'user_advices_dilemmas') %>");
+  <% if @dilemmas_with_user_advices.last_page? %>
+    $('#pagination-advices-links').html("");
+  <% else %>
+    $('#pagination-advices-links').html("<%= escape_javascript link_to_next_page(@dilemmas_with_user_advices, '', remote: true, param_name: :advice_page, class:'i load-more') %>");
+  <% end %>
+<% end %>
+get_end_date();
+initializeTimers();

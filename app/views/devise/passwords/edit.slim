@@ -1,0 +1,21 @@
+.uk-grid
+  .uk-width-medium-4-5.uk-align-center
+    .devise-wrapper
+      h2.uk-text-center
+        = _("#{t('devise.mailer.reset_password_instructions.change_password')}")
+      .holder
+        .uk-grid.uk-grid-divider
+          .uk-width-medium-1-2.uk-container-center
+            = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+              = f.error_notification
+              = f.input :reset_password_token, as: :hidden
+              = f.full_error :reset_password_token
+              .uk-form
+                .uk-form-row
+                  = f.input :password, label: _("#{t('devise.passwords.new_password')}"), required: true, autofocus: true, hint: (_("#{@minimum_password_length} #{t('devise.mailer.reset_password_instructions.minimum_characters')}") if @minimum_password_length)
+                .uk-form-row
+                  = f.input :password_confirmation, label: _("#{t('devise.passwords.confirm_new_password')}"), required: true
+              .form-actions
+                .uk-flex
+                  div
+                    = f.button :submit, _("#{t('devise.passwords.change_my_password')}"), class:'primary-button mini-button'

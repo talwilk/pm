@@ -1,0 +1,31 @@
+- if @trending_dilemmas.present?
+  - @trending_dilemmas.each do |top_dilemma|
+    .uk-grid
+      .uk-width-medium-1-1
+        = link_to dilemma_path(top_dilemma), class:'link-no-hover' do
+          .dilemma-similar-item
+            .uk-panel.uk-panel-box
+              - if top_dilemma.cover_photo.present?
+                 .uk-panel-teaser
+                  .dilemma-similar-item__amount = top_dilemma.advices.count
+                  - if Medium.find_by(id: top_dilemma.cover_photo).youtube_url
+                    = image_tag 'http://img.youtube.com/vi/' + Medium.find_by(id: top_dilemma.cover_photo).youtube_url + '/0.jpg'
+                  - else
+                    = responsive_image_tag Medium.find_by(id: top_dilemma.cover_photo).file, :sizes => { :default => :desktop_cover_thumbnail, :desktop => :desktop_cover_thumbnail, :mobile => :mobile_cover_thumbnail }, class:'full-width responsive'
+              - else
+                div.dilemma-similar-item__placeholder
+                  span= _("#{t('users.dashboard.cover_photo_not_set')}")
+              .uk-panel-content
+                .uk-grid
+                  .uk-width-medium-1-1
+                    h3.dilemma-similar-item__title=top_dilemma.title
+                .uk-grid
+                  .uk-width-medium-1-1
+                    .dilemma-similar-item__left-section
+                      = responsive_image_tag top_dilemma.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive'
+                    .dilemma-similar-item__right-section
+                      p.dilemma-similar-item__username= top_dilemma.user.profile.full_name
+                      .dilemma-similar-item__rank class="rank-#{top_dilemma.user.level}-xs"
+                      p.dilemma-similar-item__level= SupportedUserLevel.find(top_dilemma.user.level)
+- else
+  p = _("#{t('users.dashboard.no_trending_dilemma')}")

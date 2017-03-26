@@ -1,0 +1,40 @@
+@import "globals";
+
+#edit-dilemma {
+  .grid-first + .grid-second {
+    margin-top:25px;
+  }
+  .fr-element {
+    padding-bottom:15px;
+  }
+  .uk-subnav {
+    border-bottom:1px solid #aab1c2;
+    li  {
+      border-bottom:0;
+    }
+  }
+}
+
+.edit-media-item {
+  margin-bottom:20px;
+  float:left;
+}
+
+.edit-media-item img {
+  display: block;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+.edit-media-item > div {
+  border:1px solid $border-color;
+  padding-bottom:5px;
+}
+
+.dilemma-edit-form-submit {
+  width: 1px;
+  height: 1px;
+  display: block;
+  background: none;
+  visibility:hidden;
+}

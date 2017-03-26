@@ -1,0 +1,39 @@
+- @dilemmas_with_user_advices.each do |dilemma|
+  div class="uk-grid user-dilemma-#{dilemma.id} bg-info"
+    .uk-width-medium-1-1
+      article.dashboard-dilemma-item
+        = link_to dilemma_path(dilemma), class:'link-no-hover' do
+          .dashboard-dilemma-item__cover.uk-cover-background
+            - if dilemma.cover_photo.present?
+              - if Medium.find_by(id: dilemma.cover_photo).youtube_url
+                = image_tag 'http://img.youtube.com/vi/' + Medium.find_by(id: dilemma.cover_photo).youtube_url + '/0.jpg', height: '500', class:'youtube-thumbnail'
+              - else
+                = responsive_image_tag Medium.find_by(id: dilemma.cover_photo).file, class:'responsive'
+            - else
+              p= _("#{t('users.common.cover_photo')}")
+          .dashboard-dilemma-item__header
+            .dilemma-item__timer
+              div.dilemma-item__remaining id="getting-started-user-profile-#{dilemma.id}" data-server="#{dilemma.ends_at}" data-dilemma_id="#{dilemma.id}"  translation= "#{t('dilemma.closed_dilemma')}" days= "#{t('dilemma.days')}" hours= "#{t('dilemma.hours')}" minutes= "#{t('dilemma.minutes')}" remaining= "#{t('dilemma.to_go')}"
+        .uk.grid
+          .uk-width-medium-1-1
+            .dashboard-dilemma-item__content
+              .uk-grid
+                .uk-width-medium-8-10.uk-width-small-1-1
+                  = link_to dilemma_path(dilemma), class:'link-no-hover' do
+                    h2.dashboard-dilemma-item__title= dilemma.title
+                .uk-width-medium-2-10.uk-width-small-1-1
+                  p.dashboard-dilemma-item__count.uk-text-left-small = _("%{dilemma_advices_size} #{t('users.common.advices')}") % { dilemma_advices_size: dilemma.advices.size }
+              .uk-grid.uk-flex.uk-flex-space-between.uk-flex-top
+                .uk-width-medium-1-1
+                  .dashboard-dilemma-item__left-section
+                    = link_to user_path(dilemma.user)
+                      = responsive_image_tag dilemma.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive', alt:'dilemma.user.profile.full_name'
+                  .dashboard-dilemma-item__right-section
+                    = link_to user_path(dilemma.user)
+                      p.dashboard-dilemma-item__username=dilemma.user.profile.full_name
+                    .dashboard-dilemma-item__rank class="rank-#{dilemma.user.level}-sm"
+                    p.dashboard-dilemma-item__level= SupportedUserLevel.find(dilemma.user.level)
+        - if dilemma.favorite_dilemma_advice.present?
+          .uk-grid
+            .uk-width-medium-1-1
+              = render partial: 'favorite_advice', locals: { advice: dilemma.favorite_dilemma_advice }

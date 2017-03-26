@@ -1,0 +1,21 @@
+#paymentModal.uk-modal
+  .uk-modal-dialog.uk-text-center
+    a.uk-modal-close.uk-close
+    .uk-modal-header.uk-grid
+      .uk-width-medium-1-1
+        h2#paymentModalLabel =_("#{t('pricing.choose_plan')}")
+    .uk-grid
+      .uk-width-medium-1-1
+        p=_("#{t('payment_plan_transaction.choose_payment_plan')}")
+    .uk-grid.uk-grid-buttons
+      .uk-width-medium-1-1.uk-text-center.uk-container-center
+        button.primary-button.big-button.uk-modal-close =_("#{t('payment_plan_transaction.continue')}")
+javascript:
+  $(window).load(function(){
+    var payment_modal = UIkit.modal("#paymentModal", {center: true});
+      if (payment_modal.isActive() ) {
+        payment_modal.hide();
+      } else {
+        payment_modal.show();
+      }
+  });

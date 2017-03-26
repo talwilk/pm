@@ -1,0 +1,6 @@
+- if current_user.voted_for? advice
+  = link_to like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i blank-heart' do
+- else
+  = link_to like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i heart' do
+- if advice.get_likes.any?
+    p.dilemma-advice-item__total-likes= advice.get_likes.size

@@ -1,0 +1,22 @@
+#guru-registration
+  .uk-grid
+    .uk-width-medium-1-1.uk-text-center
+      h2= _("#{t('guru_registrations.guru_registration')}")
+  .uk-grid
+    .uk-width-medium-8-10.uk-container-center
+      = simple_form_for @guru_registration_form, url: guru_registrations_path, method: :post  do |f|
+        .uk-grid
+          .uk-width-medium-1-1
+            .holder class="#{t :dir}"
+              = f.input :first_name, label: "#{t('guru_registrations.first_name')}"
+              = f.input :last_name, label: "#{t('guru_registrations.last_name')}"
+              = f.input :email, label: "#{t('guru_registrations.email')}"
+              = f.input :password, label: "#{t('guru_registrations.password')}"
+              = f.input :category_list, label: "#{t('guru_registrations.category_list')}", collection: SupportedCategory.collection, include_hidden: false, input_html: { multiple: true, class: 'select2_special' }
+              = f.input :address, label: "#{t('guru_registrations.city')}"
+              = f.input :mobile_number, label: "#{t('guru_registrations.mobile_number')}", placeholder: "#{t('guru_registrations.phone_number_format')}"
+              = f.input :mantra, label: "#{t('guru_registrations.mantra')}"
+              = f.input :experience, label: "#{t('guru_registrations.experience')}", collection: SupportedExperienceTime.collection, input_html: { class: 'select2_special' }
+        .uk-grid
+          .uk-width-medium-1-1.apply-button class="#{t :dir}"
+            = f.submit "#{t('guru_registrations.apply')}", class: 'primary-button small-button'

@@ -1,0 +1,33 @@
+<div class="uk-grid uk-grid-large">
+    <div class="uk-panel uk-panel-box uk-align-center">
+        <div class="uk-container uk-text-center">
+            <h2><%= _("#{t('pro.create_pro_title')}") %></h2></br>
+        </div>
+
+        <div class="uk-overflow-container">
+
+            <%= simple_form_for([@project, @task, @pro], :url => {:controller => 'pros', :action => 'create'}) do |p| %>
+                <table class="uk-table uk-responsive-width uk-width-4-4 uk-text-right">
+                    <tr>
+                        <%= p.collection_select :company_name, Pro.where(project_id: @project.id), :id, :full_name, {:prompt => _("#{t('common.select')}")} %>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td><%= _("#{t('pro.first')}") %></td>
+                        <td><%= p.text_field :first_name %></td>
+                        <td><%= _("#{t('pro.last')}") %></td>
+                        <td><%= p.text_field :last_name %></td>
+                    </tr><tr>
+                        <td><%= _("#{t('pro.phone')}") %></td>
+                        <td><%= p.text_field :mobile_phone %></td>
+                        <td><%= _("#{t('pro.email')}") %></td>
+                        <td><%= p.text_field :email %></td>            
+                    </tr>
+                </table>
+                <div class="uk-text-left">
+                    <%= p.button :submit, _("#{t('common.submit')}"), class:'primary-button mini-button' %>    
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

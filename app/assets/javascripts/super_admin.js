@@ -1,0 +1,16 @@
+//= require jquery
+//= require jquery_ujs
+//= require tether.min
+//= require bootstrap
+//= require js.cookie
+//= require jstz
+//= require browser_timezone_rails/set_time_zone
+//= require avatar_upload
+//= require froala_editor.min.js
+//= require plugins/emoticons.min.js
+//= require plugins/link.min.js
+//= require blog
+//= require select2
+//= require select2_locale_en
+//= require super_admin_edit_dilemma
+//= require super_admin_edit_dilemma_advice

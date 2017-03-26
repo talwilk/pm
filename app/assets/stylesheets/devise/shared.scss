@@ -1,0 +1,138 @@
+@import "globals";
+
+.devise-wrapper {
+  margin:12% 0;
+  h2 {
+    font-size:2.4rem;
+    color:#2d3344;
+    padding-bottom:25px;
+  }
+}
+
+.devise-wrapper.custom {
+  margin:3% 0;
+  h2 {
+    font-size:2.4rem;
+    color:#2d3344;
+    padding-bottom:25px;
+  }
+}
+
+.holder {
+  background:#fff;
+  border:1px solid $border-color;
+  padding:35px 35px 30px;
+  @include r(phone-max) {
+    margin: 0 -11px 0 -10px;
+    padding: 30px 20px;
+  }
+}
+
+.uk-grid-divider > [class*='uk-width-medium-']:not(.uk-width-medium-1-1):nth-child(n+2) {
+    border-color: $border-color;
+}
+
+.terms-and-conditions {
+  padding-top:15px;
+  p {
+    font-size:1.1rem;
+    color:#2d3344;
+    display:inline;
+  }
+  a {
+    font-size:1.1rem;
+    padding-left:3px;
+  }
+}
+
+.social-login-holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column
+}
+
+.social-login {
+  width:100%;
+  a {
+    font-family:$regular;
+    font-size:1.6rem;
+    color:#fff;
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      font-size:1.1rem;
+    }
+    &:hover {
+      color:#fff;
+      text-decoration:none;
+    }
+  }
+  .provider-google_oauth2 div {
+    background:#e54c2c;
+    height:40px;
+    line-height: 42px;
+    padding:0 10px;
+    text-align: center;
+    &:before {
+      float:left;
+      content: '\f0d5';
+      font-family: FontAwesome;
+      padding-right:5px;
+      font-size:18px;
+      color:#fff;
+    }
+  }
+  .provider-facebook div {
+    background:#3b5999;
+    height:40px;
+    line-height: 42px;
+    padding:0 10px;
+    text-align: center;
+    &:before {
+      float:left;
+      content: '\f082';
+      font-family: FontAwesome;
+      padding-right:5px;
+      font-size:18px;
+      color:#fff;
+    }
+  }
+  a + a div {
+    margin-top:30px;
+  }
+}
+
+.sign-up-bottom {
+  margin-top:15px;
+  margin-bottom:-15px;
+}
+
+.ltr.password-cancel-button {
+  margin-left:auto;
+  margin-right:15px;
+  a:hover {
+    text-decoration:none!important;
+  }
+}
+.rtl.password-cancel-button {
+  margin-left:15px;
+  margin-right:auto;
+  a:hover {
+    text-decoration:none!important;
+  }
+}
+.ltr.apply-button {
+  text-align: right;
+}
+.rtl.apply-button {
+  text-align: left;
+}

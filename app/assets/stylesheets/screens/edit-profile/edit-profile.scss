@@ -1,0 +1,181 @@
+@import "globals";
+
+.file-upload-img img {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+}
+
+.no-avatar {
+  margin:0 auto;
+  text-align:center;
+  width:120px;
+  height:120px;
+  background:#aab1c2;
+  border-radius:50%;
+  cursor:pointer;
+  &:hover {
+    background:#a1a7b7;
+  }
+  a {
+    margin:0 auto;
+    text-align:center;
+    font-family:$regular;
+    color:#fff;
+    font-size:14px;
+    text-decoration:none;
+    &:hover {
+      color:#fff;
+    }
+  }
+}
+
+i.fa.fa-file-image-o {
+  color:#932b5b;
+  cursor:pointer;
+  font-size:14px!important;
+}
+
+.fa-remove {
+  cursor:pointer;
+  font-size:16px!important;
+}
+
+.current-avatar {
+  margin-bottom:15px;
+}
+// Social media inputs with icons
+
+.update_user_profile_form_facebook_link{
+  .form-control,
+  .form-control:focus {
+    text-indent:30px;
+    background: asset-url('fb-profile.png') no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('fb-profile.png') no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('fb-profile.png') no-repeat!important; background-position: 98% center!important;
+  }
+}
+
+.update_user_profile_form_facebook_link.has-error{
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('fb-profile.png') #fec5c9 no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('fb-profile.png') #fec5c9 no-repeat!important; background-position: 98% center!important;
+  }
+}
+
+
+.update_user_profile_form_google_plus_link {
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('gp-profile.png') no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('gp-profile.png') no-repeat!important; background-position: 99% center!important;
+  }
+}
+
+.update_user_profile_form_google_plus_link.has-error{
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('gp-profile.png') #fec5c9 no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('gp-profile.png') #fec5c9 no-repeat!important; background-position: 99% center!important;
+  }
+}
+
+
+.update_user_profile_form_twitter_link {
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('tw-profile.png') no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('tw-profile.png') no-repeat!important; background-position: 98% center!important;
+  }
+}
+
+.update_user_profile_form_twitter_link.has-error{
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('tw-profile.png') #fec5c9 no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('tw-profile.png') #fec5c9 no-repeat!important; background-position: 98% center!important;
+  }
+}
+
+.update_user_profile_form_pinterest_link {
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('pt-profile.png') no-repeat!important;  background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('pt-profile.png') no-repeat!important;  background-position: 98% center!important;
+  }
+}
+
+.update_user_profile_form_pinterest_link.has-error{
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('pt-profile.png') #fec5c9 no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('pt-profile.png') #fec5c9 no-repeat!important; background-position: 98% center!important;
+  }
+}
+
+
+.update_user_profile_form_instagram_link {
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('in-profile.png') no-repeat!important;background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('in-profile.png') no-repeat!important;background-position: 98% center!important;
+  }
+}
+
+.update_user_profile_form_instagram_link.has-error{
+  .form-control.ltr {
+    text-indent:30px;
+    background: asset-url('in-profile.png') #fec5c9 no-repeat!important; background-position: 10px center!important;
+  }
+  .form-control.rtl {
+    text-indent:30px;
+    background: asset-url('in-profile.png') #fec5c9 no-repeat!important; background-position: 98% center!important;
+  }
+}
+
+#avatar-replace {
+  color:#932b5b;
+  cursor:pointer;
+  &:hover {
+    text-decoration:underline;
+  }
+}
+
+.remove-avatar-hide {
+  color:#f1f2f7;
+  &:hover {
+    color:#f1f2f7;
+    text-decoration:none;
+  }
+}

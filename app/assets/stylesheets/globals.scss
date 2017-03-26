@@ -1,0 +1,51 @@
+// Fonts
+
+$regular: 'Gotham Medium', sans-serif;
+$bold: 'Gotham Bold', sans-serif;
+$book: 'Gotham Book', sans-serif;
+
+// Colors
+$main-font-color: #2d3344;
+$border-color: #D3D9E9;
+$brand-color:#932b5b;
+// Flex ultimate center
+
+@mixin flex-vh-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
+// Responsive shortcuts & mixins
+
+$tablet-min: "(min-width: 1024px)";
+$tablet-max: "(max-width: 1023px)";
+
+$phone-min: "(min-width: 768px)";
+$phone-max: "(max-width: 767px)";
+$phone-max-768: "(max-width: 768px)";
+
+@mixin r($point) {
+  @if $point == tablet-min {
+    @media (min-width: 1024px) { @content ; }
+  }
+  @else if $point == tablet-max {
+    @media (max-width: 1023px) { @content ; }
+  }
+  @else if $point == phone-min {
+    @media (min-width: 768px) { @content ; }
+  }
+  @else if $point == phone-max {
+    @media (max-width: 767px)  { @content ; }
+  }
+}

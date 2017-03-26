@@ -1,0 +1,39 @@
+.uk-grid.uk-animation-fade
+  .uk-width-medium-1-1
+    article.dilemma-advice-item
+      .uk-grid
+        .uk-width-medium-1-1
+          .dilemma-advice-item__left-section
+            .uk-grid
+              .uk-width-medium-1-1.uk-text-center
+                = responsive_image_tag(advice.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive', alt:'advice.user.profile.full_name')
+            .uk-grid
+              .uk-width-medium-1-1.uk-text-center
+                div id="advice-likes-#{advice.id}"
+                  - if policy(advice).like?
+                    - if current_user.voted_for? advice
+                      = link_to '', like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i blank-heart'
+                    - else
+                      = link_to '', like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i heart'
+                    - if advice.get_likes.any?
+                      p.dilemma-advice-item__total-likes= advice.get_likes.size
+            .uk-grid
+              .uk-width-medium-1-1.uk-text-center
+                - if policy(@dilemma).favorite? && advice.id != @dilemma.favorite_dilemma_advice_id && policy(@dilemma).country_disabled?
+                  = link_to '', favorite_dilemma_advice_path(advice.dilemma, advice), class:'i best-advice'
+          .dilemma-advice-item__right-section
+            = link_to user_path(advice.user), class: 'link-no-hover'
+              p.dilemma-advice-item__username= advice.user.profile.full_name
+            .dilemma-advice-item__rank class= "rank-#{advice.user.level}-sm"
+            p.dilemma-advice-item__level= SupportedUserLevel.find(@dilemma.user.level)
+            p.dilemma-advice-item__description= advice.content.html_safe
+          .uk-grid.uk-flex.advice-attached-media
+            - advice.media.each do |media|
+              - if !media.file.blank?
+                = link_to media.file.url, :"data-uk-lightbox" => '', class: 'link-no-hover'
+                  = responsive_image_tag media.file, sizes: { default: :desktop_advice_thumbnail, desktop: :desktop_advice_thumbnail, mobile: :mobile_advice_thumbnail }, class:'responsive'
+                  .dilemma-advice-item__media-description = media.media_description
+              - if !media.youtube_url.blank?
+                = link_to media.file.url, :"data-uk-lightbox" => '', class: 'link-no-hover'
+                  = render 'youtube_video_advice', media: media
+                  .dilemma-advice-item__media-description = media.media_description

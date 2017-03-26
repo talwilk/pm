@@ -1,0 +1,8 @@
+unless defined?(LOAD_CONSTANTS)
+  # Can't touch this
+  LOAD_CONSTANTS = true
+  DILEMMA_TITLE = 120
+  DILEMMA_DESCRIPTION = 300
+  DEFAULT_PER_PAGE = 20
+  USER_PROFILE_PER_PAGE = 10
+end

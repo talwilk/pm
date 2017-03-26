@@ -1,0 +1,15 @@
+#edit-dilemma
+  .uk-grid.grid-first
+    .uk-width-medium-1-1
+      h2 = _("#{t('dilemma.edit_your_dilemma')}")
+  .uk-grid.uk-grid-large.grid-second
+    section.uk-width-medium-7-10
+      .uk-grid
+        .uk-width-medium-1-1
+          .holder
+            = render partial: 'edit_form'
+      .uk-grid.button-grid
+        .uk-width-medium-1-2.uk.width-small-1-1
+        .uk-width-medium-1-2.uk.width-small-1-1.text-align class=" #{ t :dir}"
+          button.primary-button.small-button.less-padding.submit-button
+            = _("#{t('dilemma.update_dilemma')}")

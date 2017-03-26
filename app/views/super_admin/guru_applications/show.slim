@@ -1,0 +1,46 @@
+.container
+  h1= @guru_application.user.profile.full_name
+  h4= _('E-mail')
+  p= @guru_application.user.email
+  h4= _('Applied at')
+  p= @guru_application.created_at
+  h4= _('Sign up way')
+  p= @guru_application.user.signup_way.camelize
+  h4= _('Country')
+  p= @guru_application.user.country
+  h4= _('City')
+  p= @guru_application.user.profile.address
+  h4= _('Mobile number')
+  p= @guru_application.user.profile.mobile_number
+  h4= _('Experience')
+  p= SupportedExperienceTime.find(@guru_application.user.profile.experience)
+  h4= _('Mantra')
+  p= @guru_application.user.profile.mantra
+  h4= _('Categories')
+  p= @guru_application.user.profile.category_list.map { |key| SupportedCategory.find(key).name }.join(', ')
+  h4 = _('Note')
+  = simple_form_for [:super_admin, @guru_application] do |f|
+    = f.input :super_admin_note
+    = f.submit _('Save note'), class: 'btn btn-primary'
+  h4= _('Status')
+  p
+    - if @guru_application.pending?
+      = _('Pending')
+    - elsif @guru_application.being_reviewed?
+      = _('Being reviewed')
+    - elsif @guru_application.rejected?
+      = _('Rejected')
+    - elsif @guru_application.accepted?
+      = _('Accepted')
+  - if @guru_application.being_reviewed?
+    h4= _('Actions')
+    p
+      = link_to _('Reject'), reject_guru_application_super_admin_guru_application_path(@guru_application), method: :patch, class: 'btn btn-sm btn-danger'
+      = link_to _('Accept'), accept_guru_application_super_admin_guru_application_path(@guru_application), method: :patch, class: 'btn btn-sm btn-success'
+  - elsif @guru_application.pending?
+    p= link_to _('Start review'), start_guru_application_review_super_admin_guru_application_path(@guru_application), method: :patch, class: 'btn btn-sm btn-warning'
+  p= _("Application is reviewed by: #{@guru_application.reviewer}") if @guru_application.reviewer_id
+  p= _("Application is verdicted by: #{@guru_application.resulter}") if @guru_application.resulter_id
+  h4= _('Last update time')
+  p= @guru_application.updated_at
+  = link_to _('Back'), super_admin_guru_applications_path

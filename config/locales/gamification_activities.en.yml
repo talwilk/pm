@@ -1,0 +1,13 @@
+en:
+  gamification_activities:
+    advice_like: 'Someone likes your advice.'
+    following: "You've started following Dilemma Guru user."
+    followers: 'You have a new follower.'
+    social_share_of_dilemma: 'You shared a Dilemma.'
+    create_dilemma: 'You posted new Dilemma.'
+    create_advice: 'You adviced a dilemma.'
+    mark_favourite_advice: 'You picked your favourite advice.'
+    create_advice_with_media: 'You adviced a dilemma with media.'
+    your_advice_marked_as_favourite: 'Your advice was marked as favourite.'
+    register_as_guru: 'Your Guru Application is accepted.'
+    super_admin_grant_points: 'Super admin granted your points.'

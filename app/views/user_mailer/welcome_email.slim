@@ -1,0 +1,37 @@
+doctype html
+html style="font-family: 'Helvetica Neue'), 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"
+  head
+    meta content="width=device-width" name="viewport" /
+    meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+    title Dilemma Guru
+  body bgcolor="#f1f2f7" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; -webkit-font-smoothing: antialiased; height: 100%; -webkit-text-size-adjust: none; width: 100% !important; margin: 0; padding: 0;"
+    /! body
+    table.body-wrap bgcolor="#f1f2f7" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; width: 100%; margin: 0; padding: 20px;"
+      tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"
+        td style="font-family: 'Helvetica Neue'), 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"
+        td.container bgcolor="#FFFFFF" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; clear: both !important; display: block !important; max-width: 600px !important; margin: 0 auto; padding: 20px; border: 1px solid #f0f0f0; height:100%;"
+          table bgcolor="#FFFFFF" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; width: 100%; margin: 0; padding: 0;"
+            tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"
+              td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0; padding-bottom:30px;"
+                = image_tag(attachments['logo'].url, alt:"Dilemma Guru", style:"border:0; outline:none")
+            tr style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"
+              td style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.welcome", user: @user.profile.full_name)
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_1")
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_2")
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_3_html", href: link_to(t("emails.user_mailer.welcome_email.link_1_href"), "https://dilemmaguru.freshdesk.com/support/solutions/articles/9000071915-posting-your-first-dilemma"))
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_4_html", href: link_to(t("emails.user_mailer.welcome_email.link_2_href"), "https://dilemmaguru.freshdesk.com/solution/articles/9000082067-share-a-dilemma"))
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_5_html", href: link_to(t("emails.user_mailer.welcome_email.link_3_href"), "https://dilemmaguru.freshdesk.com/solution/articles/9000071923-add-your-advise"))
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_6_html", href: link_to(t("emails.user_mailer.welcome_email.link_4_href"), "https://dilemmaguru.freshdesk.com/support/solutions/articles/9000073155-i-want-to-become-a-guru-"))
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0; padding-bottom:10px;"
+                  = t("emails.user_mailer.welcome_email.content_7_html", href: link_to(t("emails.user_mailer.welcome_email.email_link_href"),"mailto:master@dilemma.guru"))
+                p style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6em; font-weight: normal; margin: 0 0 10px; padding: 0;color:#932b5b"
+                  = t("emails.user_mailer.welcome_email.signature")
+      td style="font-family: 'Helvetica Neue'), 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6em; margin: 0; padding: 0;"

@@ -1,0 +1,20 @@
+table.table
+  thead
+    th = _('Country name')
+    th = _('Number of users')
+    th = _('Actions')
+  tbody
+    - @countries.each do |country|
+      tr
+        td
+          - if (country.country_iso == 'RD')
+            = link_to I18n.t("countries.#{country.country_iso}"), super_admin_users_path(user_country_filter: country.country_iso)
+          - else
+            = link_to I18n.t(country.country_iso, :scope => :countries), super_admin_users_path(user_country_filter: country.country_iso)
+        td
+          = User.where(country_iso: country.country_iso).count
+        td
+          - if country.enabled_at.nil?
+            = link_to ('Enable country'), enable_super_admin_country_management_index_path(country_iso: country.country_iso), class: 'btn btn-success'
+          - else
+            = link_to ('Disable country'), disable_super_admin_country_management_index_path(country_iso: country.country_iso), class: 'btn btn-danger'

@@ -1,0 +1,103 @@
+@import "globals";
+
+.fr-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  i {
+      color:#aab1c2;
+    }
+}
+.fr-box.fr-basic .fr-wrapper .fr-placeholder {
+  color:#aab1c2;
+}
+.fr-element p {
+  margin:0;
+}
+
+.fr-wrapper,
+.fr-toolbar,
+.fr-basic {
+  border:0!important;
+  box-shadow:none!important;
+}
+
+.fr-toolbar {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-top:1px solid #D3D9E9!important;
+  border-radius: 0!important;
+  margin-left: 10px;
+}
+
+.fr-separator {
+  display:none;
+}
+
+.fr-toolbar button:nth-child(1) {
+  margin-left:0!important;
+}
+
+.fr-sticky-on, .fr-sticky-on, .fr-sticky {
+  position: initial!important;
+}
+
+[data-cmd="froala-attach-button"] {
+  display:block!important;
+}
+
+[data-cmd="froala-action-button"] {
+  display:block!important;
+  margin-left:auto!important;
+  background:#932b5b!important;
+  color:#fff;
+  font-size:1.4rem!important;
+  font-family: $regular;
+  text-transform:uppercase;
+  border:0;
+  cursor:pointer;
+  height: 30px!important;
+  line-height:30px!important;
+  margin-top: 7px!important;
+  width: 125px!important;
+  text-align: center!important;
+  order: 20;
+  @include r(phone-max) {
+    flex:1 0 100%!important;
+  }
+}
+
+[data-cmd="emoticons"], [data-cmd="insertLink"] {
+  display:inline-block!important;
+}
+
+.froala-action-button {
+  background:#932b5b;
+  color:#fff;
+  font-size:1.4rem!important;
+  font-family: $regular;
+  text-transform:uppercase;
+  border:0;
+  cursor:pointer;
+  font-weight: normal!important;
+  float:none!important;
+}
+
+.fr-element em {
+  color:#2d3344;
+}
+
+.fr-view span.fr-emoticon {
+  padding-right:5px;
+}

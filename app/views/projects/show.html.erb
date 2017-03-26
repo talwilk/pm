@@ -1,0 +1,150 @@
+<%= stylesheet_link_tag "screens/projects" %>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "project.js" %>
+<% end %>
+
+<body>
+	<div class="uk-grid uk-grid-large">
+		<div class="uk-panel uk-panel-box">
+			<h2><%=  @project.name %></h2>
+			<p><%=  @project.type.name  %></p>
+
+			<div class="uk-panel uk-text-right">
+				<%=   _("#{t('project.description')}") %>
+				<%=  @project.description %></div>
+			<div class="uk-panel uk-text-right"> 
+				<%=   _("#{t('project.plot')}") %>
+				<%=  @project.plot %>
+				<%= _("#{t('common.hint_size')}") %></div>
+			<div class="uk-panel uk-text-right">
+				<%=   _("#{t('project.lot')}") %>
+				<%=  @project.build %>
+				<%= _("#{t('common.hint_size')}") %></div>
+			<div class="uk-panel uk-text-right">
+				<%=   _("#{t('project.start_date')}") %>
+				<%=  @project.orig_start_date %></div>
+			<div class="uk-container uk-align-left">
+				<div class="button-grid">
+					<div class="secondery-button mini-button">
+						<%= link_to _("#{t('common.edit')}"), edit_project_path %>
+					</div>
+				</div>
+			</div>
+
+			<div class="uk-panel-space"></div>
+
+			<div class="uk-h2"><%= _("#{t('project.my_task_list')}") %></div>
+			
+			<hr class="uk-panel-space"></hr>
+
+			<div class="uk-panel uk-panel-box">
+				<table class="uk-table uk-width-10-10 uk-text-bold uk-text-right">
+					<tr class="table_header">
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-2-10">
+							<%= _("#{t('project.tasks')}") %></th>
+						<th class="uk-width-1-10">
+							<%= _("#{t('project.end_date')}") %></th>
+						<th class="uk-width-2-10">
+							<%=  _("#{t('project.cost')}") %></th>
+						<th class="uk-width-2-10"></th>
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-1-10"></th>
+					</tr>
+					<tr  class="table_header">
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-2-10">
+							<%= @complete_task_count %> /
+							<%= @task_count %> </th>
+						<th class="uk-width-1-10">
+							<%= @total_end_date %></th>
+						<th class="uk-width-2-10">
+							<%= @total_paid %> / 
+							<%= @total_cost %> 
+							<%= _("#{t('common.hint_cur')}") %></th>
+						<th class="uk-width-2-10"></th>
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-1-10"></th>
+					</tr>
+
+					<% if !@tasks_hash.nil? %>
+						<% @tasks_hash.each_entry do |phase, tasks| %>
+							<tr class="uk-h3">
+								<th colspan="2"><%= SupportedPhase.find(phase).name %> </th>
+								</tr>
+							<% tasks.each_entry do |id, t| %>
+								<%	t.each_entry do |x|  %>
+									<tr class="task_row uk-text-small"">
+	  									<th class="uk-width-1-10">
+											<%= image_tag(x.task_type) %>
+					  					</th>
+		  								<th class="uk-width-2-10"><%= link_to x.name, project_task_path(@project,x) %>
+		  								</th>
+		  								<th class="uk-width-1-10"><%= x.cur_end_date %>
+		  								</th>
+		  								<th class="uk-width-2-10">
+		  									<%= if (!x.paid.nil?) then x.paid else "0" end %>
+		  									<%= "/" %>
+		  									<%= if (!x.cost.nil?) then x.cost else "0" end %>
+		  								</th>
+										<th class="uk-width-2-10"><%=	if !x.pro.nil? then 
+											(link_to (x.pro.full_name), project_task_pro_path(x.project,x,x.pro)) else (link_to "Choose",new_project_task_pro_path(x.project,x)) end %></th>
+										<th class="uk-width-1-10"><%=	if x.manual_ind=='0' then ("-") else x.manual_ind end %></th>
+										<th class="uk-width-1-10">
+										</th>	
+									</tr>
+									<tr class="task_details" hidden="true">
+									<td class="task_details" colspan="7">
+										<div class="uk-panel uk-form-width-medium">
+										<p><%= _("#{t('task.description')}") %>
+										<%=  x.description %></br></p>
+										<p><%= _("#{t('task.tips')}") %>
+										<%=  x.task_tips %></br></p>
+										<p><%= _("#{t('task.duration')}") %>
+										<%=  x.duration %>
+										<%=   _("#{t('common.days')}") %></br></p>
+										<p><%= _("#{t('task.cost')}") %>
+										<%=  x.cost %>
+										<%= _("#{t('common.hint_cur')}") %></br></p>
+										<p id = "show_notes"><%= _("#{t('task.notes')}") %>
+										<%=  text_area_tag ':x.notes' %></p>
+										<p><%= if x.manual_ind == '0' then
+											 (_("#{t('project.no_dilemma_title')}")
+											 link_to _("#{t('project.here')}"), new_dilemma_path(:task_id => x.id)) 
+											 else ("Dilemma titles... ") end %></p>
+										<p><%= _("#{t('task.cost')}") %>
+										<%=  x.cost %>
+										<%= _("#{t('common.hint_cur')}") %>,
+										<%= _("#{t('task.paid')}") %>
+										<%=  x.paid %>
+										<%= _("#{t('common.hint_cur')}") %>
+										</br></p>
+										<p><%=	link_to _("#{t('common.edit')}") , edit_project_task_path(@project,x) %></p>
+										<p class="uk-align-left"><%=	link_to _("#{t('common.delete')}"), project_task_path(@project, x), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></p>
+										</div>
+									</td></tr>
+									<tr class="add_pro_area" hidden="true">
+										<td class="add_pro_area" colspan="7">
+											<div class="uk-panel uk-form-width-medium">
+												<p>pro info</p>
+											</div>
+										</td>
+									</tr>
+
+								<% end %>
+							<% end %>
+						<% end %>
+					<% end %>
+				</table>
+			</div>
+
+			<div class="uk-container uk-align-left">
+				<div class="button-grid">
+					<div class="button secondary-button small-button">
+						<%= link_to _("#{t('project.add_task')}"), new_project_task_path(@project) %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

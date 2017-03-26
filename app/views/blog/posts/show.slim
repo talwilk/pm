@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .card.card-block
+        h2=@post.title
+        div class='fr-view'
+          p=@post.content.html_safe
+          - if @post.cover_image.present?
+            = image_tag @post.cover_image, id: 'img_upload', size: '300'

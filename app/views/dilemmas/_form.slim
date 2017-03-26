@@ -1,0 +1,116 @@
+= simple_form_for @dilemma, class:'uk-form add-media-form', method: :post do |f|
+  = f.input :category_list, label: "#{t('dilemma.category_list')}", collection: SupportedCategory.collection, include_hidden: false, input_html: { multiple: true, class: 'select2_special' }
+  = f.input :title, label: "#{t('dilemma.title')}", input_html: {maxlength: DILEMMA_TITLE}
+  = f.input :description, label: "#{t('dilemma.description')}", as: :text, class:"froala-init { t :dir}", placeholder: t('dilemma.place_holder')
+  #description_tr.no-display
+    .undo 
+      =t('dilemma.icon_common.undo')
+    .redo 
+      =t('dilemma.icon_common.redo')
+    .emoticons 
+      =t('dilemma.icon_common.emoticons')
+    .insertLink 
+      =t('dilemma.icon_common.insertLink')
+    .bold
+      =t('dilemma.icon_common.bold')
+    .italic
+      =t('dilemma.icon_common.italic')
+    .underline 
+      =t('dilemma.icon_common.underline')
+    .strikeThrough 
+      =t('dilemma.icon_common.strikeThrough')
+    .linkList
+      =t('dilemma.icon_common.linkList')
+    .facebook
+      =t('dilemma.icon_common.facebook')
+    .google
+      =t('dilemma.icon_common.google')
+    .froala
+      =t('dilemma.icon_common.froala')
+    .text
+      =t('dilemma.icon_common.text')
+    .url
+      =t('dilemma.icon_common.url')
+    .linkInsert
+      =t('dilemma.icon_common.linkInsert')
+    .openinnewtab
+      =t('dilemma.icon_common.openinnewtab')
+    .linkRemove
+      =t('dilemma.icon_common.linkRemove')
+    .linkEdit
+      =t('dilemma.icon_common.linkEdit')
+    .linkStyle
+      =t('dilemma.icon_common.linkStyle')
+    .green
+      =t('dilemma.icon_common.green')
+    .thick
+      =t('dilemma.icon_common.thick')
+    .linkOpen
+      =t('dilemma.icon_common.linkOpen')
+    .linkBack
+      =t('dilemma.icon_common.linkBack')
+    .direction
+      ="#{ t :dir}"
+  .uk-form-row
+    label.control-label = "#{t('dilemma.media')}"
+  - if @dilemma.errors.has_key?(:media)
+    - @dilemma.errors.full_messages_for(:media).each do |msg|
+      .uk-grid
+        .uk-width-medium-1-1
+          .uk-alert.uk-alert-danger
+            = msg.gsub(/Media/ , '')
+  - @dilemma.media.each do |media|
+    - if media.errors.has_key?(:image_url)
+      - media.errors.full_messages_for(:image_url).each do |msg|
+        .uk-grid
+          .uk-width-medium-1-1
+            .uk-alert.uk-alert-danger
+              = msg
+  = f.simple_fields_for :media do |d|
+    - if @existing_media
+      - if d.object.image_url.present?
+        .nested-fields.uk-width-medium-1-3.uk-animation-fade.filled
+          div
+            .uk-hidden
+              = d.input :image_url, readonly: true
+            = image_tag d.object.image_url, id: 'img_url_upload', size: '300'
+            = d.input :media_description, as: :text, label: false, placeholder: "#{t('dilemma.enter_media_description')}"
+            = link_to_remove_association _("#{t('dilemma.remove')}"), d, class: 'remove-media'
+      - if d.object.youtube_url.present?
+        .nested-fields.uk-width-medium-1-3.uk-animation-fade.filled
+          div
+            .uk-hidden
+              = d.input :youtube_url, readonly: true
+            = image_tag 'http://img.youtube.com/vi/' + d.object.youtube_url + '/0.jpg', id: 'youtube_upload', size: '300'
+            = d.input :media_description, as: :text, label: false, placeholder: _("#{t('dilemma.enter_media_description')}")
+            = link_to_remove_association _("#{t('dilemma.remove')}"), d, class:'remove-media'
+      - if d.object.file.present? && !d.object.image_url.present?
+        .nested-fields.uk-width-medium-1-3.uk-animation-fade.filled
+          div
+            .uk-hidden
+              = d.label :file, "#{t('dilemma.file')}"
+              = d.file_field :file, onchange: 'previewFileImg(this);', accept: '.jpg, .png, .jpeg, .gif|images/*'
+              = d.hidden_field :file_cache
+              = text_field_tag "#{t('dilemma.browse')}", ' ', readonly: true
+            = image_tag d.object.file , id: 'img_file_upload', size: '300'
+            = d.input :media_description, as: :text, label: false, placeholder: _("#{t('dilemma.enter_media_description')}")
+            = link_to_remove_association _("#{t('dilemma.remove')}"), d, class:'remove-media'
+    - if d.object == @dilemma.media.last
+      .uk-grid.medias data-uk-grid-match=""
+        .uk-width-medium-1-2.uk-width-large-1-3
+          .add-media
+            .uk-panel.uk-panel-box
+              .guide
+                = image_tag("add-media-icon.png", alt: "#{t('dilemma.add_media')}", class: "add-media-icon")
+                p = "#{t('dilemma.add_photo_or_video')}"
+              .selection
+                .add-image-file data-uk-modal="{target:'#fileModal'}" = "#{t('dilemma.image_from_pc')}"
+                .add-image-url data-uk-modal="{target:'#imageModal'}" = "#{t('dilemma.image_from_url')}"
+                .add-youtube-url data-uk-modal="{target:'#youtubeModal'}" = "#{t('dilemma.video_from_youtube')}"
+      .uk-hidden
+        = link_to_add_association _("#{t('dilemma.add_image_file')}"),  f, :media, :data => {'association-insertion-method' => 'append'}, partial: 'dilemma_browse_fields', class:'append-image-file'
+        = link_to_add_association _("#{t('dilemma.add_image_url')}"),  f, :media, :data => {'association-insertion-method' => 'append'}, partial: 'dilemma_image_url_fields', class:'append-image-url'
+        = link_to_add_association _("#{t('dilemma.add_youtube_video')}"),  f, :media, :data => {'association-insertion-method' => 'append'}, partial: 'dilemma_youtube_url_fields', class:'append-youtube-url'
+= render 'youtube_url_modal'
+= render 'image_url_modal'
+= render 'browse_modal'

@@ -1,0 +1,14 @@
+.uk-grid
+  .uk-width-large-8-10.uk-width-medium-9-10.uk-container-center
+    = render partial: 'payment_plan'
+.uk-grid
+.uk-grid
+  .uk-width-medium-8-10.uk-container-center
+    h2.uk-text-center = _("#{t('payment_plan_transaction.payment_plans_history')}")
+.uk-grid
+  .uk-width-medium-8-10.uk-container-center
+    = render partial: 'payment_plan_history'
+    - if flash[:free_user] == 'AlertMessage|render_free_user_modal'
+      = render partial: 'free_user_modal'
+    - elsif flash[:payment] == 'AlertMessage|render_payment_modal'
+      = render partial: 'payment_modal'

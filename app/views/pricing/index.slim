@@ -1,0 +1,42 @@
+.uk-grid
+  .uk-width-medium-1-1.uk-text-center
+    h2 = _("#{t('pricing.title')}")
+.uk-grid.uk-grid-medium.uk-flex.uk-flex-bottom
+  .uk-width-medium-1-3.uk-width-small-1-1
+    =link_to payment_plan_transaction_path(payment_plan: 'SMALL'), id: 'small-plan', class:'link-no-hover', method: :put
+      .uk-panel.uk-panel-box.billing-plan__box
+        .uk-panel-title
+          h3.billing-plan__title = t('payment_plans.SMALL')
+        .billing-plan__content
+          .billing-plan__price
+            .uk-flex.uk-flex-nowrap.uk-flex-center
+              p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+              p.billing-plan__amount=  _("29")
+              p.billing-plan__period = _("#{t('pricing.week')}")
+          button.primary-button.small-button = _("#{t('pricing.choose_plan')}")
+  .grid-spaced-medium.uk-visible-small
+  .uk-width-medium-1-3.uk-width-small-1-1.billing-plan__medium
+    .uk-panel.uk-panel-box.billing-plan__box
+      .uk-panel-title
+        h3.billing-plan__title = t('payment_plans.MEDIUM')
+      .billing-plan__content
+        .billing-plan__price
+          .uk-flex.uk-flex-nowrap.uk-flex-center
+            p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+            p.billing-plan__amount=  _("49")
+            p.billing-plan__period = _("#{t('pricing.week')}")
+        =link_to payment_plan_transaction_path(payment_plan: 'MEDIUM'), id: 'medium-plan', method: :put
+          button.primary-button.small-button = _("#{t('pricing.choose_plan')}")
+  .grid-spaced-medium.uk-visible-small
+  .uk-width-medium-1-3.uk-width-small-1-1
+    .uk-panel.uk-panel-box.billing-plan__box
+      .uk-panel-title
+        h3.billing-plan__title = t('payment_plans.LARGE')
+      .billing-plan__content
+        .billing-plan__price
+          .uk-flex.uk-flex-nowrap.uk-flex-center
+            p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+            p.billing-plan__amount=  _("79")
+            p.billing-plan__period = _("#{t('pricing.year')}")
+        =link_to payment_plan_transaction_path(payment_plan: 'LARGE'), id: 'large-plan', method: :put
+          button.primary-button.small-button = _("#{t('pricing.choose_plan')}")

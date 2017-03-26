@@ -1,0 +1,24 @@
+.uk-grid
+  .uk-width-medium-1-1.uk-text-center
+    h2= _("#{t('devise.registrations.change_password')}")
+.uk-grid
+  .uk-width-medium-8-10.uk-container-center
+    .uk-grid
+        .uk-width-medium-1-1
+          .holder
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+              = f.error_notification
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+               p
+                 = _("#{t('devise.registrations.confirmation')}")
+                 = resource.unconfirmed_email
+              = f.input :current_password, label: "#{t('devise.registrations.current_password')}" ,hint: _("#{t('devise.registrations.current_password_need')}"), required: true
+              = f.input :password, autocomplete: "#{t('devise.registrations.off')}", label: "#{t('devise.registrations.password')}", hint: _("#{t('devise.registrations.leave_blank')}"), required: false
+              = f.input :password_confirmation, label: "#{t('devise.registrations.password_confirmation')}", required: false
+
+              .uk-grid
+              .uk-grid
+                .uk-width-medium-1-1.uk-text-center
+                  button.primary-button.small-button.less-padding form="edit_user" type="submit"
+                      = _("#{t('devise.registrations.save_changes')}")
+

@@ -1,0 +1,25 @@
+.uk-grid
+  .uk-width-medium-4-5.uk-align-center
+    .devise-wrapper
+      h2.uk-text-center
+        = t('devise.mailer.resend_confirmation_instruction')
+      .holder
+        .uk-grid.uk-grid-divider
+          .uk-width-medium-1-2
+            = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+              = f.error_notification
+              = f.full_error :confirmation_token
+              .uk-form
+                .uk-form-row
+                  = f.input :email, label: _("#{t('devise.sessions.email')}"), required: true, autofocus: true
+              .form-actions
+                = f.button :submit, _("#{t('devise.common.resend')}"), class:'primary-button medium-button'
+          .uk-width-medium-1-2.social-login-holder
+            p.uk-visible-small
+            p.uk-visible-small
+            .uk-grid
+              .uk-width-medium-1-1
+                = render "devise/shared/social_login"
+            .uk-grid
+              .uk-width-medium-1-1
+                = render "devise/shared/links"

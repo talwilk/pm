@@ -1,0 +1,65 @@
+header.top-navigation.uk-flex.uk-flex-middle
+  .uk-container.uk-container-center.full-width
+      nav.uk-navbar.uk-flex.uk-flex-middle.uk-flex-nowrap
+          ul.uk-navbar-nav
+            .uk-grid.uk-grid-small.uk-flex.uk-flex-middle.full-width
+              .uk-width-medium-7-10.uk-width-4-5.uk-flex.uk-flex-middle
+                li
+                  = link_to root_path
+                    .i#logo class=" #{ t :dir}" 
+                li class=" #{ t :dir}"
+                  #top-search
+                    = form_tag dilemmas_path, method: :get do
+                      = text_field_tag :search, params[:search],  placeholder: "#{t('users.dashboard.seacrh_for_dilemmas_by_title')}", class:'top-search-input'
+                    //  = submit_tag _('Search'), title: nil, class: 'btn'
+                li.uk-visible-large.flex-float-right-left class=" #{ t :dir}"
+                  = link_to new_dilemma_path
+                    button.primary-button.mini-button.add-dilemma-button = _("#{t('users.dashboard.add_dilemma')}")
+              .uk-width-medium-3-10.uk-width-1-5.text-align class=" #{ t :dir}"
+                - if current_user
+                  li#user-menu class=" #{ t :dir}"
+                    .uk-button-dropdown
+                      .uk-hidden-large
+                        i.fa.fa-bars
+                        .mobile-menu-close.uk-hidden
+                      .uk-visible-large.flex-float-right-left class=" #{ t :dir}"
+                        .notification-holder class=" #{ t :dir}"
+                          .top-user-rank
+                            div class="rank-#{current_user.level}-sm"
+                          .gamification-notice.tooltip title=""
+                          - if @current_user.total_points.present?
+                            .top-user-points class=" #{ t :dir}"
+                              = @current_user.total_points
+                          - if current_user.profile.avatar?
+                            = image_tag current_user.profile.avatar_url, id: 'img_upload', class:"top-user-avatar uk-border-circle #{ t :dir}"
+                        p.inline.username class=" #{ t :dir}" = current_user.profile.full_name
+                      .uk-dropdown
+                        ul.uk-nav.uk-nav-dropdown
+                          .mobile-personal-info.uk-text-center.uk-hidden-large
+                            .avatar
+                              = image_tag current_user.profile.avatar, class:'profile-view__avatar'
+                            .profile-view__rank class="rank-#{@current_user.level}-xs"
+                            p.profile-view__level.inline= SupportedUserLevel.find(@current_user.level)
+                            p.profile-view__points.tooltip = @current_user.total_points
+                          li
+                            = link_to _("#{t('users.dashboard.dash_board')}"), root_path
+                          li.uk-hidden-large
+                            = link_to _("#{t('users.dashboard.add_dilemma')}"), new_dilemma_path
+                          li
+                            = link_to _("#{t('users.dashboard.my_dilemmas')}"), user_url(current_user.id)
+                          li
+                            = link_to _("#{t('users.dashboard.my_advices')}"), user_url(current_user.id, redirect_from: "advices")
+                          li
+                            = link_to _("#{t('users.dashboard.edit_profile')}"), edit_profile_url
+                          li
+                            = link_to _("#{t('users.dashboard.ranks_and_activities')}"), gamification_path
+                          li
+                            = link_to _("#{t('users.dashboard.billing')}"), edit_payment_plan_transaction_path
+                          li
+                            = link_to _("#{t('users.dashboard.change_password')}"), edit_user_registration_path
+                          li
+                            = link_to _("#{t('users.dashboard.sign_out')}"), destroy_user_session_path, method: :delete
+                - else
+                  li.flex-float-right-left
+                    = link_to new_user_session_path
+                      button.primary-button.mini-button = _("#{t('users.dashboard.sign_in')}")

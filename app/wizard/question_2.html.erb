@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "screens/wizard" %>
+
+<div class="uk-grid uk-grid-large uk-flex-center">
+	<div class="uk-panel uk-panel-box">
+		<p class="uk-text-right"><%= _("#{t('wizard.q2_welcome')}") %></p></br>
+		<table>
+			<tr>
+				<th class="uk-width-1-4"></th>
+				<th class="uk-width-1-4"><%= link_to @A11, next_wizard_path(:q => '1', :qna_id => @qna_id), method: :put %> </th>
+				<th class="uk-width-1-4"></th>
+				<th class="uk-width-1-4"></th>
+			</tr>
+			<tr>
+				<th class="uk-width-1-4"><%= _("#{t('wizard.Im')}") %></th>
+				<th class="uk-width-1-4"><%= link_to @A13, next_wizard_path(:q => '3', :qna_id => @qna_id), method: :put %> </th>
+				<th class="uk-width-1-4"></th>
+				<th class="uk-width-1-4"><%= image_tag(@image_url) %></th>
+			</tr>
+			<tr>
+				<th class="uk-width-1-4"></th>
+				<th class="uk-width-1-4"><%= link_to @A12, next_wizard_path(:q => '2', :qna_id => @qna_id), method: :put %> </th>
+				<th class="uk-width-1-4"></th>
+				<th class="uk-width-1-4"></th>
+			</tr>
+		</table>
+		<div class="uk-text-right">
+			<%= link_to _("#{t('common.back')}"), previous_wizard_path(:qna_id => @qna_id) %> |  <%= link_to _("#{t('common.skip')}"), wizard_path(:project_details) %>
+		</div>
+	</div>
+</div>

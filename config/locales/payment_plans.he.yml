@@ -1,0 +1,5 @@
+he:
+  payment_plans:
+    SMALL: 'תוכנית שבועית'
+    MEDIUM: 'תוכנית חודשית'
+    LARGE: 'תוכנית רבעונית'

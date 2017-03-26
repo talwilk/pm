@@ -1,0 +1,97 @@
+- if @dilemma_guru_advices.present?
+  h3.advices#advices-guru data-uk-toggle="{ target: '#guru-advices' }"
+    .guru-advice-counter.inline = @dilemma_guru_advices.count
+    span.text-align-padding =_("#{t('dilemma.guru_advice')}")
+.advices#guru-advices
+  - @dilemma_guru_advices.each_with_index do |advice,index|
+    .uk-grid
+      .uk-width-medium-1-1
+        article.dilemma-advice-item
+          .uk-grid
+            .uk-width-medium-1-1.uk-flex.uk-flex-nowrap
+              .dilemma-advice-item__left-section
+                .uk-grid
+                  .uk-width-medium-1-1.uk-text-center
+                    = responsive_image_tag(advice.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive', alt:'advice.user.profile.full_name')
+                .uk-grid
+                  .uk-width-medium-1-1.uk-text-center
+                    div id="advice-likes-#{advice.id}"
+                      - if policy(@dilemma).signed_user?
+                        - if policy(advice).like?
+                          - if current_user.voted_for? advice
+                            = link_to '', like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i blank-heart'
+                          - else
+                            = link_to '', like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i heart'
+                          - if advice.get_likes.any?
+                              p.dilemma-advice-item__total-likes= advice.get_likes.size
+                .uk-grid
+                  .uk-width-medium-1-1.uk-text-center
+                    - if policy(@dilemma).signed_user?
+                      - if policy(@dilemma).favorite? && advice.id
+                        =link_to '', favorite_dilemma_advice_path(advice.dilemma, advice), class:'i best-advice'
+              .dilemma-advice-item__right-section
+                .fr-view id="guru_dilemma_advice-#{index}"
+                  = link_to user_path(advice.user), class:'link-no-hover'
+                    p.dilemma-advice-item__username=advice.user.profile.full_name
+                  .dilemma-advice-item__rank class="rank-#{advice.user.level}-sm"
+                  p.dilemma-advice-item__level= SupportedUserLevel.find(advice.user.level)
+                  p.dilemma-advice-item__profession=advice.user.profile.category_list.first(3).map { |key| SupportedCategory.find(key).name }.join(', ')
+                  p.dilemma-advice-item__description=advice.content.html_safe
+                .uk-grid.uk-flex.advice-attached-media
+                  - advice.media.each do |media|
+                    - if !media.file.blank?
+                      =link_to media.file.url, :"data-uk-lightbox" => '', class: 'link-no-hover'
+                        = responsive_image_tag media.file, sizes: { default: :desktop_advice_thumbnail, desktop: :desktop_advice_thumbnail, mobile: :mobile_advice_thumbnail }, class:'responsive'
+                        .dilemma-advice-item__media-description = media.media_description
+                    - if !media.youtube_url.blank?
+                      =link_to media.file.url, :"data-uk-lightbox" => '', class: 'link-no-hover'
+                        = render 'youtube_video_advice', media: media
+                        .dilemma-advice-item__media-description = media.media_description
+- if @dilemma_user_advices.present?
+  h3.advices#advices-user data-uk-toggle="{ target: '#user-advices' }"
+    .user-advice-counter.inline = @dilemma_user_advices.count
+    span.text-align-padding = _("#{t('dilemma.user_advice')}")
+.advices#user-advices
+  - @dilemma_user_advices.each_with_index do |advice,index|
+    .uk-grid
+      .uk-width-medium-1-1
+        article.dilemma-advice-item
+          .uk-grid
+            .uk-width-medium-1-1.uk-flex
+              .dilemma-advice-item__left-section class= "#{ t :dir}"
+                .uk-grid
+                  .uk-width-medium-1-1
+                    = responsive_image_tag(advice.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive', alt:'advice.user.profile.full_name')
+                .uk-grid
+                  .uk-width-medium-1-1.uk-text-center
+                    div id="advice-likes-#{advice.id}"
+                      - if policy(@dilemma).signed_user?
+                        - if policy(advice).like?
+                          - if current_user.voted_for? advice
+                            = link_to '', like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i blank-heart'
+                          - else
+                            = link_to '', like_dilemma_advice_path(advice.dilemma, advice), method: :put, remote: true, class:'i heart'
+                          - if advice.get_likes.any?
+                            p.dilemma-advice-item__total-likes= advice.get_likes.size
+                .uk-grid
+                  .uk-width-medium-1-1.uk-text-center
+                    - if policy(@dilemma).signed_user?
+                      - if policy(@dilemma).favorite? && advice.id
+                        =link_to '', favorite_dilemma_advice_path(advice.dilemma, advice), class:'i best-advice'
+              .dilemma-advice-item__right-section
+                .fr-view id="user_dilemma_advice-#{index}"
+                  = link_to user_path(advice.user), class:'link-no-hover'
+                    p.dilemma-advice-item__username=advice.user.profile.full_name
+                  .dilemma-advice-item__rank class="rank-#{advice.user.level}-sm"
+                  p.dilemma-advice-item__level= SupportedUserLevel.find(advice.user.level)
+                  p.dilemma-advice-item__description=advice.content.html_safe
+                .uk-grid.uk-flex.advice-attached-media
+                  - advice.media.each do |media|
+                    - if !media.file.blank?
+                      =link_to media.file.url, :"data-uk-lightbox" => '', class: 'link-no-hover'
+                        = responsive_image_tag media.file, sizes: { default: :desktop_advice_thumbnail, desktop: :desktop_advice_thumbnail, mobile: :mobile_advice_thumbnail }, class:'responsive'
+                        .dilemma-advice-item__media-description = media.media_description
+                    - if !media.youtube_url.blank?
+                      =link_to media.file.url, :"data-uk-lightbox" => '', class: 'link-no-hover'
+                        = render 'youtube_video_advice', media: media
+                        .dilemma-advice-item__media-description = media.media_description

@@ -1,0 +1,41 @@
+footer.uk-flex.uk-flex-middle
+  .uk-container.uk-container-center.full-width
+    .uk-grid.uk-grid-small.uk-flex.uk-flex-middle.uk-flex-center.full-width
+      .uk-width-1-1
+        .footer-container.uk-flex
+          .footer-empty-space
+          .footer-links-col-1
+            = link_to new_guru_registration_path
+              p =_("#{t('footer.become_guru')}")
+            = link_to dilemmas_path(sort_by: "most_advised")
+              p =_("#{t('footer.discover_dilemma')}")
+            = link_to dilemmas_path(sort_by: "ending_soon")
+              p =_("#{t('footer.give_advice')}")
+            = link_to gamification_path
+              p =_("#{t('footer.ranking_and_badges')}")
+            = link_to "#privacy-policy", data: { "uk-modal": "" }
+              p =_("#{t('footer.privacy_policy')}")
+          .footer-links-col-2
+            = link_to("https://dilemmaguru.freshdesk.com/support/home", target: '_blank')
+              p =_("#{t('footer.faq')}")
+            = link_to("http://blog.dilemma.guru/", target: '_blank')
+              p =_("#{t('footer.blog')}")
+            = link_to about_path
+              p =_("#{t('footer.about')}")
+            = link_to("https://dilemmaguru.freshdesk.com/support/tickets/new", target: '_blank')
+              p =_("#{t('footer.contact_us')}")
+            = link_to "#terms-conditions", data: { "uk-modal": "" }
+              p =_("#{t('footer.terms_and_conditions')}")
+          .footer-social-media
+            .uk-flex.uk-flex-top.uk-flex-space-between
+              = link_to 'https://www.facebook.com/dilemma.guru/', target: '_blank'
+                #facebook_link class="#{t :dir}"
+                  = image_tag "landing/a7ab68e1-fb_00w00w00w00w000000.png"
+              = link_to 'https://twitter.com/Dilemma_Guru', target: '_blank'
+                #twitter_link class="#{t :dir}"
+                  = image_tag "landing/d2a3e31b-twitter_00w00w00w00w000000.png"
+              = link_to 'https://www.linkedin.com/company/dilemma-guru', target: '_blank'
+                #linked_in_link class="#{t :dir}"
+                  = image_tag "landing/1b5da8c4-linkedin_00w00w00w00w000000.png"
+        .rights
+          span =_("#{t('footer.rights')}")

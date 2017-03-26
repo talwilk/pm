@@ -1,0 +1,31 @@
+- @user_dilemmas.each_with_index do |dilemma,index|
+  .uk-grid.user-dilemmas id="user_dilemma-#{index}"
+    .uk-width-medium-1-1
+      = link_to dilemma_path(dilemma), class:'link-no-hover'
+        .dilemma-similar-item
+          .uk-panel.uk-panel-box
+            - if dilemma.cover_photo.present?
+              .uk-panel-teaser
+                - if dilemma.advices.present?
+                  .dilemma-similar-item__amount = dilemma.advices.count
+                - if Medium.find_by(id: dilemma.cover_photo).youtube_url
+                  = image_tag 'http://img.youtube.com/vi/' + Medium.find_by(id: dilemma.cover_photo).youtube_url + '/0.jpg'
+                - else
+                  = responsive_image_tag Medium.find_by(id: dilemma.cover_photo).file, :sizes => { :default => :desktop_cover_thumbnail, :desktop => :desktop_cover_thumbnail, :mobile => :mobile_cover_thumbnail }, :class => 'responsive'
+            - else
+              div.dilemma-similar-item__placeholder
+                span= _("#{t('dilemma.cover_photo_not_set')}")
+            .uk-panel-content
+              .uk-grid
+                .uk-width-medium-1-1
+                  h3.dilemma-similar-item__title=dilemma.title
+              .uk-flex
+                .uk-width-medium-1-1
+                  .dilemma-similar-item__left-section
+                    = link_to user_path(dilemma.user.id), class:'link-no-hover'
+                      = responsive_image_tag dilemma.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive'
+                  .dilemma-similar-item__right-section
+                    = link_to user_path(dilemma.user.id), class:'link-no-hover'
+                      p.dilemma-similar-item__username= dilemma.user.profile.full_name
+                    .dilemma-similar-item__rank class="rank-#{@dilemma.user.level}-xs"
+                    p.dilemma-similar-item__level= SupportedUserLevel.find(@dilemma.user.level)

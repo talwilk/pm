@@ -1,0 +1,134 @@
+@import "globals";
+
+.dilemma-item {
+  display:flex;
+  position:relative;
+  flex-direction:column;
+  background:#fff;
+  border:1px solid $border-color;
+  @include r(phone-max) {
+    margin-left:-11px;
+    margin-right:-11px;
+  }
+  &__header.ltr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    flex-wrap:nowrap;
+  }
+  &__header.rtl {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width:100%;
+    flex-direction: row-reverse;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    flex-wrap:nowrap;
+  }
+  &__share {
+    height:65px;
+    line-height:65px;
+    padding:0 30px 0 25px;
+    color:#fff;
+    background:#922b5b;
+    cursor:pointer;
+    flex: 1;
+    flex-basis: auto;
+    flex-grow:0;
+    @include r(phone-max) {
+      height:50px;
+      line-height:50px;
+      padding:0 20px 0 15px;
+    }
+    &:hover {
+      background:#691c40;
+    }
+    i {
+      font-size:2.8rem;
+       @include r(phone-max) {
+        font-size:2.2rem;
+      }
+    }
+  }
+  &__timer {
+    height:65px;
+    line-height:65px;
+    padding:0 30px;
+    background:#2d3344;
+    font-size:2.4rem;
+    color:#fff;
+    flex: 1;
+    flex-basis: auto;
+    flex-grow:0;
+    @include r(phone-max) {
+      height:50px;
+      line-height:50px;
+      padding:0 20px;
+      font-size:1.6rem;
+    }
+    span {
+      font-family:$regular;
+      text-transform:uppercase;
+    }
+  }
+  &__remaining {
+    font-family:$bold;
+    text-transform:none;
+  }
+  &__content {
+    width:100%;
+    padding:25px 35px 35px;
+    @include r(phone-max) {
+      padding:25px 20px 0;
+    }
+  }
+  &__category {
+  }
+  &__title {
+    padding-top:10px;
+    line-height:1.5;
+    word-wrap: break-word;
+  }
+  &__description {
+    margin:0;
+    padding-top:15px;
+  }
+  &__media {
+    position:relative;
+    width:100%;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    .owl-item {
+      text-align:center;
+    }
+    img {
+    }
+  }
+  &__media-description {
+    padding: 15px;
+  }
+
+  &__advice-form {
+    border: 1px solid #D3D9E9;
+    border-radius: 1px;
+    background: #fff;
+    padding: 15px;
+    overflow:visible;
+  }
+}
+
+.youtube-thumbnail {
+  height:500px;
+}

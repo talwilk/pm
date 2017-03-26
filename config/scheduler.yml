@@ -1,0 +1,40 @@
+chosen_as_best_advice:
+  cron: "*/15 * * * *"
+  class: "IssueChosenAsBestAdviceEmailsJob"
+  queue: default
+  description: ""
+daily_advices:
+  cron: "0 17 * * *"
+  class: "IssueDailyAdvicesEmailsJob"
+  queue: default
+  description: ""
+dilemma_closed:
+  cron: "*/15 * * * *"
+  class: "IssueDilemmaClosedEmailsJob"
+  queue: default
+  description: ""
+sign_in_reminders:
+  cron: "0 12 * * *"
+  class: "IssueSignInRemindersJob"
+  queue: default
+  description: ""
+favorite_advice_reminder:
+  cron: "0 12 * * *"
+  class: "IssueFavoriteAdviceReminderEmailsJob"
+  queue: default
+  description: ""
+dilemmas_for_advice:
+  cron: "0 12 * * *"
+  class: "IssueDilemmasForAdviseEmailsJob"
+  queue: default
+  description: ""
+welcome_email:
+  cron: "0 12 * * *"
+  class: "IssueWelcomeEmailsJob"
+  queue: default
+  description: ""
+first_dilemma_solved:
+  cron: "0 12 * * *"
+  class: "IssueFirstDilemmaSolvedEmailsJob"
+  queue: default
+  description: ""

@@ -1,0 +1,5 @@
+en:
+  payment_plans:
+    SMALL: 'Weekly Plan'
+    MEDIUM: 'Monthly Plan'
+    LARGE: 'Quarterly Plan'

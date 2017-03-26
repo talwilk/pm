@@ -1,0 +1,16 @@
+#confirmationModal.modal.fade aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        button.close aria-label=_("#{t('home.close')}") data-dismiss="modal" type="button"
+          span aria-hidden="true"  &times;
+        h4#confirmationModalLabel.modal-title =_("#{t('home.your_account_has_been_confirmed')}")
+      .modal-body
+        =_("#{t('home.continue_to_dashboard')}")
+      .modal-footer
+        button.btn.btn-default data-dismiss="modal" type="button"=_('Continue')
+        = link_to _("#{t('home.add_dilemma')}"), new_dilemma_path, class: 'button btn btn-primary'
+javascript:
+  $(window).load(function(){
+    $('#confirmationModal').modal('show');
+  });

@@ -1,0 +1,5 @@
+h1
+  = _("#{t('home.test')}")
+   - if flash[:confirmed] == 'render_confirmation_modal'
+     = render 'home/confirmation_modal'
+

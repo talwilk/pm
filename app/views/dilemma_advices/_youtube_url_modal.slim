@@ -1,0 +1,14 @@
+#youtubeModal.uk-modal
+  .uk-modal-dialog.uk-text-center
+    a.uk-modal-close.uk-close
+    .uk-modal-header
+      h2#youtubeModalLabel =_('Add your youtube video URL!')
+    .uk-width-8-10.uk-container-center
+      .uk-input-group
+        input.form-control id="youtube_url_modal_input" type="text"
+        button.primary-button.medium-button id="youtube_url_insert_button" data-dismiss="modal" type="button"
+          i.fa.fa-youtube-play
+          span =_("#{t('dilemma_advices.add_url')}")
+
+
+

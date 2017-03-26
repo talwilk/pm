@@ -1,0 +1,63 @@
+= simple_form_for @form, url: profile_path, method: :put do |f|
+  .uk-grid
+    .uk-width-medium-1-1.uk-text-center
+      div class='file-upload-img'
+        div id='avatar_dropdown'
+        = f.file_field :avatar, onchange: 'previewImg(this);', accept: '.jpg, .png, .jpeg, .gif|images/*'
+        .avatar-holder
+          - if @user.profile.avatar?
+            = image_tag @current_user.profile.avatar.edit_profile, id: 'img_upload', class:'current-avatar'
+            .uk-grid.uk-grid-small
+              .uk-width-medium-1-1.uk-container-center
+                #avatar-replace
+                  =_("#{t('user_profile.change_profile_picture')}")
+            .uk-grid.uk-grid-small
+             .uk-width-medium-1-1.uk-container-center
+                =link_to _("#{t('user_profile.remove_profile_picture')}"), remove_avatar_profile_path, id: 'remove_avatar', class:'remove-avatar-hide', method: :delete
+          - else
+            #avatar-replace
+              - if "#{t :dir}" == "ltr"
+                =image_tag('blank-avatar.png', id: 'img_upload', alt:"#{t('user_profile.profile_image')}")
+              - else
+                =image_tag('blank-avatar-he.png', id: 'img_upload', alt:"#{t('user_profile.profile_image')}")
+  .uk-grid
+    .uk-width-medium-1-1
+      .holder class="#{t :dir}"
+        = f.input :first_name, label: "#{t('user_profile.first_name')}", required: @user.guru?
+        = f.input :last_name, label: "#{t('user_profile.last_name')}", required: @user.guru?
+        = f.input :email, label: "#{t('user_profile.email')}", disabled: true
+        = f.input :locale, label: "#{t('languages.email_language_select')}", collection: ([["#{t('languages.english')}", 'en'], ["#{t('languages.hebrew')}", 'he']]), multiple: true, class: 'select2_special'
+        .checkbox
+          = f.input_field :show_email, label: "#{t('user_profile.show_email')}", as: :boolean, class: 'styled'
+          = f.label :show_email, label: "#{t('user_profile.show_email')}"
+        - if @user.guru?
+          = f.input :category_list,
+                              label: "#{t('user_profile.category_list')}",
+                              collection: SupportedCategory.collection,
+                              include_hidden: false,
+                              input_html: { multiple: true, class: 'select2_special' }
+          = f.input :website_link, label: "#{t('user_profile.website_url')}"
+        = f.input :facebook_link, placeholder:"#{t('user_profile.facebook_link')}", label: "#{t('user_profile.social_media_link')}", input_html: { autocomplete: 'off', class: "#{t :dir}" }
+        = f.input :google_plus_link, placeholder:"#{t('user_profile.google_plus_link')}", label: false, input_html: { autocomplete: 'off', class: "#{t :dir}" }
+        = f.input :twitter_link, placeholder:"#{t('user_profile.twitter_link')}", label: false, input_html: { autocomplete: 'off', class: "#{t :dir}" }
+        = f.input :pinterest_link, placeholder:"#{t('user_profile.pinterest_link')}", label: false, input_html: { autocomplete: 'off', class: "#{t :dir}" }
+        = f.input :instagram_link, placeholder:"#{t('user_profile.instagram_link')}", label: false, input_html: { autocomplete: 'off', class: "#{t :dir}" }
+        - if @user.guru?
+          = f.input :address, label: "#{t('user_profile.address')}"
+          = f.input :company, label: "#{t('user_profile.company')}"
+          = f.input :mobile_number, label: "#{t('user_profile.mobile_number')}", placeholder: "#{t('user_profile.phone_number_format')}"
+          .checkbox
+            = f.input_field :show_mobile_number, as: :boolean, class:'styled'
+            = f.label :show_mobile_number, label: "#{t('user_profile.show_mobile_number')}"
+          = f.input :mantra, label: "#{t('user_profile.mantra')}"
+        .uk-grid
+        .uk-grid
+          .uk-width-medium-1-1.uk-text-center
+            button.primary-button.small-button.less-padding form="new_update_user_profile_form" type="submit"
+              = _("#{t('user_profile.save_profile')}")
+  .uk-grid
+    .uk-width-medium-10-10.uk-container-center
+      h3 = _("#{t('user_profile.cancel_my_account')}")
+      p
+        = _("#{t('user_profile.unhappy')}")
+        = link_to _("#{t('user_profile.cancel_my_account')}"), registration_path(current_user), data: { confirm: _("#{t('user_profile.warning')}") }, method: :delete

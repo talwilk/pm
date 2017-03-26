@@ -1,0 +1,107 @@
+@import "globals";
+
+#featured-gurus {
+  .uk-grid-small + .uk-grid-small, .uk-grid-small > .uk-grid-margin, .uk-grid-small > * > .uk-panel + .uk-panel {
+    margin-top:18px;
+  }
+}
+
+.featured-guru-item {
+  position:relative;
+  border:1px solid $border-color;
+  background:#fff;
+  padding:20px;
+  @media screen and  (min-width: 960px) and (max-width: 1024px) {
+    padding:10px;
+  }
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  .ltr &__left-section {
+    margin-right:20px;
+    display:inline-block;
+    vertical-align: top;
+    min-width:40px;
+    @media screen and (max-width: 1024px) {
+      margin-right:10px;
+    }
+  }
+  .rtl &__left-section {
+    margin-left:20px;
+    display:inline-block;
+    vertical-align: top;
+    min-width:40px;
+    @media screen and (max-width: 1024px) {
+      margin-left:10px;
+    }
+  }
+
+  &__right-section {
+    display:inline-block;
+     @include r(phone-min) {
+      padding-top:10px;
+    }
+  }
+  &__username {
+    margin:0;
+    font-size:1.4rem;
+    font-family:$bold;
+  }
+  p a {
+    color:$main-font-color;
+    font-family:$bold;
+    margin:0;
+  }
+  &__button-container {
+    padding:15px 0;
+  }
+  .ltr &__rank {
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:5px;
+  }
+  .rtl &__rank {
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:5px;
+  }
+
+  &__level {
+    display:inline-block;
+    vertical-align:bottom;
+    color:$brand-color;
+    font-size:14px;
+    font-family:$book;
+    padding-top:3px;
+    margin:0;
+  }
+  &__profession {
+    color:#2d3344;
+    font-size:12px;
+    margin:7px 0;
+    font-size:1.2rem;
+  }
+  &__stats {
+    font-size:1.2rem;
+    margin:0;
+  }
+}
+
+.dilemma-similar-item__amount {
+  position:absolute;
+  left:0;
+  top:0;
+  padding:5px 10px;
+  background:#932b5b;
+  font-family:$regular;
+  color:#fff;
+}
+
+.dilemma-similar-item__placeholder{
+  background:#e9eaf3;
+  padding:20px;
+  margin:0 auto;
+  text-align:center;
+}

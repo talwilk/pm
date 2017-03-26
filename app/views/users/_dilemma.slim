@@ -1,0 +1,58 @@
+.uk-grid
+  .uk-width-medium-1-1
+    article.dashboard-dilemma-item
+      = link_to dilemma_path(dilemma), class:'link-no-hover' do
+        .dashboard-dilemma-item__cover.uk-cover-background
+          - if dilemma.cover_photo.present?
+            - if Medium.find_by(id: dilemma.cover_photo).youtube_url
+              = image_tag 'http://img.youtube.com/vi/' + Medium.find_by(id: dilemma.cover_photo).youtube_url + '/0.jpg', height: '500', class:'youtube-thumbnail'
+            - else
+              = responsive_image_tag Medium.find_by(id: dilemma.cover_photo).file, class:'responsive'
+          - else
+            p= _("#{t('users.common.cover_photo')}")
+        .dashboard-dilemma-item__header
+          .dilemma-item__timer
+            div.dilemma-item__remaining data-server="#{dilemma.ends_at}" translation= "#{t('dilemma.closed_dilemma')}" days= "#{t('dilemma.days')}" hours= "#{t('dilemma.hours')}" minutes= "#{t('dilemma.minutes')}" remaining= "#{t('dilemma.to_go')}"
+      .uk.grid
+        .uk-width-medium-1-1
+          .dashboard-dilemma-item__content
+            .uk-grid.uk-flex.uk-flex-space-between.uk-flex-top
+              .uk-width-medium-8-10.uk-width-small-1-1
+                = link_to dilemma_path(dilemma), class:'link-no-hover' do
+                  h2.dashboard-dilemma-item__title= dilemma.title
+              .uk-width-medium-2-10.uk-width-small-1-1
+                p.dashboard-dilemma-item__count.uk-text-left-small = _('%{dilemma_advices_size} advices') % { dilemma_advices_size: dilemma.advices.size }
+            .uk-grid
+              .uk-width-medium-1-1.uk-flex.uk-flex-nowrap
+                .dashboard-dilemma-item__left-section
+                  = link_to user_path(dilemma.user)
+                    = responsive_image_tag dilemma.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive', alt: dilemma.user.profile.full_name
+                .dashboard-dilemma-item__right-section
+                  = link_to user_path(dilemma.user)
+                    p.dashboard-dilemma-item__username=dilemma.user.profile.full_name
+                  .dashboard-dilemma-item__rank class="rank-#{dilemma.user.level}-sm"
+                  p.dashboard-dilemma-item__level= SupportedUserLevel.find(dilemma.user.level)
+      - if dilemma.favorite_dilemma_advice.present?
+        .uk-grid
+          .uk-width-medium-1-1
+            article.dashboard-dilemma-item__fav-advice
+              .uk-grid
+                .uk-width-medium-1-1.uk-flex.uk-flex-nowrap
+                  .dashboard-dilemma-item-fav-advice__left-section
+                    .uk-grid
+                      .uk-width-medium-1-1.uk-text-center
+                        = responsive_image_tag dilemma.favorite_dilemma_advice.user.profile.avatar, class:'dilemma-advice-item__avatar uk-border-circle responsive', alt: dilemma.favorite_dilemma_advice.user.profile.full_name
+                    .uk-grid.uk-hidden
+                      .uk-width-medium-1-1.uk-text-center
+                        p.dilemma-advice-item__total-likes= dilemma.favorite_dilemma_advice.get_likes.size
+                  .dashboard-dilemma-item-fav-advice__right-section
+                    .uk-grid
+                      .uk-width-medium-6-10
+                        p.dilemma-advice-item__username= dilemma.favorite_dilemma_advice.user.profile.full_name
+                      .uk-width-medium-4-10.uk-text-right
+                        p.dilemma-advice-item__date.uk-text-right.uk-float-right.uk-vertical-align-top=dilemma.favorite_dilemma_advice.created_at.strftime("%d %b %Y, %H:%M")
+                    .dashboard-dilemma-item__rank class="rank-#{dilemma.favorite_dilemma_advice.user.level}-sm"
+                    p.dilemma-advice-item__level= SupportedUserLevel.find(dilemma.favorite_dilemma_advice.user.level)
+                    p.dilemma-advice-item__profession= @user.profile.category_list.first(3).map { |key| SupportedCategory.find(key).name }.join(', ')
+                    p.dilemma-advice-item__description
+                      = dilemma.favorite_dilemma_advice.content.html_safe

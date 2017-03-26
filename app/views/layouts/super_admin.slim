@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title DilemmaGuru
+    = stylesheet_link_tag 'super_admin', media: 'all'
+    = csrf_meta_tags
+  body
+    nav.navbar.bg-faded
+      .container-fluid
+        .pull-md-left
+          = link_to 'DilemmaGuru', super_admin_root_path, class: 'btn'
+          - if current_super_admin
+            ul.nav.navbar-nav
+              li.nav-item = link_to _('Guru Applications'), super_admin_guru_applications_path
+              li.nav-item = link_to _('Users & Gurus'), super_admin_users_path
+              li.nav-item = link_to _('Posts'), super_admin_dilemmas_path
+              li.nav-item = link_to _('Invite new Guru'), new_super_admin_guru_invitation_path
+              li.nav-item = link_to _('Blog'), super_admin_blog_index_path
+              li.nav-item = link_to _('Countries'), super_admin_country_management_index_path
+              li.nav-item = link_to _('Super Admins'), super_admin_super_admins_path
+        .pull-md-right
+          - if current_super_admin
+            = link_to _('Sign out'), destroy_super_admin_session_path, method: :delete, class: 'btn btn-danger'
+          - else
+            = link_to _('Sign in'), new_super_admin_session_path, class: 'btn btn-warning'
+    = render partial: 'layouts/messages'
+    = yield
+    - set_var 'FROALA_LICENSE_KEY', ENV['FROALA_LICENSE_KEY']
+    == rjv_tags
+    = javascript_include_tag 'super_admin'

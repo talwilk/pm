@@ -1,0 +1,51 @@
+.container
+  h1= _('Posts')
+  .row
+    ul.nav.nav-tabs
+      li.nav-item
+        = link_to 'Dilemmas', super_admin_dilemmas_path, class: 'nav-link active'
+      li.nav-item
+        = link_to 'Advices', super_admin_dilemma_advices_path, class: 'nav-link'
+  .row
+    = form_tag super_admin_dilemmas_path, method: :get do
+      .col-md-3
+        = text_field_tag :search, params[:search], placeholder: 'Search for...'
+      .col-md-1
+        = submit_tag _('Search'), title: nil, class: 'btn'
+  .row
+    h1#search-results-counter
+      - if @dilemmas.total_count == 0
+        = _('No results found')
+      - else
+        = "Search results: (#{@dilemmas.total_count})"
+  .table-responsive
+    table.table.table-condensed.table-hover
+      thead
+        tr
+          th= _('Id')
+          th= _('User')
+          th= _('Title')
+          th= _('Description')
+          th= _('Media count')
+          th= _('Created at')
+          th= _('Actions')
+      tbody
+        - @dilemmas.each do |dilemma|
+          tr
+            td
+              - if dilemma.deleted_at.nil?
+                = "##{dilemma.id}"
+              - else
+                .text-danger = "##{dilemma.id}"
+            td
+              = link_to edit_super_admin_user_path(dilemma.user) do
+                = dilemma.user
+                small= "(#{dilemma.user.role})"
+            td = dilemma.title.truncate(20)
+            td = strip_tags(dilemma.description).truncate(20)
+            td = dilemma.media.count
+            td = dilemma.created_at
+            td
+              = link_to _('View in app'), dilemma_path(dilemma), class: 'btn btn-sm btn-info', target: '_blank'
+              = link_to _('Edit'), edit_super_admin_dilemma_path(dilemma), class: 'btn btn-sm btn-primary'
+  = paginate @dilemmas

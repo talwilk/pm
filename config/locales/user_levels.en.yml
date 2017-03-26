@@ -1,0 +1,13 @@
+en:
+  user_levels:
+    '0': 'Novice user'
+    '1': 'Tyro user'
+    '2': 'User'
+    '3': 'Pro user'
+    '4': 'Super User'
+    '5': 'Noble User'
+    '6': 'Stagiaire Guru'
+    '7': 'Guru'
+    '8': 'Veteran Guru'
+    '9': 'Super Guru'
+    '10': 'Mega Guru'

@@ -1,0 +1,45 @@
+@import "globals";
+
+#gamification {
+  .holder {
+    margin-top:15px;
+    @include r(phone-max) {
+      padding:20px 0;
+    }
+  }
+  .full-width {
+    width:150px!important;
+    margin:0 auto;
+    text-align:center;
+    @include r(tablet-max) {
+      margin-bottom:20px;
+    }
+  }
+  hr {
+    border-color:#e1e6f2;
+    margin:15px 30px;
+  }
+}
+
+.paleblue {
+  color:#6e7998;
+}
+
+.gamification {
+  &__rank-title {
+    color:#2d3344;
+    font-size:1.7rem;
+    font-family:$book;
+    margin:0;
+  }
+  &__description{
+    padding:20px 0;
+    text-align:left;
+  }
+}
+.uk-width-medium-1-1.uk-flex.uk-flex-middle.ltr{
+  padding-left: 10px;
+}
+.uk-width-medium-1-1.uk-flex.uk-flex-middle.rtl{
+  padding-right: 10px;
+}

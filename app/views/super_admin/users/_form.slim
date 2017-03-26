@@ -1,0 +1,12 @@
+= simple_form_for @user, url: [:super_admin, @user] do |f|
+  = f.input :email
+  = f.input :username
+  = f.input :country_iso, collection: Country.all.map{|c| [c.to_s, c.country_iso]}, label: _('Country')
+  = f.simple_fields_for :profile do |ff|
+    = ff.input :first_name
+    = ff.input :last_name
+    = ff.input :mobile_number
+    = ff.input :company
+    = ff.input :mantra
+  br
+  = f.submit _('Save'), class: 'btn btn-success'

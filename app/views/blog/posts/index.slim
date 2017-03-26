@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      h1 = _("#{t('blogs.posts.blog')}")
+      - @posts.each do |post|
+        .card
+          p= link_to post.title, blog_post_path(post.id)
+          - if post.cover_image.present?
+            = image_tag post.cover_image, id: 'img_upload', size: '300'

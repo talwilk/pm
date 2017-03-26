@@ -1,0 +1,32 @@
+@import "globals";
+
+.uk-alert {
+  margin-bottom:30px!important;
+}
+
+.uk-alert-danger  {
+  background:#EEC8C4!important;
+  color:#932b5b!important;
+  border:1px solid #EA8A78!important;
+}
+
+.uk-alert-success {
+  color: #3c763d!important;
+  background: #dff0d8!important;
+  border:1px solid #3c763d!important;
+  display:none!important;
+}
+
+.uk-alert + .uk-alert {
+  margin-top:0px!important;
+}
+
+.confirmation-alert {
+  border: 1px solid #2d7091;
+}
+
+.main-container > .uk-alert {
+  @include r(tablet-min) {
+    margin-top:-20px;
+  }
+}

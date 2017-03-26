@@ -1,0 +1,47 @@
+<div class="uk-grid uk-grid-large">
+    <div class="uk-panel uk-panel-box uk-align-center">
+        <div class="uk-container uk-text-center">
+            <h2><%= _("#{t('pro.show_pro_title')}") %></h2></br>
+				<%= @pro.full_name %> </h2> 
+        </div>
+
+		<div class="uk-overflow-container">
+			<table class="uk-table uk-responsive-width uk-width-2-2 uk-text-right">			
+				<tr>
+					<td>Email: <%=  @pro.email %></td>
+					<td>Mobile Phone: <%=  @pro.mobile_phone %></td>
+				</tr><tr>
+				</tr>
+			</table>
+		    
+		    <%= link_to _("#{t('common.edit')}"), edit_project_task_pro_path %>
+
+			 <% if !@tasks.nil? %>
+				 <h3>Pro's task list</h3>
+
+			<table class="uk-table uk-responsive-width uk-width-2-2 uk-text-right">				<tr>
+					<tr>
+						<td><%= @task_count %> tasks</td>
+						<td>Total Cost - <%= @total_cost %> NIS</td>
+					</tr>
+				</table>
+
+			<table class="uk-table uk-responsive-width uk-width-2-2 uk-text-right">				<tr>
+
+				 	<%  @tasks.each do |t| %>
+					<tr>
+						<td><%=	SupportedPhase.find(t.phase).name %></td>
+						<td><%=	SupportedStatus.find(t.status).name %></td>
+						<td><%=	t.name %></td>
+						<td><%=	t.duration %></td>
+						<td><%=	t.cost %></td>
+						<td><%=	SupportedCategory.find(t.category).name %></td>
+						<td><%=	link_to 'View', project_task_path(@project,t) %></td>
+						<td><%=	link_to 'Edit', edit_project_task_path(@project,t) %></td>
+						<td><%=	link_to 'Delete', project_task_path(@project, t), data: {:confirm => "Are you sure?"}, method: :delete %></td>
+					</tr>
+			 	<% end %>
+	 <% end %>
+	 </table>
+	 </tr>
+	 <%= link_to "Back to Project", project_path(@project) %>

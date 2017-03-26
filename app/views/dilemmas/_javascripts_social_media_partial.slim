@@ -1,0 +1,15 @@
+javascript:
+  var tag_google = document.createElement('script');
+  tag_google.type = 'text/javascript';
+  tag_google.async = true;
+  tag_google.defer = true;
+  tag_google.src = 'https://apis.google.com/js/plusone.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(tag_google, s);
+  var tag_pinterest = document.createElement('script');
+  tag_pinterest.type = 'text/javascript';
+  tag_pinterest.async = true;
+  tag_pinterest.defer = true;
+  tag_pinterest.src = "//assets.pinterest.com/js/pinit.js";
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(tag_pinterest, s);

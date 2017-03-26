@@ -1,0 +1,57 @@
+<% if @sent %>
+  <% if current_user.guru? %>
+    if ($('#advices-guru').size() === 0) {
+      $('#guru-advices .uk-width-medium-1-1:first').prepend('<h3 class="advices" data-uk-toggle="{ target:\'#guru-advices\' }" id="advices-guru"><div class="guru-advice-counter inline">0</div><span>Gurus\' <%= I18n.t("solutions") %></span></h3>');
+    }
+    $('#guru-advices').append("<%= escape_javascript render(partial: 'advice', locals: { advice: @dilemma_advice }) %>");
+    $('html, body').animate({
+        scrollTop: $("#guru-advices > div:last-child").offset().top
+      }, 100);
+      $('.guru-advice-counter').html(function(i, val) { return val*1+1 });
+      $('.uk-form-row').removeClass('has-error');
+      $('.uk-form-row .help-block').remove();
+      $('.fr-element').empty();
+      $('button[data-cmd="froala-action-button"]').prop("disabled", false);
+  <% else %>
+    if ($('#advices-user').size() === 0) {
+      $('#user-advices .uk-width-medium-1-1:first').prepend('<h3 class="advices" data-uk-toggle="{ target:\'#user-advices\' }" id="advices-user"><div class="user-advice-counter inline">0</div><span>Users\' <%= I18n.t("solutions") %></span></h3>');
+    }
+    $('#user-advices').append("<%= escape_javascript render(partial: 'advice', locals: { advice: @dilemma_advice }) %>");
+      $('html, body').animate({
+          scrollTop: $("#user-advices > div:last-child").offset().top
+      }, 100);
+      $('.user-advice-counter').html(function(i, val) { return val*1+1 });
+      $('.uk-form-row').removeClass('has-error');
+      $('.uk-form-row .help-block').remove();
+      $('.fr-element').empty();
+      $('button[data-cmd="froala-action-button"]').prop("disabled", false);
+  <% end %>
+
+  $( ".nested-fields" ).remove();
+  $('#advice-button').replaceWith("<span class='froala-action-button' id='advice-button'>Add advice</span>");
+
+  // Show gamification tooltip
+  $(".gamification-notice").tooltipster('content', '<div class="gamification-notice__bold"><%= @points_added %>+</div> <%= ' ' + I18n.t("you_got") + ' ' + @points_added.to_s + ' ' + I18n.t("points_for_adding_an_advice") %> ');
+  $('.gamification-notice').tooltipster('open');
+  $('.tooltipster-base').addClass('advice-tooltip');
+
+  function tooltipDestroy() {
+    $('.gamification-notice').tooltipster('destroy');
+  }
+  if ($(window).width() < 959) {
+    tooltipDestroy()
+  }
+  $(window).resize(function () {
+    if ($(window).width() < 959) {
+      tooltipDestroy()
+    }
+ });
+
+<% else %>
+  $('#add-dilemma-advice-form').html("<%= escape_javascript render(partial: 'dilemmas/dilemma_advice_form')%>");
+  initializeDilemmaAdvice();
+  set_medias_inputs();
+<% end %>
+$('.nested-fields.filled').prependTo('.uk-grid.medias')
+
+responsive_image();

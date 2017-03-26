@@ -1,0 +1,10 @@
+= simple_form_for @post, url: super_admin_blog_path, method: :put do |f|
+  = f.input :title
+  = f.input :content, as: :text
+  = f.label :cover_image
+  = f.file_field :cover_image, onchange: 'previewImg(this);', accept: '.jpg, .png, .jpeg, .gif|images/*'
+  - if @post.cover_image.present?
+    = image_tag @post.cover_image, id: 'img_upload', size: '300'
+  - else
+    = image_tag '', id: 'img_upload', size: '300'
+  = f.submit _('Update post')

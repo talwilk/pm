@@ -1,0 +1,277 @@
+@import "globals";
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius:0;
+  border-radius:0;
+}
+
+.uk-form-row + .uk-form-row {
+  margin-top:25px;
+}
+
+.uk-form-uk-grid + .uk-form-uk-grid {
+  margin-top: 20px;
+}
+
+.form-control {
+  width:100%;
+  border:1px solid #D3D9E9!important;
+  border-radius:2px!important;
+  height:45px!important;
+  line-height:45px!important;
+  font-family:$book!important;
+  font-size:1.4rem!important;
+  color:#2d3344!important;
+  padding-left:20px!important;
+  padding-right:20px!important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.control-label {
+  font-size:1.3rem;
+  color:#2d3344;
+  padding-left:7px;
+}
+
+.control-label + .form-control,
+.control-label + .fr-box,
+.maxlength-feedback + .fr-box {
+  margin-top:10px;
+ }
+
+abbr[title] {
+  display:none;
+  border-bottom:none;
+}
+
+#guru-registration {
+  abbr[title] {
+    display:inline;
+  }
+}
+
+.ltr .uk-form-row.string.optional .help-block,
+.ltr .uk-form-row.string .help-block {
+  margin: 5px 0 10px;
+  float: right;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.rtl .uk-form-row.string.optional .help-block,
+.rtl .uk-form-row.string .help-block {
+  margin: 5px 0 10px;
+  float: right;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.ltr .uk-form-row.has-error .help-block {
+  margin: 5px 0 10px;
+  float: right;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.rtl .uk-form-row.has-error .help-block {
+  margin: 5px 0 10px;
+  float: right;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+span.help-block {
+  color:red;
+}
+
+.form-actions {
+  padding-top:25px;
+}
+
+input[type=email], input[type=password] {
+  text-transform: none;
+}
+
+input:disabled {
+  background: #f1f2f7!important;
+  color:#aab1c2!important;
+  margin-top:10px;
+  position:relative;
+}
+
+.uk-form-row.disabled label {
+  color:#aab1c2;
+}
+
+
+input.uk-form-danger  {
+  background:#fec5c9!important;
+  color:#932b5b!important;
+  border:1px solid #e84e59!important;
+}
+
+.uk-input-group {
+  display:flex;
+  input {
+    height: 40px!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+    line-height:40px!important;
+  }
+  button {
+    margin-left:-1px;
+  }
+  @include r(phone-max) {
+    flex-direction:column
+  }
+}
+
+.fr-counter {
+  visibility:hidden!important;
+}
+
+.maxlength-feedback {
+  font-size:1.3rem;
+  visibility:visible!important;
+}
+
+.ltr.alignment-counter{
+  float: right !important;
+}
+
+.rtl.alignment-counter{
+  float: left !important;
+}
+
+.ltr.alignment-type-something{
+  float: left !important;
+}
+
+.rtl.alignment-type-something{
+  float: right !important;
+}
+
+.remaining-char-0 {
+  color:red;
+}
+
+// Placeholders
+
+input::-webkit-input-placeholder{
+  font-family:$book;
+  font-size:1.4rem;
+  color:#2d3344!important;
+  opacity:1;
+}
+
+input:-moz-placeholder {
+  font-family:$book;
+  font-size:1.4rem;
+  color:#2d3344!important;
+  opacity:1;
+}
+
+input:-ms-input-placeholder {
+  font-family:$book;
+  font-size:1.4rem;
+  color:#2d3344!important;
+  opacity:1;
+}
+
+input:disabled::-webkit-input-placeholder{
+  opacity:0.4;
+}
+
+input:disabled:-moz-placeholder {
+  opacity:0.4;
+}
+
+input:disabled:-ms-input-placeholder {
+  opacity:0.4;
+}
+
+.uk-form-danger::-webkit-input-placeholder {
+  color:#932b5b!important;
+}
+
+.uk-form-danger:-moz-placeholder {
+  color:#932b5b!important;
+}
+
+.uk-form-danger:-ms-input-placeholder {
+  color:#932b5b!important;
+}
+
+input:focus::-webkit-input-placeholder { opacity: 0; }
+input:focus:-moz-placeholder { opacity: 0; } /* FF 4-18 */
+input:focus::-moz-placeholder { opacity: 0; } /* FF 19+ */
+input:focus:-ms-input-placeholder { opacity: 0;} /* IE 10+ */
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+// error
+
+.uk-form-row.has-error  {
+  .form-control,
+  .select2-selection,
+  .fr-box {
+      background:#fec5c9!important;
+    color:#932b5b!important;
+    border:1px solid #e84e59!important;
+  }
+  .fr-toolbar, .fr-wrapper {
+    background:#fec5c9 !important;
+    p {
+      color:#932b5b!important;
+    }
+  }
+  .fr-toolbar {
+    border-color:#e84e59!important;
+  }
+  .fr-toolbar .fr-command.fr-btn i,
+  .fr-popup .fr-command.fr-btn i,
+  input::-webkit-input-placeholder,
+  .fr-placeholder {
+    color:#932b5b!important;
+  }
+  .fr-counter {
+    visibility:hidden;
+  }
+}
+
+
+// Focus border change
+
+
+.form-control:focus,
+.select2-container--focus .select2-selection {
+  border-color:#aab1c2!important;
+}
+
+.help-block {
+  margin-bottom:0;
+}
+
+.uk-form-row + .checkbox {
+  margin-top:10px;
+}
+
+.checkbox + .uk-form-row {
+  margin-top:25px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus,
+textarea:focus, select:focus {
+  font-size: 16px!important;
+}

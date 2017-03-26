@@ -1,0 +1,1557 @@
+# English translations for app package.
+# Copyright (C) 2016 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2016-03-07 15:27+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid " and"
+msgstr ""
+
+msgid "# of advices for your Dilemma"
+msgstr "# of solutions for your Dilemma"
+
+msgid "$"
+msgstr ""
+
+msgid "%{dilemma_advices_size} advices"
+msgstr "%{dilemma_advices_size} solutions"
+
+msgid "%{guru_likes_size} Likes / %{guru_advices_size} Advices"
+msgstr "%{guru_likes_size} Likes / %{guru_advices_size} Solutions"
+
+msgid "%{points_added}+ You got %{points_added} points for choosing favourite advice"
+msgstr ""
+
+msgid "%{points_added}+ You got %{points_added} points for posting a Dilemma"
+msgstr ""
+
+msgid "%{points_to_next_level} points more to"
+msgstr ""
+
+msgid "/"
+msgstr ""
+
+msgid "/ 1 Year"
+msgstr ""
+
+msgid "/ Week"
+msgstr ""
+
+msgid "0-5 points"
+msgstr ""
+
+msgid "10 advices selected"
+msgstr ""
+
+msgid "10 people"
+msgstr ""
+
+msgid "100 advices selected"
+msgstr ""
+
+msgid "100 people"
+msgstr ""
+
+msgid "100 points"
+msgstr ""
+
+msgid "1500 points"
+msgstr ""
+
+msgid "25 points"
+msgstr ""
+
+msgid "250 points"
+msgstr ""
+
+# Translation for small pricing
+msgid "29"
+msgstr ""
+
+msgid "30000 points"
+msgstr ""
+
+msgid "400 points"
+msgstr ""
+
+# Translation for medium pricing
+msgid "49"
+msgstr ""
+
+msgid "50 advices selected"
+msgstr ""
+
+msgid "50 people"
+msgstr ""
+
+msgid "50 points"
+msgstr ""
+
+msgid "500 points"
+msgstr ""
+
+msgid "6-10 points"
+msgstr ""
+
+msgid "600 points"
+msgstr ""
+
+# Translation for large pricing
+msgid "79"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Accept"
+msgstr ""
+
+msgid "Acceptable Use Policy and Prohibited Products Policy"
+msgstr ""
+
+msgid "Accepted"
+msgstr ""
+
+msgid "Access to certain functionalities of the Site will require you to register with and/or provide certain information to Dilemma Guru. If and when you register with or provide information to Dilemma Guru, you agree to (a) provide accurate, current and complete information about yourself as prompted (including your email address) and (b) maintain and update your information (including your email address) to keep it accurate, current and complete."
+msgstr ""
+
+msgid "Account Termination and Data Retention"
+msgstr ""
+
+msgid "Account connected to this e-mail exists. Please use password recovery method"
+msgstr "This email already exists. You can recover your password by clicking reset password. "
+
+msgid "Account connected to this e-mail is deleted. Please reopen it"
+msgstr "This account was deleted. We will be glad to reopen it for you."
+
+msgid "Actions"
+msgstr ""
+
+msgid "Acts as votable/vote"
+msgstr ""
+
+msgid "ActsAsVotable::Vote|Votable type"
+msgstr ""
+
+msgid "ActsAsVotable::Vote|Vote flag"
+msgstr ""
+
+msgid "ActsAsVotable::Vote|Vote scope"
+msgstr ""
+
+msgid "ActsAsVotable::Vote|Vote weight"
+msgstr ""
+
+msgid "ActsAsVotable::Vote|Voter type"
+msgstr ""
+
+msgid "Add Dilemma"
+msgstr ""
+
+msgid "Add URL"
+msgstr ""
+
+msgid "Add Youtube video"
+msgstr ""
+
+msgid "Add dilemma"
+msgstr ""
+
+msgid "Add file"
+msgstr ""
+
+msgid "Add image URL "
+msgstr ""
+
+msgid "Add image file"
+msgstr "Add image"
+
+msgid "Add image file "
+msgstr "Add image"
+
+msgid "Add new dilemma"
+msgstr ""
+
+msgid "Add new super admin"
+msgstr "Add new administrator"
+
+msgid "Add your image URL!"
+msgstr "Add image URL"
+
+msgid "Add your image file"
+msgstr ""
+
+msgid "Add your youtube video URL!"
+msgstr "Add YouTube URL"
+
+msgid "Additional Application Terms"
+msgstr ""
+
+msgid "Additionally, you agree to follow Dilemma Guru’s policy that: 1) you may not charge for seed or plant exchanges, but requiring pre-paid postage is permitted; and 2) you may not use the forum to seek exchange of plants or seeds with someone from another country. Dilemma Guru expressly disclaims any liability with respect to plants or seeds offered through exchanges."
+msgstr ""
+
+msgid "Advice liked"
+msgstr ""
+
+msgid "Advices"
+msgstr ""
+
+msgid "AlertMessage|Account reopening link was sent to your e-mail"
+msgstr "Account reactivation link was sent to your e-mail."
+
+msgid "AlertMessage|Account was successfully updated."
+msgstr "Account was successfully updated."
+
+msgid "AlertMessage|Application accepted"
+msgstr "Application was accepted"
+
+msgid "AlertMessage|Application rejected"
+msgstr "Application was rejected."
+
+msgid "AlertMessage|Application review started"
+msgstr "Application review was started."
+
+msgid "AlertMessage|Avatar cannot be removed."
+msgstr "Avatar cannot be removed."
+
+msgid "AlertMessage|Country could not be disabled"
+msgstr "Country could not be disabled."
+
+msgid "AlertMessage|Country could not be enabled"
+msgstr "Country could not be enabled."
+
+msgid "AlertMessage|Country was disabled"
+msgstr "Country was disabled."
+
+msgid "AlertMessage|Country was enabled"
+msgstr "Country was enabled."
+
+msgid "AlertMessage|Dilemma advice saved successfully."
+msgstr "Dilemma advice saved successfully."
+
+msgid "AlertMessage|Dilemma has been already commented!"
+msgstr "Dilemma has been posted about before."
+
+msgid "AlertMessage|Dilemma need to have at least one media."
+msgstr "Dilemma needs to have at least one type of media file."
+
+msgid "AlertMessage|Dilemma saved successfully."
+msgstr "Dilemma saved successfully."
+
+msgid "AlertMessage|Dilemma was successfully updated."
+msgstr "Dilemma was successfully updated."
+
+msgid "AlertMessage|Favourite advice can not be chosen."
+msgstr "Favorite solution has not been chosen."
+
+msgid "AlertMessage|Invitation sent successfully"
+msgstr "Invitation sent successfully"
+
+msgid "AlertMessage|Media cannot be removed."
+msgstr "Media cannot be removed."
+
+msgid "AlertMessage|New post was successfully created!"
+msgstr "New post was successfully created!"
+
+msgid "AlertMessage|Note saved successfully."
+msgstr "Comments saved successfully."
+
+msgid "AlertMessage|Points granted"
+msgstr "You have earned points!"
+
+msgid "AlertMessage|Post was successfully updated!"
+msgstr "Post was successfully updated!"
+
+msgid "AlertMessage|Something went wrong"
+msgstr "Something went wrong"
+
+msgid "AlertMessage|Something went wrong! Try again."
+msgstr "Something went wrong. Please try again. If issue has not been resolved, please contact support@dilemma.guru."
+
+msgid "AlertMessage|Something went wrong, try again"
+msgstr "Something went wrong. Please try again. If issue has not been resolved, please contact support@dilemma.guru."
+
+msgid "AlertMessage|Something went wrong. Please try again."
+msgstr "Something went wrong. Please try again. If issue has not been resolved, please contact support@dilemma.guru."
+
+msgid "AlertMessage|Super admin created successfully."
+msgstr "Administrator created successfully."
+
+msgid "AlertMessage|Super admin removed successfully."
+msgstr "Administrator removed successfully."
+
+msgid "AlertMessage|Super admin updated successfully."
+msgstr "Administrator updated successfully."
+
+msgid "AlertMessage|Super admin was brought back successfully."
+msgstr "Administrator re-created."
+
+msgid "AlertMessage|User was saved successfully."
+msgstr "User was saved successfully."
+
+msgid "AlertMessage|Welcome back!"
+msgstr "Welcome back!"
+
+msgid "AlertMessage|You are unable to choose your plan."
+msgstr "You cannot choose a plan. Please contact support@dilemma.guru"
+
+msgid "AlertMessage|You have already chosen your plan!"
+msgstr "You already chose your plan."
+
+msgid "AlertMessage|Your Guru Application was created successfully and it is waiting for Admin approval"
+msgstr "Thank you for submitting your guru application. Your request will be reviewed within a few days."
+
+msgid "AlertMessage|Your avatar is not set."
+msgstr "Your avatar is not set."
+
+msgid "AlertMessage|Your avatar was removed successfully."
+msgstr "Your avatar was removed successfully."
+
+msgid "AlertMessage|Your blog post could not be deleted!"
+msgstr "Your blog post could not be deleted!"
+
+msgid "AlertMessage|Your blog post has been deleted!"
+msgstr "Your blog post has been deleted!"
+
+msgid "AlertMessage|Your confirmation token was resend succesfully."
+msgstr "Your confirmation token has been resent successfully."
+
+msgid "AlertMessage|Your confirmation token was resend unsuccesfully."
+msgstr "Your confirmation token cannot be sent. Please contact support@dilemma.guru"
+
+msgid "AlertMessage|Your cover photo can not be updated."
+msgstr "Your cover photo cannot be updated. Please contact support@dilemma.guru"
+
+msgid "AlertMessage|Your cover photo was successfully updated."
+msgstr "Your cover photo was successfully updated."
+
+msgid "AlertMessage|Your dilemma advice has been deleted!"
+msgstr "Your dilemma advice has been deleted!"
+
+msgid "AlertMessage|Your dilemma has been deleted!"
+msgstr "Your dilemma was deleted!"
+
+msgid "AlertMessage|Your media was removed successfully."
+msgstr "Your media was removed successfully."
+
+msgid "AlertMessage|render_confirmation_modal"
+msgstr ""
+
+msgid "AlertMessage|render_free_user_modal"
+msgstr ""
+
+msgid "AlertMessage|render_payment_modal"
+msgstr ""
+
+msgid "All rights reserved, Dilemma Guru 2016"
+msgstr ""
+
+msgid "Already have an account?"
+msgstr ""
+
+msgid "Any changes we make to the terms and conditions will be effective immediately upon our making such changes available on the Site, and posting notice of such changes on the Site or in another manner in our reasonable discretion. You agree that your continued use of the Site after such changes constitutes your acceptance of such changes. If you do not agree with any of the updates to the terms of this Agreement, you should not use the Site. Be sure to return to this page periodically to ensure your familiarity with the most current version of this Agreement."
+msgstr ""
+
+msgid "Any information you provide through the Site may be transferred to, stored in, or processed in the United States."
+msgstr ""
+
+msgid "Application is reviewed by"
+msgstr "Application is Being Reviewed By"
+
+msgid "Application status"
+msgstr "Application Status"
+
+msgid "Applied at"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "As our selected beta customer you can use dilemma guru for free. enjoy!"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Badges"
+msgstr ""
+
+msgid "Become a Guru"
+msgstr ""
+
+msgid "Being followed by"
+msgstr ""
+
+msgid "Being reviewed"
+msgstr ""
+
+msgid "Best Advice"
+msgstr ""
+
+msgid "Billing"
+msgstr "Payment"
+
+msgid "Blog"
+msgstr ""
+
+msgid "Bring back"
+msgstr "Reactivate User"
+
+msgid "Browse"
+msgstr ""
+
+msgid "By posting or providing any Content on the Site, you represent and warrant to Dilemma Guru that you own or have the right to use and permit us to use and license such Content in the manner stated in this Agreement. By way of example and not limitation, if you post or otherwise provide a photograph which includes an image of any person, you need to first obtain permission or a release from such person (or such person’s parent/legal guardian if applicable) appearing in the photograph to use their image and permit us to use and license it as stated in this Agreement and you must be the owner or licensee of the copyright in the photograph, with the right to permit us to use it as stated in this Agreement. By way of further example and not limitation, if you post or otherwise provide a photograph of a pictorial, graphic, sculptural or architectural work that is protected by copyright, you need to first obtain permission or a release from the owner of the copyright in such work to reproduce and adapt their work and permit us to use it as stated in this Agreement and you must be the owner or licensee of the copyright in the photograph, with the right to permit us to use it as stated in this Agreement."
+msgstr ""
+
+msgid "By registering with or using this Site you represent, acknowledge and agree that you are at least the age of majority where you reside. Regardless of the age of majority where you live, if you are not at least 13 years old, you may not use the Site."
+msgstr ""
+
+msgid "By signing up, I acknowledge and agree to Dilemma Guru"
+msgstr "By signing up, I agree to Dilemma Guru's"
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel my account"
+msgstr ""
+
+msgid "Cancelled at:"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Certain services offered on the Site may require you to enter into a separate agreement and/or be subject to additional terms. For example: placement of advertisements, participation in brand services, offering products for sale in the Marketplace, or use of Site Designer each require you to enter into a separate agreement with terms specific to that service. In the event of any conflict between this Agreement and the terms of that separate agreement, the terms of that separate agreement will control."
+msgstr ""
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Change my password"
+msgstr ""
+
+msgid "Change password"
+msgstr ""
+
+msgid "Change profile picture"
+msgstr ""
+
+msgid "Change your password"
+msgstr ""
+
+msgid "Changes to the Site or Terms"
+msgstr ""
+
+msgid "Check out sample dilemmas"
+msgstr ""
+
+msgid "Children"
+msgstr ""
+
+msgid "Choices"
+msgstr ""
+
+msgid "Choose Plan"
+msgstr "Choose the plan for you"
+
+msgid "Choose plan"
+msgstr "Choose the plan for you"
+
+msgid "City"
+msgstr ""
+
+msgid "Click here to add photo or video"
+msgstr ""
+
+msgid "Click the link below to restore your account:"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Collection and Use of Information"
+msgstr ""
+
+msgid "Confirm your new password"
+msgstr ""
+
+msgid "Congratulations! You are in first thousand free users! You can post dilemmas for free!"
+msgstr "Congrats! You have been chosen to be a member of the Dilemma Guru Beta community! All Beta members are entitled to post Dilemmas for free. Welcome and hope to see you around!"
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Continue"
+msgstr ""
+
+msgid "Continue with Facebook"
+msgstr ""
+
+msgid "Continue with Google+"
+msgstr ""
+
+msgid "Controlling Law and Jurisdiction"
+msgstr ""
+
+msgid "Cookies and Other Tracking Technologies"
+msgstr ""
+
+msgid "Copy link"
+msgstr ""
+
+msgid "Copy this private URL to share:"
+msgstr ""
+
+msgid "Copyright and Trademark Policy"
+msgstr ""
+
+msgid "Countries"
+msgstr "Country Management"
+
+msgid "Country"
+msgstr ""
+
+msgid "Country name"
+msgstr ""
+
+msgid "Cover photo is not set"
+msgstr ""
+
+msgid "Create new post"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "Created at:"
+msgstr ""
+
+msgid "Currently waiting confirmation for: "
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Data in the United States"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Deleted at:"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Description is too long (max. %{length} chars)"
+msgstr ""
+
+msgid "Destroy"
+msgstr "Delete"
+
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+msgid "Dilemma"
+msgstr ""
+
+msgid "Dilemma Guru Buttons, Links and Widgets"
+msgstr ""
+
+msgid "Dilemma Guru Inc."
+msgstr ""
+
+msgid "Dilemma Guru and sellers on the Site strive for accuracy in pricing of the products sold. However, occasional errors or mistakes may cause inaccurate prices to appear on the Site. We have the right to void any purchases that display an inaccurate price."
+msgstr ""
+
+msgid "Dilemma Guru permits you to view and print a reasonable number of copies of web pages located on the Site for your own personal use, but not for any for-profit or commercial purpose or for resale; provided that (a) you retain all trademark, copyright, and other proprietary notices contained in the original materials, (b) you provide attribution to Dilemma Guru, (c) the material is printed in its entirety without modification, reformatting or adaptation of any kind, and (d) any such copies are subject to the terms and conditions of this Agreement and remain the property of Dilemma Guru. You understand and agree that you may not authorize any Information to be reproduced, modified, displayed, performed, transferred, distributed or otherwise used by any third party, and you agree that you will take all reasonable steps to prevent any unauthorized reproduction and/or other use of the Information. You agree to advise Dilemma Guru promptly of any such unauthorized use of which you are aware. Failure to abide by these conditions will immediately terminate this permission and may result in the infringement of the copyrights and/or trademarks and other proprietary rights of Dilemma Guru or others."
+msgstr ""
+
+msgid "Dilemma advice"
+msgstr "Solution"
+
+msgid "Dilemma answered"
+msgstr ""
+
+msgid "Dilemma:"
+msgstr ""
+
+msgid "DilemmaAdvice|Cached votes up"
+msgstr ""
+
+msgid "DilemmaAdvice|Content"
+msgstr ""
+
+msgid "DilemmaAdvice|Deleted at"
+msgstr ""
+
+msgid "Dilemmas"
+msgstr ""
+
+msgid "Dilemma|Cover photo"
+msgstr ""
+
+msgid "Dilemma|Deleted at"
+msgstr ""
+
+msgid "Dilemma|Description"
+msgstr ""
+
+msgid "Dilemma|Ends at"
+msgstr ""
+
+msgid "Dilemma|Favourite advice"
+msgstr ""
+
+msgid "Dilemma|Favourite advice ends at"
+msgstr ""
+
+msgid "Dilemma|First advice added"
+msgstr ""
+
+msgid "Dilemma|Title"
+msgstr ""
+
+msgid "Disclaimers and Limitations of Liability"
+msgstr ""
+
+msgid "Dispute Resolution"
+msgstr ""
+
+msgid "Don't have account yet?"
+msgstr "Don’t have an account yet?"
+
+msgid "E-mail"
+msgstr ""
+
+msgid "EU, Safe Harbor and Dispute Recourse"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Edit dilemma"
+msgstr ""
+
+msgid "Edit super admin"
+msgstr "Edit Administrator"
+
+msgid "Edit your dilemma"
+msgstr ""
+
+msgid "Edit your profile"
+msgstr ""
+
+msgid "Eligibility"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Enter media description here.."
+msgstr ""
+
+msgid "Experience"
+msgstr ""
+
+msgid "FAQs"
+msgstr ""
+
+msgid "Favourite Advice"
+msgstr "Favorite solution"
+
+msgid "Favourite advice"
+msgstr "Favorite solution"
+
+msgid "Featured Gurus"
+msgstr ""
+
+msgid "Feedback"
+msgstr ""
+
+msgid "Follow 10 people"
+msgstr ""
+
+msgid "Follow 100 people"
+msgstr ""
+
+msgid "Follow 50 people"
+msgstr ""
+
+msgid "Followed"
+msgstr ""
+
+msgid "Following"
+msgstr ""
+
+msgid "Forgot your password?"
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "Grant points"
+msgstr ""
+
+msgid "Grant points for %{user_full_name}"
+msgstr "%{user_full_name} has been granted points!"
+
+msgid "Guru"
+msgstr ""
+
+msgid "Guru Applications"
+msgstr ""
+
+msgid "Guru application"
+msgstr "Guru Application"
+
+msgid "Guru registration"
+msgstr "Guru Registration"
+
+msgid "Guru's advices"
+msgstr "Gurus' solutions"
+
+msgid "GuruApplication|Accepted at"
+msgstr ""
+
+msgid "GuruApplication|Application ip"
+msgstr ""
+
+msgid "GuruApplication|Form hash"
+msgstr ""
+
+msgid "GuruApplication|Rejected at"
+msgstr ""
+
+msgid "GuruApplication|Review started at"
+msgstr ""
+
+msgid "Hello"
+msgstr ""
+
+msgid "How to add your Dilemma?"
+msgstr "Get better solutions"
+
+msgid "Id"
+msgstr ""
+
+msgid "If any provision of this Agreement is found to be unlawful, void, or for any reason unenforceable, then that provision shall be deemed severable from this Agreement and shall not affect the validity and enforceability of any remaining provisions (except as provided for under “Dispute Resolution”). This is the entire Agreement between you and us relating to the subject matter herein and supersedes any and all prior or contemporaneous written or oral agreements between you and us with respect to such subject matter. This Agreement may not be changed, waived or modified except by Dilemma Guru as provided herein or otherwise by written instrument signed by Dilemma Guru. Neither this Agreement nor any right, obligation, or remedy hereunder is assignable, transferable, delegatable, or sublicensable by you except with Dilemma Guru's prior written consent, and any attempted assignment, transfer, delegation, or sublicense shall be null and void. Dilemma Guru may assign, transfer, or delegate this Agreement or any right or obligation or remedy hereunder in its sole discretion. No waiver by either party of any breach or default hereunder shall be deemed to be a waiver of any preceding or subsequent breach or default. Any heading, caption, or section title contained in this Agreement is inserted only as a matter of convenience and in no way defines or explains any section or provision hereof."
+msgstr ""
+
+msgid "If you identify yourself by name or provide a picture or audio or video recording of yourself, you further authorize us and our affiliates, licensees and sublicensees, without compensation to you or others, to reproduce, print, publish and disseminate in any format or media (whether now known or hereafter created) your name, voice and likeness throughout the world, and such permission shall be perpetual and cannot be revoked for any reason, except as required by the applicable law."
+msgstr ""
+
+msgid "Image From PC"
+msgstr ""
+
+msgid "Image From URL"
+msgstr ""
+
+msgid "Improper use of the Information, Services or Site may result in termination of your access to and use of the Site, and/or civil or criminal liabilities."
+msgstr ""
+
+msgid "Indemnification"
+msgstr ""
+
+msgid "Invalid token"
+msgstr ""
+
+msgid "Invite new Guru"
+msgstr ""
+
+msgid "It may be possible to disable Cookies through your device or browser settings. The method for disabling cookies may vary by device and browser, but can usually be found in preferences or security settings. However, doing so may affect your ability to use the Site. If you are not comfortable with the above uses of Cookies, please do not use this Site."
+msgstr ""
+
+msgid "Join Now"
+msgstr ""
+
+msgid "Last Updated August 15, 2015"
+msgstr ""
+
+msgid "Last modified as of August 15, 2015"
+msgstr ""
+
+msgid "Last update time"
+msgstr ""
+
+msgid "Learn More"
+msgstr ""
+
+msgid "Learn more"
+msgstr ""
+
+msgid "Leave it blank if you don't want to change it"
+msgstr ""
+
+msgid "Like Advice"
+msgstr ""
+
+msgid "Links to Other Sites"
+msgstr ""
+
+msgid "Look for additional dilemmas posted by"
+msgstr "Look for additional dilemmas posted by"
+
+msgid "Mantra"
+msgstr ""
+
+msgid "Mark solution as your favorite for the dilemma"
+msgstr "Mark solution as your favorite for the dilemma"
+
+msgid "Media"
+msgstr ""
+
+msgid "Media count"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Medium|Deleted at"
+msgstr ""
+
+msgid "Medium|File"
+msgstr ""
+
+msgid "Medium|Image url"
+msgstr ""
+
+msgid "Medium|Mediable type"
+msgstr ""
+
+msgid "Medium|Youtube url"
+msgstr ""
+
+msgid "Mega Guru"
+msgstr ""
+
+msgid "Miscellaneous"
+msgstr ""
+
+msgid "Mobile number"
+msgstr ""
+
+msgid "Modifications and Updates to this Privacy Policy"
+msgstr ""
+
+msgid "My Advices"
+msgstr ""
+
+msgid "My Dilemmas"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "New password"
+msgstr ""
+
+msgid "New person wants to be a Guru!"
+msgstr ""
+
+msgid "New person wants to become a Guru! You can review application here:"
+msgstr ""
+
+msgid "New super admin"
+msgstr "New administrator"
+
+msgid "No results found"
+msgstr ""
+
+msgid "Nobel User"
+msgstr ""
+
+msgid "Note"
+msgstr "Comments"
+
+msgid "Notice for California Users'"
+msgstr ""
+
+msgid "Novice User"
+msgstr ""
+
+msgid "Number of users"
+msgstr ""
+
+msgid "Of further note about the information we collect:"
+msgstr ""
+
+msgid "Our Site contains links to other sites that are not controlled by us. Please be aware that we are not responsible for the privacy practices of such other sites. We encourage you to be aware when you leave our site and read the privacy policies of each and every site you visit. This privacy policy applies only to information collected by our Site."
+msgstr ""
+
+msgid "Ownership"
+msgstr ""
+
+msgid "PRIVACY POLICY"
+msgstr ""
+
+msgid "Payment plan transaction"
+msgstr ""
+
+msgid "Payment plans history"
+msgstr "Payment plan history"
+
+msgid "PaymentPlanTransaction|Deleted at"
+msgstr ""
+
+msgid "PaymentPlanTransaction|Payment plan"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Plant and Seed Exchange"
+msgstr ""
+
+msgid "Please note we do not change system behavior within the Site in response to browser requests not to be tracked."
+msgstr ""
+
+msgid "Points"
+msgstr ""
+
+msgid "Post your first Dilemma here"
+msgstr ""
+
+msgid "Postings and Other Submissions"
+msgstr ""
+
+msgid "Posts"
+msgstr ""
+
+msgid "Pricing"
+msgstr ""
+
+msgid "Privacy & Policy"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "Privacy Policy."
+msgstr ""
+
+msgid "Pro User"
+msgstr ""
+
+msgid "Products and Services"
+msgstr ""
+
+msgid "Professional Profiles"
+msgstr ""
+
+msgid "Professionals may elect to register as a Gurus and create a Guru profile on Dilemma Guru. Subject to the terms of this Agreement, such users can use the features made available by Dilemma Guru to promote their business on the Site."
+msgstr ""
+
+msgid "Questions and Dispute Resolution"
+msgstr ""
+
+msgid "Radar"
+msgstr ""
+
+msgid "Ranking & Badges"
+msgstr ""
+
+msgid "Ranks and Activities"
+msgstr ""
+
+msgid "Ranks and Badges"
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Rejected"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove dilemma"
+msgstr ""
+
+msgid "Remove dilemma advice"
+msgstr ""
+
+msgid "Remove media"
+msgstr ""
+
+msgid "Remove profile picture"
+msgstr ""
+
+msgid "Reports of Other Violations"
+msgstr ""
+
+msgid "Resend"
+msgstr ""
+
+msgid "Resend confirmation instructions"
+msgstr ""
+
+msgid "Resend unlock instructions"
+msgstr ""
+
+msgid "Reset Password"
+msgstr ""
+
+msgid "Restore my account"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "Review application"
+msgstr ""
+
+msgid "Safe Harbor Adherence"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save & Publish Dilemma"
+msgstr "Publish Your Dilemma"
+
+msgid "Save Changes"
+msgstr ""
+
+msgid "Save Profile"
+msgstr ""
+
+msgid "Save note"
+msgstr "Save Comments"
+
+msgid "Search"
+msgstr ""
+
+msgid "Search results: (%{search_results_number})"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Seed and plant exchanges are regulated by government laws. By participating in these forums, you agree that you will familiarize yourself with and follow all applicable local and national laws in your country."
+msgstr ""
+
+msgid "Set as cover"
+msgstr ""
+
+msgid "Share"
+msgstr ""
+
+msgid "Sharing Your Information"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Sign in"
+msgstr ""
+
+msgid "Sign in as user"
+msgstr ""
+
+msgid "Sign in to Dilemma Guru"
+msgstr ""
+
+msgid "Sign out"
+msgstr ""
+
+msgid "Sign up"
+msgstr ""
+
+msgid "Sign up way"
+msgstr "Registration method"
+
+msgid "Signed in successfully"
+msgstr ""
+
+msgid "Signed up at"
+msgstr ""
+
+msgid "Signed up:"
+msgstr ""
+
+msgid "Similar Dilemmas"
+msgstr "Similar Dilemmas"
+
+msgid "Stagiare Guru"
+msgstr ""
+
+msgid "Start review"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Super Admins"
+msgstr "Administrators"
+
+msgid "Super Guru"
+msgstr ""
+
+msgid "Super User"
+msgstr ""
+
+msgid "Super admin"
+msgstr "Administrator"
+
+msgid "Super admins"
+msgstr "Administrators"
+
+msgid "SuperAdmin Dashboard"
+msgstr "Administrator Dashboard"
+
+msgid "SuperAdmin|Current sign in at"
+msgstr ""
+
+msgid "SuperAdmin|Current sign in ip"
+msgstr ""
+
+msgid "SuperAdmin|Email"
+msgstr ""
+
+msgid "SuperAdmin|Encrypted password"
+msgstr ""
+
+msgid "SuperAdmin|Failed attempts"
+msgstr ""
+
+msgid "SuperAdmin|Last sign in at"
+msgstr ""
+
+msgid "SuperAdmin|Last sign in ip"
+msgstr ""
+
+msgid "SuperAdmin|Locked at"
+msgstr ""
+
+msgid "SuperAdmin|Remember created at"
+msgstr ""
+
+msgid "SuperAdmin|Reset password sent at"
+msgstr ""
+
+msgid "SuperAdmin|Reset password token"
+msgstr ""
+
+msgid "SuperAdmin|Sign in count"
+msgstr ""
+
+msgid "SuperAdmin|Unlock token"
+msgstr ""
+
+msgid "Supplemental Terms for Certain Services"
+msgstr ""
+
+msgid "TERMS OF USE AGREEMENT"
+msgstr ""
+
+msgid "Term & Termination"
+msgstr ""
+
+msgid "Terms & conditions"
+msgstr ""
+
+msgid "Terms of Use"
+msgstr ""
+
+msgid "Test"
+msgstr ""
+
+msgid "The Site is owned and operated by Dilemma Guru and its licensors. The Information and Services (and any intellectual property and other rights relating thereto) are and will remain the property of Dilemma Guru and its licensors and suppliers. The Information and Services are protected by U.S. and international copyright, trademark, and other laws, and you acknowledge that these rights are valid and enforceable. Except as set forth in this Agreement, you may not copy, reproduce, modify, adapt, translate, republish, upload, post, transmit, distribute, sub-license, sell, reverse engineer, decompile, or disassemble any part of the Site or any Service or Information without our prior written permission. The Site, Information, and Services may be used solely (a) to the extent permitted in this Agreement or (b) as expressly authorized in writing by Dilemma Guru or, if so indicated in writing by Dilemma Guru, its licensors or suppliers. Use of the Site or any Services or Information for any other purpose is strictly prohibited. You acknowledge that you do not acquire any ownership rights by using the Site or any Services or Information."
+msgstr ""
+
+msgid "The availability of any Products on the Site does not imply our endorsement of the Products. Reviews are solely the opinions of the users that post them. None of the Reviews contain or reflect any opinions or views of Dilemma Guru."
+msgstr ""
+
+msgid "The most trending dilemmas"
+msgstr "Trending Dilemmas"
+
+msgid "There is no featured guru yet"
+msgstr ""
+
+msgid "There is no trending dilemma yet"
+msgstr ""
+
+msgid "Third-Party Links"
+msgstr ""
+
+msgid "This Agreement is effective from the date that you first access the Site or submit any information to Dilemma Guru, whichever is earlier, and shall remain effective until terminated in accordance with its terms. Certain violations of this Agreement, as determined by Dilemma Guru, may result in immediate termination of this Agreement, and/or your access to and use of the Site, without prior notice. This Agreement will also terminate automatically if you fail to comply with any term or provision of this Agreement. Upon termination of this Agreement by either party, your right to use the Site shall immediately cease, and you shall destroy all copies of information that you have obtained from the Site, whether made under the terms of this Agreement or otherwise. All disclaimers, limitations of liability, indemnitees, Dilemma Guru rights of ownership, and licenses to Dilemma Guru shall survive any termination."
+msgstr ""
+
+msgid "This Agreement provides important information to you, including information about your obligations regarding your content, our limitation of liability to you, your agreement to resolve any disputes by individual arbitration and to waive the right to participate in a class action."
+msgstr ""
+
+msgid "This Site is Operated By"
+msgstr ""
+
+msgid "This privacy policy is to help you understand what information Dilemma Guru collects, how Dilemma Guru uses it, how it may be shared, and what choices you have. This privacy policy governs the products and services we offer through our website and applications (collectively the “Site” or “Dilemma Guru”). When you use the Site, you consent to our collection, use and disclosure of information about you as described in this privacy policy. Additionally, our Terms of Use are incorporated by reference into this privacy policy. The terms “we,” or “our,” refer to Dilemma Guru Ltd., a Israeli corporation, headquartered in Matan, in Israel."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "To get the best solutions,describe your Dilemma clearly and  concisely, use visuals to communicate better, attach pictures, or videos (Youtube snippets). The shorter and more concise your Dilemma, the better solutions you'll get."
+msgstr ""
+
+msgid "Token expired"
+msgstr ""
+
+msgid "Type of subscription"
+msgstr "Subscription type"
+
+msgid "Tyro User"
+msgstr ""
+
+msgid "Unhappy? "
+msgstr ""
+
+msgid "Update Dilemma"
+msgstr ""
+
+msgid "Update post"
+msgstr ""
+
+msgid "Used to your friends and family giving you tons of feedback on everything you do? Then why not share your Dilemma with whatever social network you prefer. Then sit back and let THEIR opinions flow in."
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User Ranking Scale"
+msgstr ""
+
+msgid "User can not be removed"
+msgstr ""
+
+msgid "User profile"
+msgstr ""
+
+msgid "User type"
+msgstr ""
+
+msgid "User was removed sucessfully"
+msgstr ""
+
+msgid "User's advices"
+msgstr "Users' solutions"
+
+msgid "User:"
+msgstr ""
+
+msgid "UserProfile|Address"
+msgstr ""
+
+msgid "UserProfile|Avatar"
+msgstr ""
+
+msgid "UserProfile|Category"
+msgstr ""
+
+msgid "UserProfile|Company"
+msgstr ""
+
+msgid "UserProfile|Deleted at"
+msgstr ""
+
+msgid "UserProfile|Experience"
+msgstr ""
+
+msgid "UserProfile|Facebook link"
+msgstr ""
+
+msgid "UserProfile|First name"
+msgstr ""
+
+msgid "UserProfile|Google plus link"
+msgstr ""
+
+msgid "UserProfile|Instagram link"
+msgstr ""
+
+msgid "UserProfile|Last name"
+msgstr ""
+
+msgid "UserProfile|Mantra"
+msgstr ""
+
+msgid "UserProfile|Mobile number"
+msgstr ""
+
+msgid "UserProfile|Pinterest link"
+msgstr ""
+
+msgid "UserProfile|Show email"
+msgstr ""
+
+msgid "UserProfile|Show mobile number"
+msgstr ""
+
+msgid "UserProfile|Twitter link"
+msgstr ""
+
+msgid "UserProfile|Website link"
+msgstr ""
+
+msgid "Users & Gurus"
+msgstr ""
+
+msgid "User|Confirmation sent at"
+msgstr ""
+
+msgid "User|Confirmation token"
+msgstr ""
+
+msgid "User|Confirmed at"
+msgstr ""
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Deleted at"
+msgstr ""
+
+msgid "User|Email"
+msgstr ""
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|Facebook oauth uid"
+msgstr ""
+
+msgid "User|First dilemma added"
+msgstr ""
+
+msgid "User|Google oauth uid"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Payment plan"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reopen account token"
+msgstr ""
+
+msgid "User|Reopen account token sent at"
+msgstr ""
+
+msgid "User|Reopened at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Role"
+msgstr ""
+
+msgid "User|Sign in count"
+msgstr ""
+
+msgid "User|Signup way"
+msgstr ""
+
+msgid "User|Unconfirmed email"
+msgstr ""
+
+msgid "User|Username"
+msgstr ""
+
+msgid "Veteran Guru"
+msgstr ""
+
+msgid "Video From Youtube"
+msgstr ""
+
+msgid "View in app"
+msgstr ""
+
+msgid "We collect information that you provide us directly or automatically when you use our Site."
+msgstr ""
+
+msgid "We do not represent, warrant or guarantee that the Product descriptions are accurate, complete, reliable, current, or error-free. If a Product bought directly from Dilemma Guru is not as described, then your sole remedy is to return it in unused condition."
+msgstr ""
+
+msgid "We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and once we receive it. However, no method of transmission over the Internet or via mobile device, or method of electronic storage, is 100% secure – so we cannot guarantee its absolute security."
+msgstr ""
+
+msgid "We may use Cookies to collect or transmit information about you and your use of the Site or third-party sites, such as: your browser type, search preferences, data relating to advertisements that have been displayed to you or that you have clicked on, your interests on our Site and other sites, and the date and time of your use. When we use Cookies, we do so in order to further Site features and processes, provide authentication and security for your transactions on the Site, store your preferences, facilitate relevant advertising, and help us learn more about how users engage with the Site, and understand your activities after you leave our Site. Our Cookies may be persistent or stored only during an individual session."
+msgstr ""
+
+msgid "We may use the information for purposes such as to: provide the Site’s functionality, improve the Site’s quality, personalize your experience, track usage of the Site, provide feedback to businesses and professionals whose products or services are listed on the Site, display relevant advertising, evaluate the success of our advertising, provide customer support, message you (in ways described by this privacy policy and managed by you in your account settings), back up our systems and allow for disaster recovery, enhance the security of the Site, fulfill transactions authorized by you on the Site, and comply with legal obligations."
+msgstr ""
+
+msgid "We need your current password to confirm your changes"
+msgstr ""
+
+msgid "We reserve the right at any time and from time to time to modify, discontinue, temporarily or permanently, the Site, or any part or portion thereof, with or without notice to you. You agree that we shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Site, or any part of portion thereof. Nothing in this Agreement shall be construed to obligate Dilemma Guru to maintain and support the Site, or any part or portion thereof, during the term of this Agreement."
+msgstr ""
+
+msgid "We reserve the right at any time to:"
+msgstr ""
+
+msgid "We thought you may find these leading gurus interesting"
+msgstr ""
+
+msgid "We're contacting you to notify you that your password has been changed."
+msgstr ""
+
+msgid "We've found this for you"
+msgstr ""
+
+msgid "Welcome to Dilemma Guru"
+msgstr ""
+
+msgid "Welcome to Dilemma Guru Administration"
+msgstr ""
+
+msgid "Welcome to Dilemma Guru!"
+msgstr ""
+
+msgid "Welcome to Dilemma Guru! Dilemma Guru is an information and social network dedicated to construction, renovation, and design. Dilemma Guru connects you to professional service providers, and others who can give you feedback and advice about your design goals."
+msgstr ""
+
+msgid "You agree not to post or provide any Content that belongs to any person other than yourself or that contains the name, voice or likeness of any person other than yourself unless you first obtain permission to do so, and to grant to us the rights granted in this agreement, from that person (or such person’s parent/legal guardian, if applicable)."
+msgstr ""
+
+msgid "You are unconfirmed user. Please, confirm account via your e-email. You can resend confirmation e-mail"
+msgstr "Your email has not yet been confirmed. A confirmation email can be sent again."
+
+msgid "You can continue to the dashboard or add your first dilemma!"
+msgstr "You can continue on to the dashboard or add your first dilemma."
+
+msgid "You further agree that we may use the posted or provided Content in any manner that we deem appropriate or necessary. We reserve the right to edit or abridge any Content for any reason, and to edit, refuse to post or remove any Content submitted by you or others. We do not guarantee that we will post all Content submitted or that such content will not be offensive, defamatory or objectionable. Although we reserve the right to remove without notice any Content for any reason, we have no obligation to delete Content that you personally may find objectionable or offensive. We do not control in real time the Content posted via the Services and as such do not guarantee the accuracy, integrity or quality of such Content. In addition to other disclaimers found in this Agreement, we do not endorse or make any warranties or representations with respect to the accuracy, completeness or timeliness of any Content posted on the Site."
+msgstr ""
+
+msgid "You have certain choices about how to control your data, including publicly displayed profile information, communications settings, network linking, and opting out of tracking by third- parties for certain advertising purposes. These choices are described throughout this privacy policy in the relevant sections."
+msgstr ""
+
+msgid "You have not done any payment yet."
+msgstr "You have not made a payment yet. "
+
+msgid "You have permission to use the Dilemma Guru buttons, links and widgets, subject to the terms of this Agreement (including the disclaimers and limitations of liability) and the further understanding that: (a) your use of such buttons, links and widgets link only to the Site; (b) you do not modify such buttons, links, widgets or associated code in any manner; (c) you do not use any such buttons, links, widgets in any manner which implies or suggests that Dilemma Guru operates, endorses, sponsors or recommends the website on which such buttons, links and widgets are used; and (d) the use of such buttons, links and widgets, and the website on which such buttons, links and widgets are used do not violate the Dilemma Guru’s Acceptable Use Policy or Prohibited Products Policy. We retain the right to revoke the permission to use such buttons, links and widgets at any time for any reason."
+msgstr ""
+
+msgid "You may be offered the ability to exchange plants or seeds with other users in the exchanges forums."
+msgstr ""
+
+msgid "You may opt-out of tracking by third parties for certain advertising purposes, as discussed below in the section entitled “Third Party Ad Networks,” which can help you control targeted advertising by third-parties that track your activities across sites."
+msgstr ""
+
+msgid "You need another %{points_to_next_level} points to get %{next_level}."
+msgstr ""
+
+msgid "You need to choose your payment plan first, if you want to add more dilemmas!"
+msgstr "To add additional dilemmas, you need to choose your plan."
+
+msgid "You need to gain %{points_to_next_level} more points to reach the next level!"
+msgstr ""
+
+msgid "You reached "
+msgstr ""
+
+msgid "Your Permitted Use of Services and Information"
+msgstr ""
+
+msgid "Your account has been confirmed!"
+msgstr "Your email has been confirmed. "
+
+msgid "Your account has been deleted, but you can restore it by setting up new password."
+msgstr ""
+
+msgid "Your billing plan"
+msgstr "Choose your plan"
+
+msgid "Your country is disabled. You can not perform such actions like adding, editing dilemmas or advices, liking dilemmas"
+msgstr ""
+
+msgid "Your number of points : "
+msgstr ""
+
+msgid "as best advice"
+msgstr ""
+
+msgid "by 10 users"
+msgstr ""
+
+msgid "by 25 users"
+msgstr ""
+
+msgid "change the Site, including eliminating or discontinuing any Information or Services (defined below) or other features in whole or in part; and"
+msgstr ""
+
+msgid "change the terms and conditions of this Agreement, consistent with applicable law;"
+msgstr ""
+
+msgid "deny or terminate your use of and/or access to the Site."
+msgstr ""
+
+msgid "here."
+msgstr ""
+
+msgid "is accurate, truthful and complete; and"
+msgstr ""
+
+msgid "is already a Guru"
+msgstr "This user is already a Guru"
+
+msgid "is based upon your first-hand experience with the vendor, service provider or product or service that is the subject of the Review;"
+msgstr ""
+
+msgid "is not defamatory, trade libelous, or otherwise in violation of our Acceptable Use Policy below, all as determined by us in our sole and absolute discretion."
+msgstr ""
+
+msgid "ou can close your account at any time by going to account settings. When you close your account, you will cease to provide ongoing or future data to us. Your public profile will be deactivated. However, unless prohibited by applicable law, postings or comments you provided to the forum associated with your public profile prior to closing your account, will remain public. We may retain information about you for the purposes authorized under this privacy policy unless prohibited by law."
+msgstr ""
+
+msgid "was a Guru, but deleted account"
+msgstr "This user was a Guru, but no longer has an account."
+
+msgid "“Dilemma Guru ENTITIES” MEANS Dilemma Guru, Ltd., AND ANY SUBSIDIARIES, AFFILIATES, RELATED COMPANIES, SUPPLIERS, LICENSORS AND PARTNERS, AND THE OFFICERS, DIRECTORS, EMPLOYEES, AGENTS AND REPRESENTATIVES OF EACH OF THEM. EACH PROVISION BELOW APPLIES TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW:"
+msgstr ""
+
+#~ msgid "Easily share with your friends and family"
+#~ msgstr "Share with your friends and family"

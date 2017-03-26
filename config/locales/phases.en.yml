@@ -1,0 +1,14 @@
+en:
+  phases:
+    01_goals: 'Goals'
+    02_finance: 'Finance'
+    03_purchase: 'Purchase'
+    04_design: 'Design'
+    05_license: 'License'
+    06_detailed_design: 'Detailed Design'
+    08_choose_constructor: 'Choose constructor'
+    10_build_skeleton: 'Build - Skeleton'
+    11_build_gmar: 'Build - Gmar'
+    15_shelter: 'Shelter'
+    18_development: 'Development'
+    20_completion: 'Completion'

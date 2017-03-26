@@ -1,0 +1,5 @@
+.share-icon, .carousel-arrow-left, .carousel-arrow-right
+{ display: inline-block; background: asset-url('dilemma-view-sprite.png') no-repeat; overflow: hidden; text-align: left; }
+.share-icon { background-position: -1px -0px; width: 29px; height: 32px; }
+.carousel-arrow-left { background-position: -1px -33px; width: 10px; height: 17px; }
+.carousel-arrow-right { background-position: -12px -33px; width: 10px; height: 17px; }

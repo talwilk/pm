@@ -1,0 +1,7 @@
+en:
+  experience_times:
+    less_than_1_year: 'Less than 1 year (internship)'
+    1_5_years: '1 to 5 years'
+    5_10_years: '5 to 10 years'
+    10_20_years: '10 to 20 years'
+    20_years_and_above: '20 years and above'

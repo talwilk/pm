@@ -1,0 +1,82 @@
+<div class="uk-grid uk-grid-large">
+	<div class="uk-panel uk-panel-box uk-align-center">
+	  	<h2><%=   _("#{t('task.show_task_details')}") %> 
+	  		<%=@task.name %> 
+	  	</h2></br>
+	
+		<div class="uk-overflow-container">
+			<table class="uk-table uk-responsive-width uk-width-2-2 uk-text-right">
+ 				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.phase')}") %></td>
+ 					<td><%=	SupportedPhase.find(@task.phase).name %></td>
+ 				</tr>
+ 				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.description')}") %></td>
+ 					<td><%=	@task.description %></td>	
+ 				</tr>
+ 				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.category')}") %></td>
+ 					<td><%=	SupportedCategory.find(@task.category).name %></td>
+ 				</tr>
+ 				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.status')}") %></td>
+ 					<td><%=	SupportedStatus.find(@task.status).name %></td>
+ 				</tr>
+ 				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.notes')}") %></td>
+					<td><%=	@task.notes %></td>
+				</tr>
+				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.tips')}") %></td>
+					<td><%=	@task.task_tips %></td>
+				</tr>
+				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.duration')}") %></td>
+					<td><%=	@task.duration %>
+					<%=   _("#{t('common.days')}") %>
+							<%=	@range_duration %></td>
+				</tr>
+				<tr>
+					<td class="uk-text-bold"><%= _("#{t('task.cost')}") %></td>
+					<td><%=	@task.cost %>
+					<%=   _("#{t('common.hint_cur')}") %>
+					<%=	@range_cost %></td>
+ 				</tr>
+				<tr>
+				<td class="uk-text-bold"><%= _("#{t('task.paid')}") %></td>
+					<td><%=	@task.paid %>
+					<%=   _("#{t('common.hint_cur')}") %>
+					<%=	@range_cost %></td>
+ 				</tr>
+ 				<tr>
+ 					<%	if !@task.pro.nil? then %>
+						<td class="uk-text-bold"><%=   _("#{t('task.pro')}") %> 
+							<%= @task.pro.first_name %></td>
+						<td></td>
+					<% else %>
+						<td></td>
+						<td class="uk-text-bold"><%=   _("#{t('task.no_pro')}") %></td>
+					</tr>
+ 				<%	end %>
+ 			</table>
+		</div>
+		<div class="uk-panel uk-panel-box uk-align-center">
+			<div class="uk-container uk-align-left">
+				<div class="button-grid">
+					<div class="button secondary-button small-button uk-position-left">
+						<%= link_to _("#{t('common.back')}"), root_path %>
+					</div>	
+				</div>
+			</div>
+			<div class="uk-container uk-align-right">
+				<div class="button-grid">
+					<div class="button secondary-button small-button uk-position-left">
+						<%= link_to _("#{t('common.edit')}"), edit_project_task_path(@project, @task) %>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<%= link_to _("#{t('common.delete')}") , edit_project_task_path(@project, @task), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %>
+	</div>
+	
+ </div>

@@ -1,0 +1,5 @@
+.uk-alert.confirmation-alert data-uk-alert=""
+  div
+    = t('devise.failure.unconfirmed')
+    = ' '
+    = link_to _("#{t('devise.common.here')}"), users_confirmation_resend_token_url

@@ -1,0 +1,199 @@
+.i {
+  display: inline-block;
+  background: asset-url('sprite.png') no-repeat;
+}
+
+#logo {
+  width: 41px;
+  height: 39px;
+  background-position: 0 0;
+}
+
+
+.best-advice {
+  width: 22px;
+  height: 22px;
+  background-position: 0 -65px;
+  &:hover {
+    width: 22px;
+    height: 22px;
+    background-position: -24px -41px;
+  }
+  &:active, &:focus {
+    width: 22px;
+    height: 22px;
+    background-position: 0 -41px;
+  }
+}
+
+.heart {
+  width: 27px;
+  height: 24px;
+  background-position: -117px -38px;
+  &:hover{
+    width: 27px;
+    height: 24px;
+    background-position: -48px -38px;
+  }
+  &:active, &:focus {
+    width: 27px;
+    height: 24px;
+    background-position: -81px 0;
+  }
+}
+
+.disabled-form-icon {
+  width: 23px;
+  height: 18px;
+  background-position: -24px -69px;
+  float:right;
+}
+
+
+.blank-heart {
+  width: 28px;
+  height: 23px;
+  background-position: -117px -64px;
+  &:hover {
+    width: 28px;
+    height: 23px;
+    background-position: -49px -64px;
+  }
+  &:active, &:focus {
+    width: 28px;
+    height: 23px;
+    background-position: -81px -26px;
+  }
+}
+
+
+.load-more {
+  display:block;
+  margin:0 auto;
+  width: 36px;
+  height: 36px;
+  background-position: -79px -51px;
+  &:hover {
+    width: 36px;
+    height: 36px;
+    background-position: -43px 0;
+  }
+  &:active, &:focus {
+    width: 35px;
+    height: 36px;
+    background-position: -111px 0;
+  }
+}
+
+.rank-0-xs, .rank-1-xs, .rank-2-xs, .rank-3-xs,.rank-4-xs, .rank-5-xs,.rank-6-xs,.rank-7-xs,.rank-8-xs,.rank-9-xs,.rank-10-xs,
+.rank-0-sm,.rank-1-sm,.rank-2-sm, .rank-3-sm, .rank-4-sm,.rank-5-sm,.rank-6-sm,.rank-7-sm,.rank-8-sm,.rank-9-sm,.rank-10-sm,.rank-0-md,.rank-1-md, .rank-2-md,.rank-3-md,.rank-4-md,.rank-5-md,.rank-6-md,.rank-7-md,.rank-8-md,.rank-9-md,.rank-10-md, .rank-0-lg,.rank-1-lg,.rank-2-lg,.rank-3-lg,.rank-4-lg,.rank-5-lg,.rank-6-lg,.rank-7-lg,.rank-8-lg,.rank-9-lg,.rank-10-lg
+{ display: inline-block; background: asset-url('ranks-badges.png') no-repeat; overflow: hidden; text-align: left; z-index: 9!important; position: relative; }
+
+.badge-best_advice-0-lg, .badge-best_advice-1-lg, .badge-best_advice-2-lg, .badge-best_advice-3-lg, .badge-best_advice-0-md, .badge-best_advice-1-md, .badge-best_advice-2-md, .badge-dilemma_advice-0-lg, .badge-dilemma_advice-1-lg, .badge-dilemma_advice-2-lg, .badge-dilemma_advice-0-md,.badge-dilemma_advice-1-md,.badge-followed-0-lg, .badge-followed-1-lg,.badge-followed-2-lg, .badge-followed-3-lg, .badge-followed-0-md,.badge-followed-1md,.badge-followed-2-md,.badge-following-0-lg, .badge-following-1-lg, .badge-following-2-lg, .badge-following-3-lg, .badge-following-0-md, .badge-following-1-md, .badge-following-2-md, .badge-like_advice-0-lg, .badge-like_advice-1-lg, .badge-like_advice-2-lg, .badge-like_advice-0-md, .badge-like_advice-1-md, .badge-dilemma_advice-0-lg, .badge-dilemma_advice-1-lg, .badge-dilemma_advice-0-md, .badge-dilemma_advice-1-md, .badge-best_advice-3-md, .badge-followed-3-md, .badge-following-3-md, .badge-like_advice-2-md, .badge-dilemma_advice-2-md, .badge-best_advice-3-md, .badge-dilemma_advice-2-md, .badge-followed-3-md, .badge-following-3-md, .badge-like_advice-2-md { display: inline-block; background: asset-url('ranks-badges.png') no-repeat; overflow: hidden; text-align: left; z-index: 9!important; position: relative; }
+
+.rank-stagiaire-guru-lg, .ranks-guru-lg, .ranks-mega-guru-lg, .ranks-nobel-user-lg, .ranks-novice-user-lg,
+.ranks-pro-user-lg, .ranks-super-guru-lg, .ranks-super-user-lg, .ranks-tyro-user-lg, .ranks-user-lg,
+.ranks-veteran-guru-lg, .badge-best-advice-100-lg, .badge-best-advice-10-lg, .badge-best-advice-50-lg, .badge-dilemma-advice-10-lg,
+.badge-dilemma-advice-25-lg, .badge-followed-100-lg, .badge-followed-10-lg, .badge-followed-50-lg, .badge-following-100-lg,
+.badge-following-10-lg, .badge-following-50-lg, .badge-like-advice-10-lg, .badge-like-advice-25-lg, .badge-best-advice-100-md,
+.badge-best-advice-10-md, .badge-best-advice-50-md, .badge-dilemma-advice-10-md, .badge-dilemma-advice-25-md, .badge-followed-100-md,
+.badge-followed-10-md, .badge-followed-50-md, .badge-following-100-md, .badge-following-10-md, .badge-following-50-md,
+.badge-like-advice-10-md, .badge-like-advice-25-md, .rank-guru-md, .rank-mega-guru-md, .rank-nobel-user-md,
+.rank-novice-user-md, .rank-pro-user-md, .rank-stagiaire-guru-md, .rank-super-guru-md, .rank-super-user-md,
+.rank-tyro-user-md, .rank-user-md, .rank-veteran-guru-md, .rank-guru-sm, .rank-mega-guru-sm,
+.rank-nobel-user-sm, .rank-novice-user-sm, .rank-pro-user-sm, .rank-stagiaire-guru-sm, .rank-super-guru-sm,
+.rank-super-user-sm, .rank-tyro-user-sm, .rank-user-sm, .rank-veteran-guru-sm, .rank-guru-xs,
+.rank-mega-guru-xs, .rank-nobel-user-xs, .rank-novice-user-xs, .rank-pro-user-xs, .rank-stagiaire-guru-xs,
+.rank-super-guru-xs, .rank-super-user-xs, .rank-tyro-user-xs, .rank-user-xs, .rank-veteran-guru-xs
+{ display: inline-block; background: asset-url('ranks-badges.png') no-repeat; overflow: hidden; text-align: left; z-index: 9!important; position: relative;}
+
+
+.badge-best_advice-3-lg { background-position: -1px -1573px; width: 140px; height: 142px; }
+.badge-best_advice-1-lg { background-position: -1px -1716px; width: 140px; height: 142px; }
+.badge-best_advice-2-lg { background-position: -1px -1859px; width: 140px; height: 142px; }
+.badge-dilemma_advice-1-lg { background-position: -1px -2002px; width: 140px; height: 142px; }
+.badge-dilemma_advice-2-lg { background-position: -1px -2145px; width: 140px; height: 142px; }
+.badge-followed-3-lg { background-position: -1px -2288px; width: 140px; height: 142px; }
+.badge-followed-1-lg { background-position: -1px -2431px; width: 140px; height: 142px; }
+.badge-followed-2-lg { background-position: -1px -2574px; width: 140px; height: 142px; }
+.badge-following-3-lg { background-position: -1px -2717px; width: 140px; height: 142px; }
+.badge-following-1-lg { background-position: -1px -2860px; width: 140px; height: 142px; }
+.badge-following-2-lg { background-position: -1px -3003px; width: 140px; height: 142px; }
+.badge-like_advice-1-lg { background-position: -1px -3146px; width: 140px; height: 142px; }
+.badge-like_advice-2-lg { background-position: -1px -3289px; width: 140px; height: 142px; }
+.badge-best_advice-3-md { background-position: -1px -3432px; width: 86px; height: 87px; }
+.badge-best_advice-1-md { background-position: -1px -3520px; width: 86px; height: 87px; }
+.badge-best_advice-2-md { background-position: -1px -3608px; width: 86px; height: 87px; }
+.badge-dilemma_advice-1-md { background-position: -1px -3696px; width: 86px; height: 87px; }
+.badge-dilemma_advice-2-md { background-position: -1px -3784px; width: 86px; height: 87px; }
+.badge-followed-3-md { background-position: -1px -3872px; width: 86px; height: 87px; }
+.badge-followed-1-md { background-position: -1px -3960px; width: 86px; height: 87px; }
+.badge-followed-2-md { background-position: -1px -4048px; width: 86px; height: 87px; }
+.badge-following-3-md { background-position: -1px -4136px; width: 86px; height: 87px; }
+.badge-following-1-md { background-position: -1px -4224px; width: 86px; height: 87px; }
+.badge-following-2-md { background-position: -1px -4312px; width: 86px; height: 87px; }
+.badge-like_advice-1-md { background-position: -1px -4400px; width: 86px; height: 87px; }
+.badge-like_advice-2-md { background-position: -1px -4488px; width: 86px; height: 87px; }
+
+
+//
+.rank-6-lg { background-position: -1px -0px; width: 143px; height: 142px; }
+.rank-7-lg { background-position: -1px -143px; width: 143px; height: 142px; }
+.rank-10-lg { background-position: -1px -286px; width: 143px; height: 142px; }
+.rank-5-lg { background-position: -1px -429px; width: 143px; height: 142px; }
+.rank-0-lg { background-position: -1px -572px; width: 143px; height: 142px; }
+.rank-3-lg { background-position: -1px -715px; width: 143px; height: 142px; }
+.rank-9-lg { background-position: -1px -858px; width: 143px; height: 142px; }
+.rank-4-lg { background-position: -1px -1001px; width: 143px; height: 142px; }
+.rank-1-lg { background-position: -1px -1144px; width: 143px; height: 142px; }
+.rank-2-lg { background-position: -1px -1287px; width: 143px; height: 142px; }
+.rank-8-lg { background-position: -1px -1430px; width: 143px; height: 142px; }
+
+//md
+.rank-7-md { background-position: -88px -3432px; width: 52px; height: 51px; }
+.rank-10-md { background-position: -88px -3484px; width: 52px; height: 51px; }
+.rank-5-md { background-position: -88px -3536px; width: 52px; height: 51px; }
+.rank-0-md { background-position: -88px -3588px; width: 52px; height: 51px; }
+.rank-3-md { background-position: -88px -3640px; width: 52px; height: 51px; }
+.rank-6-md { background-position: -88px -3692px; width: 52px; height: 51px; }
+.rank-9-md { background-position: -88px -3744px; width: 52px; height: 51px; }
+.rank-4-md { background-position: -88px -3796px; width: 52px; height: 51px; }
+.rank-1-md { background-position: -88px -3848px; width: 52px; height: 51px; }
+.rank-2-md { background-position: -88px -3900px; width: 52px; height: 51px; }
+.rank-8-md { background-position: -88px -3952px; width: 52px; height: 51px; }
+
+//sm
+.rank-7-sm { background-position: -88px -4004px; width: 26px; height: 26px; }
+.rank-10-sm { background-position: -115px -4004px; width: 26px; height: 26px; }
+.rank-5-sm { background-position: -88px -4031px; width: 26px; height: 26px; }
+.rank-0-sm { background-position: -115px -4031px; width: 26px; height: 26px; }
+.rank-3-sm { background-position: -88px -4058px; width: 26px; height: 26px; }
+.rank-6-sm { background-position: -115px -4058px; width: 26px; height: 26px; }
+.rank-9-sm { background-position: -88px -4085px; width: 26px; height: 26px; }
+.rank-4-sm { background-position: -115px -4085px; width: 26px; height: 26px; }
+.rank-1-sm { background-position: -88px -4112px; width: 26px; height: 26px; }
+.rank-2-sm { background-position: -115px -4112px; width: 26px; height: 26px; }
+.rank-8-sm { background-position: -88px -4139px; width: 26px; height: 26px; }
+
+//xs
+.rank-7-xs { background-position: -115px -4139px; width: 23px; height: 23px; }
+.rank-10-xs { background-position: -115px -4163px; width: 23px; height: 23px; }
+.rank-5-xs { background-position: -88px -4166px; width: 23px; height: 23px; }
+.rank-0-xs { background-position: -112px -4187px; width: 23px; height: 23px; }
+.rank-3-xs { background-position: -88px -4190px; width: 23px; height: 23px; }
+.rank-6-xs { background-position: -112px -4211px; width: 23px; height: 23px; }
+.rank-9-xs { background-position: -88px -4214px; width: 23px; height: 23px; }
+.rank-4-xs { background-position: -112px -4235px; width: 23px; height: 23px; }
+.rank-1-xs { background-position: -88px -4238px; width: 23px; height: 23px; }
+.rank-2-xs { background-position: -112px -4259px; width: 23px; height: 23px; }
+.rank-8-xs { background-position: -88px -4262px; width: 23px; height: 23px; }
+
+
+.gp, .pt, .tw, .fb
+{ display: inline-block; background: asset-url('share-sprite.png') no-repeat; overflow: hidden; text-align: left; }
+
+.gp { background-position: -1px -0px; width: 40px; height: 25px; }
+.pt { background-position: -1px -26px; width: 32px; height: 32px; }
+.tw { background-position: -1px -59px; width: 32px; height: 26px; }
+.fb { background-position: -1px -86px; width: 29px; height: 29px; }
+

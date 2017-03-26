@@ -1,0 +1,5 @@
+en:
+  statuses:
+    not_started: 'Not Strarted'
+    in_progress: 'In Progress'
+    completed: 'Completed'

@@ -1,0 +1,64 @@
+@import "globals";
+
+.table-container {
+  border:1px solid $border-color;
+  border-radius:1px;
+  background: #fff;
+  padding:5px 40px;
+  @include r(phone-max) {
+    padding:5px 10px;
+  }
+}
+
+.empty-table-container {
+  @extend .table-container;
+    padding:70px;
+  p {
+    color:#aab1c2;
+    font-family:$book;
+    font-size:2.1rem;
+    text-align:center;
+    margin:0 auto;
+    line-height:1.2;
+  }
+}
+
+.uk-table {
+  margin-bottom:5px;
+}
+
+table {
+  font-family:$book;
+  font-size:1.4rem;
+  color:#2d3344;
+  text-transform: uppercase;
+}
+
+th {
+  font-weight:normal;
+  height:30px;
+  line-height:30px;
+}
+
+td {
+  height:40px;
+  line-height:40px;
+}
+
+tr + tr {
+  border-top:1px solid #D3D9E9;
+}
+
+td {
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.uk-table-hover tr:hover td {
+  background:#f1f2f7;
+}
+
+.table-link {
+  color:#932b5b;
+  text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+= simple_form_for @dilemma_advice, url: [:super_admin, @dilemma_advice] do |f|
+  = f.input :content, as: :text
+  br
+  = f.submit _('Save'), class: 'btn btn-success'
+  hr
+  h4 = _('Media')
+  .row#media-list
+    - @dilemma_advice.media.each do |medium|
+      .col-md-3.medium
+        - if !medium.file.blank?
+          div
+            = link_to medium.file.url, target: '_blank' do
+              = image_tag medium.file, size: '200'
+        - if !medium.youtube_url.blank?
+          .videoWrapper
+            = render 'youtube_video', media: medium
+        = link_to 'Delete', super_admin_medium_path(medium), class: 'btn btn-danger', data: { confirm: _('Are you sure?') }, method: :delete

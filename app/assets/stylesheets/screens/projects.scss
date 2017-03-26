@@ -1,0 +1,22 @@
+@import "globals";
+@import "forms";
+
+.uk-panel {
+  background:#fff;
+  border:1px solid $border-color;
+}
+
+.table_header {
+  background:#313747;
+  font-size:1.6rem;
+  color:#E3E3E5;
+}
+
+.task_row {
+  cursor:pointer;
+}
+
+.task_details{
+	text-align: right;
+	margin-top: 10px;
+}

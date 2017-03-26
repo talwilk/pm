@@ -1,0 +1,17 @@
+en:
+  categories:
+    air_conditioning: 'Heating and Air conditioning'
+    architecture: 'Architecture'
+    cladding: 'Cladding'
+    electricity: 'Electricity'
+    feng_shui: 'Feng shui'
+    handyman: 'Handyman'
+    home_decor: 'Home Décor'
+    interior_design: 'Interior design'
+    kids: 'Kids & Youth'
+    kitchen_design: 'Kitchen Design'
+    landscaping: 'Landscaping'
+    lighting: 'Lighting'
+    plumbing: 'Plumbing'
+    restoration: 'Restoration'
+    other: 'Other'

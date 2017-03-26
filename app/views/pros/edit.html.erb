@@ -1,0 +1,28 @@
+<div class="uk-grid uk-grid-large">
+    <div class="uk-panel uk-panel-box uk-align-center">
+        <h2><%=   _("#{t('pro.edit_pro_title')}") %> 
+            <%= @pro.full_name %> 
+        </h2></br>
+        <div class="uk-overflow-container">
+	      	<%= simple_form_for(@pro, :url => {:controller => 'pros', :action => 'update'}) do |f| %>
+            <table class="uk-table uk-responsive-width uk-width-4-4 uk-text-right">
+                <tr>
+                    <td><%= _("#{t('pro.first')}") %></td>
+                    <td><%= f.text_field :first_name %></td>
+                    <td><%= _("#{t('pro.last')}") %></td>
+                    <td><%= f.text_field :last_name %></td>
+                </tr><tr>
+                    <td><%= _("#{t('pro.phone')}") %></td>
+                    <td><%= f.text_field :mobile_phone %></td>
+                    <td><%= _("#{t('pro.email')}") %></td>
+                    <td><%= f.text_field :email %></td>            
+                </tr>
+			</table>
+	        <div class="uk-text-left">
+	            <%= f.button :submit, _("#{t('common.submit')}"), class:'primary-button mini-button' %>    
+	        </div>	        
+	        <% end %>
+	        <%= link_to "Back", project_task_pro_path(@project, @task, @pro) %></br>
+		</div>
+  </div>
+</div>

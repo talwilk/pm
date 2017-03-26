@@ -1,0 +1,240 @@
+@import "globals";
+
+#add-dilemma {
+  .grid-first + .grid-second {
+    margin-top:25px;
+  }
+
+  .uk-subnav {
+    border-bottom:1px solid #aab1c2;
+    li  {
+      border-bottom:0;
+    }
+  }
+}
+
+.dilemma_description {
+  .fr-box {
+    border:1px solid $border-color!important;
+    border-radius:2px;
+    padding: 0 10px 5px 10px;
+  }
+}
+
+.add-media {
+  cursor:pointer;
+  .uk-panel {
+    background:#e9eaf3;
+    border:0;
+    padding:0 30px;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height:230px;
+    text-align:center;
+    margin:0 auto;
+    .add-media-icon{
+      margin-bottom:5px;
+      text-align:center;
+    }
+    p {
+      font-family:$regular;
+      font-size:1.6rem;
+      color:#aab1c2;
+      }
+    }
+    .selection {
+      display:none;
+      div {
+        display:block;
+        background:none;
+        border:1px solid #aab1c2;
+        color:#aab1c2;
+        font-family:$bold;
+        font-size:1.2rem;
+        padding:3px 10px;
+        &:hover {
+          background:#aab1c2;
+          color:#fff;
+        }
+      }
+      div + div {
+        margin-top:20px;
+      }
+    }
+}
+
+.add-media-mobile {
+  cursor:pointer;
+  .uk-panel {
+    background:#e9eaf3;
+    border:0;
+    padding:0 30px;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height:230px;
+    text-align:center;
+    margin:0 auto;
+    .add-media-icon{
+      margin-bottom:5px;
+      text-align:center;
+    }
+    p {
+      font-family:$regular;
+      font-size:1.6rem;
+      color:#aab1c2;
+      }
+    }
+    .selection-mobile {
+      div {
+        display:block;
+        background:none;
+        border:1px solid #aab1c2;
+        color:#aab1c2;
+        font-family:$bold;
+        font-size:1.2rem;
+        padding:3px 10px;
+        &:hover {
+          background:#aab1c2;
+          color:#fff;
+        }
+      }
+      div + div {
+        margin-top:20px;
+      }
+    }
+}
+
+@include r(phone-min) {
+  .add-media:hover {
+    .selection{
+    display: block;
+    }
+    .guide {
+      display:none;
+    }
+  }
+}
+
+@include r(phone-max) {
+  .add-media {
+    .selection{
+      display: block;
+    }
+    .guide {
+      display:none;
+    }
+  }
+}
+
+img[src=""] {
+   display: none;
+}
+
+.nested-fields {
+  //display:none;
+  margin-bottom:20px;
+  float:left;
+}
+
+.nested-fields img {
+  display: block;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+.nested-fields > div {
+  border:1px solid $border-color;
+  padding-bottom:5px;
+}
+
+.remove-media {
+  font-size:1.1rem;
+  color:$main-font-color;
+  padding:20px 10px;
+}
+
+.medias, .medias-m {
+  margin-top:10px;
+}
+
+#fileModal,
+#imageModal,
+#youtubeModal {
+    button i.ltr {
+    margin-right:10px;
+  }
+}
+
+#fileModal,
+#imageModal,
+#youtubeModal {
+    button i.rtl {
+    margin-left:10px;
+  }
+}
+
+.uk-input-group button {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+.dilemma_media_media_description, .dilemma_advice_media_media_description {
+  padding: 0 8px;
+  overflow:hidden;
+  textarea {
+  line-height: initial!important;
+    height:auto!important;
+    border:none!important;
+    padding: 10px !important;
+    font-size: 1.2rem !important;
+    border-bottom:1px solid #D3D9E9 !important;
+    border-radius:0!important;
+  }
+  textarea::-webkit-input-placeholder{
+    font-family:$book;
+    font-size: 1.2rem!important;
+    color: #aab1c2!important;
+    opacity:1;
+  }
+
+  textarea:-moz-placeholder {
+    font-family:$book;
+    font-size: 1.2rem!important;
+    color: #aab1c2!important;
+    opacity:1;
+}
+
+  textarea:-ms-input-placeholder {
+    font-family:$book;
+    font-size: 1.2rem!important;
+    color: #aab1c2!important;
+    opacity:1;
+  }
+}
+
+#add-dilemma .grid-second {
+   @include r(phone-max) {
+      margin-top:10px!important;
+   }
+}

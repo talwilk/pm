@@ -1,0 +1,6 @@
+heb:
+  experience_times:
+    less_than_1_year: 'מתלמד (פחות משנת ניסיון)'
+    1_5_years: '1-5 שנים'
+    5_10_years: '5-10 שנים'
+    10_years_and_above: 'עשר שנים ויותר'

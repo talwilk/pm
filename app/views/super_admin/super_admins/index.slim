@@ -1,0 +1,23 @@
+.container
+  h1= _('Super admins')
+  .table-responsive
+    table.table.table-condensed.table-hover
+      thead
+        tr
+          th= _('Email')
+          th= _('Name')
+          th= _('Signed up at')
+          th= _('Actions')
+      tbody
+        - @super_admins.each do |super_admin|
+          tr
+            td= super_admin.email
+            td= super_admin.full_name
+            td= super_admin.created_at
+            td
+              = link_to _('Edit'), edit_super_admin_super_admin_path(super_admin), class: 'btn btn-sm'
+              - if super_admin.deleted_at.nil?
+                = link_to _('Destroy'), super_admin_super_admin_path(super_admin), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: _('Are you sure?') }
+              - else
+                = link_to _('Bring back'), bring_back_super_admin_super_admin_path(super_admin), method: :patch, class: 'btn btn-sm', data: { confirm: _('Are you sure?') }
+  = link_to _('New super admin'), new_super_admin_super_admin_path

@@ -1,0 +1,13 @@
+he:
+  user_levels:
+    '0': 'משתמש חדש'###'Novice user'
+    '1': 'משתמש טירון'###'Tyro user'
+    '2': 'משתמש'###'User'
+    '3': 'משתמש בכיר'###'Pro user'
+    '4': 'סופר משתמש'###'Super User'
+    '5': 'משתמש אלוף'###'Noble User'
+    '6': 'כמעט גורו'###'Stagiaire Guru'
+    '7': 'גורו'###'Guru'
+    '8': 'גורו בכיר'###'Veteran Guru'
+    '9': 'סופר גורו'###'Super Guru'
+    '10': 'מגה גורו'###'Mega Guru'

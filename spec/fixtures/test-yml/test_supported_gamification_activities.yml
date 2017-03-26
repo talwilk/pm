@@ -1,0 +1,11 @@
+---
+advice_like: 5
+following: 5
+followers: 5
+social_share_of_dilemma: 5
+create_dilemma: 10
+create_advice: 10
+mark_favourite_advice: 15
+create_advice_with_media: 15
+your_advice_marked_as_favourite: 25
+register_as_guru: 500

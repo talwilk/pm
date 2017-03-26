@@ -1,0 +1,61 @@
+.uk-grid
+  .uk-width-medium-4-5.uk-align-center
+    .devise-wrapper
+      h2.uk-text-center
+        - if resource_name.to_s == 'super_admin'
+          = _("#{t('devise.sessions.welcome_dilemma_guru')}")
+        - else
+          = _("#{t('devise.sessions.sign_in_dilemma_guru')}")
+      .holder
+        .uk-grid.uk-grid-divider
+          .uk-width-medium-1-2.uk-container-center
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              = f.error_notification
+              .uk-form
+                .uk-form-row
+                  = f.input :email, label: "#{t('devise.sessions.email')}", required: false, autofocus: true
+                .uk-form-row
+                  = f.input :password, label: "#{t('devise.sessions.password')}", required: false
+                .uk-form-row class="#{t :dir}"
+                  = f.input :remember_me, label: "#{t('devise.sessions.keep_sign_in')}", as: :boolean if devise_mapping.rememberable?
+              .form-actions
+                = f.button :submit, _("#{t('devise.sessions.sign_in')}"),class:'primary-button medium-button block-button-xs'
+              .form-actions
+                = link_to _("#{t('devise.sessions.forgot_password')}"), new_password_path(resource_name)
+          - unless resource_name.to_s == 'super_admin'
+            .uk-width-medium-1-2.social-login-holder
+              p.uk-visible-small
+              p.uk-visible-small
+              .uk-grid
+                .uk-width-medium-1-1
+                  = render "devise/shared/social_login"
+
+              .uk-grid.text-align1 class="#{t :dir}"
+                .uk-width-medium-1-1
+                  p
+                    = _("#{t('devise.sessions.no_account')}")
+                  - if devise_mapping.registerable? && controller_name != 'registrations'
+                    p.uk-text-bold
+                      = link_to _("#{t('devise.sessions.join_now')}"), new_registration_path(resource_name)
+                  p
+                  .terms-and-conditions
+                    p
+                      = _("#{t('devise.sessions.acknowledgements_and_agreement')}")
+                    a href="#terms-conditions" data-uk-modal=""
+                      = _("#{t('devise.sessions.terms_of_use')}")
+                    p
+                      = _("#{t('devise.sessions.and')}")
+                    a href="#privacy-policy" data-uk-modal=""
+                      = _("#{t('devise.sessions.privacy_policy')}")
+#privacy-policy.uk-modal
+  .uk-modal-dialog
+    a.uk-modal-close.uk-close
+    div style="padding-top:25px;"
+      = render 'landing/privacy_policy'
+
+#terms-conditions.uk-modal
+  .uk-modal-dialog
+    a.uk-modal-close.uk-close
+    div style="padding-top:25px;"
+      = render 'landing/terms_conditions'
+

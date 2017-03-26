@@ -1,0 +1,29 @@
+- if @gurus.present?
+  .uk-grid#featured-gurus
+    .uk-width-medium-1-1
+      - @gurus.each do |guru|
+        .uk-grid.uk-grid-small
+          .uk-width-medium-1-1
+            .featured-guru-item
+              .uk-panel
+                .uk-grid
+                  .uk-width-medium-1-1.uk-flex.uk-flex-nowrap class="#{t :dir}"
+                    .featured-guru-item__left-section
+                      = link_to user_path(guru)
+                        = responsive_image_tag guru.profile.avatar, class:'featured-guru-item__avatar uk-border-circle responsive', alt:'guru.profile.full_name'
+                    .featured-guru-item__right-section
+                      p.featured-guru-item__username class="#{t :dir}"
+                        = link_to guru.profile.full_name, user_path(guru), class:'link-no-hover'
+                      .featured-guru-item__rank class="rank-#{guru.level}-xs"
+                      p.featured-guru-item__level= guru.role.camelize
+                      p.featured-guru-item__profession = guru.profile.category_list.first(3).map { |key| SupportedCategory.find(key).name }.join(', ')
+                      // TODO: follow button
+                      //  .featured-guru-item__button-container
+                      //    .guru-follow-button
+                      //      button.primary-button.mini-button = _("#{t('users.common.follow')}")
+                      p.featured-guru-item__stats.guru-stats
+                        = _("%{guru_likes_size} #{t('users.dashboard.likes')} / %{guru_advices_size} #{t('users.dashboard.advices')}") % { guru_likes_size: guru.amount_of_likes, guru_advices_size: guru.advices.size }
+- else
+  .uk-grid
+    .uk-width-medium-1-1
+      p = _("#{t('users.dashboard.no_featured_guru')}")

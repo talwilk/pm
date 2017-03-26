@@ -1,0 +1,131 @@
+@import "globals";
+
+.dilemma-advice-item {
+  border:1px solid $border-color;
+  border-radius:1px;
+  background: #fff;
+  padding:20px 50px;
+  overflow:hidden;
+  @include r(phone-max) {
+    padding:20px 30px;
+  }
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  &__total-points, &__total-likes {
+    color:#932b5b;
+    font-family:$regular;
+    font-size:1.2rem;
+    margin: -5px 0 0;
+  }
+  &__left-section {
+    margin-right:10px;
+    margin-left: 10px;
+    display:inline-block;
+    vertical-align: top;
+    min-width:40px;
+  }
+  &__right-section{
+    flex:1;
+    padding-top:10px;
+    display:inline-block;
+  }
+  &__username {
+    font-family:$bold;
+    color:#2d3344;
+    margin:0;
+    padding-bottom:2px;
+  }
+  &__rank {
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:5px;
+  }
+  &__level {
+    display:inline-block;
+    vertical-align:middle;
+    padding-top:2px;
+    color:#932b5b;
+    font-size:14px;
+    font-family:$book;
+    margin:0;
+  }
+  &__profession {
+    color:#2d3344;
+    font-size:1.2rem;
+  }
+  &__description {
+    color:#2d3344;
+    font-size:1.2rem;
+  }
+  &__date {
+    font-size:1.2rem;
+    @include r(phone-max) {
+      margin-top:-40px;
+    }
+  }
+  &__media-description {
+    display:block;
+    padding:10px 0;
+    color:#2d3344;
+  }
+}
+
+h3.advices + .dilemma-advice-item {
+  margin-top:15px;
+}
+
+#add-dilemma-advice-form {
+  margin-bottom:15px;
+}
+
+#guru-advices, #user-advices {
+  margin:25px 0;
+}
+
+h3.ltr.advices {
+  cursor:pointer;
+  font-family:$book;
+  font-size:1.8rem;
+  color:#282828;
+  margin:0;
+  span:after{
+    content:'\f078';
+    font-family: FontAwesome;
+    font-size:1.5rem;
+    padding-left:15px;
+  }
+}
+
+h3.rtl.advices {
+  cursor:pointer;
+  font-family:$book;
+  font-size:1.8rem;
+  color:#282828;
+  margin:0;
+  span:after{
+    content:'\f078';
+    font-family: FontAwesome;
+    font-size:1.5rem;
+    padding-right:15px;
+  }
+}
+
+.advice-attached-media {
+  overflow:hidden;
+  a {
+    width:100%;
+    margin-bottom:15px;
+  }
+  img {
+    max-width:240px;
+    height:auto;
+  }
+}
+
+.text-align-padding{
+  padding-left: 5px;
+  padding-right: 5px;
+}

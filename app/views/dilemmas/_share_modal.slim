@@ -1,0 +1,35 @@
+#share-modal.uk-modal
+  .uk-modal-dialog.uk-text-center
+    a.uk-modal-close.uk-close
+    .uk-grid
+      .uk-width-medium-8-10.uk-container-center
+        .uk-modal-header.uk-text-center
+          h2= _("#{t('dilemma.share')}")
+          p= _("#{t('dilemma.friends_and_family_give_feedback')}")
+        p
+        .uk-grid.uk-flex-uk-flex-middle.uk-flex-center
+          .uk-width-medium-1-2.uk-width-small-1-1
+            .uk-grid
+              .uk-width-1-4.uk-text-center
+                a onclick="javascript:window.open('http://facebook.com/sharer/sharer.php?u=#{dilemma_url(@dilemma)}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"
+                  .fb
+              .uk-width-1-4.uk-text-center
+                a onclick="javascript:window.open('https://plus.google.com/share?url=#{dilemma_url(@dilemma)}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"
+                  .gp
+              .uk-width-1-4.uk-text-center
+                a onclick="javascript:window.open('https://twitter.com/intent/tweet?text=#{@dilemma.title} by @dilemmaguru - #{@dilemma.short_url || dilemma_url(@dilemma)}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"
+                  .tw
+              .uk-width-1-4.uk-text-center
+                - if @dilemma.cover_photo.present?
+                  - if Medium.find_by(id: @dilemma.cover_photo).youtube_url
+                    - photo = 'http://img.youtube.com/vi/' + Medium.find_by(id: @dilemma.cover_photo).youtube_url + '/0.jpg'
+                  - else
+                    - photo = Medium.find_by(id: @dilemma.cover_photo).file
+                - dilemma_description = strip_tags(@dilemma.description)
+                a onclick="javascript:window.open('http://pinterest.com/pin/create/bookmarklet/?media=#{image_url(photo)}&url=#{dilemma_url(@dilemma)}&description=#{strip_tags(dilemma_description)}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"
+                  .pt
+          .uk-width-medium-1-1.uk-text-left
+            p.copy-link.text-align1 class=" #{ t :dir}" = "#{t('dilemma.copy_private_url')}"
+            .uk-input-group
+              input#dilemma-url.form-control type="text" value="#{@dilemma.short_url || dilemma_url(@dilemma)}" /
+              button.primary-button.medium-button data-copytarget="#dilemma-url" id='copy-dilemma-link' #{t('dilemma.copy')}

@@ -1,0 +1,7 @@
+= simple_form_for @post, url: super_admin_blog_index_path do |f|
+  = f.input :title
+  = f.input :content, as: :text
+  = f.label :cover_image
+  = f.file_field :cover_image, onchange: 'previewImg(this);', accept: '.jpg, .png, .jpeg, .gif|images/*'
+  = image_tag '', id: 'img_upload', size: '300'
+  = f.submit _('Create new post')

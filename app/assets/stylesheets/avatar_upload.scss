@@ -1,0 +1,22 @@
+.file-upload-img img{
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  object-fit: cover;
+}
+#update_user_profile_form_avatar{
+  display:block;
+  position:absolute;
+  z-index:-1;
+  opacity:0;
+  filter:alpha(opacity=0);
+}
+
+#avatar_edit_button{
+  display:block;
+  position:absolute;
+  z-index:-1;
+  opacity:0;
+  filter:alpha(opacity=0);
+}
+

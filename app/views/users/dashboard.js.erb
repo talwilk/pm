@@ -1,0 +1,31 @@
+<%
+  link_params = {}
+
+  link_params[:search] = params[:search] if params.has_key?(:search)
+  link_params[:dilemmas] = params[:dilemmas] if params.has_key?(:dilemmas)
+  link_params[:category] = params[:category] if params.has_key?(:category)
+  link_params[:sort_by] = params[:sort_by] if params.has_key?(:sort_by)
+%>
+
+<% if @load_more %>
+  $('#dilemmas-list').append("<%= escape_javascript(render partial: @dilemmas)%>");
+  $('#load-more-link-container').html("<%= escape_javascript(link_to_next_page(@dilemmas, '', :params => {:load_more => true}.merge(link_params), remote: true, id: 'load_more_dilemmas_link', class: 'i load-more'))%>");
+<% else %>
+  $('#dilemmas-list').html("<%= escape_javascript(render partial: @dilemmas)%>");
+  $('#load-more-link-container').html("<%= escape_javascript(link_to_next_page(@dilemmas, '', :params => {:load_more => true}.merge(link_params), remote: true, id: 'load_more_dilemmas_link', class: 'i load-more'))%>");
+  <% if @dilemmas.total_count != 0 %>
+    $('#search-results-counter').html("<%= escape_javascript("<%= I18n.t("search_results") %> (#{@dilemmas.total_count})") %>");
+  <% else %>
+    $('#search-results-counter').html("<%= escape_javascript("<%= I18n.t("no_results_found") %>") %>");
+  <% end %>
+<% end %>
+
+<% if @no_dilemmas %>
+  $('#post-first-dilemma').html("<%= raw escape_javascript("#{link_to <%= I18n.t("post_first_dilemma") %>, new_dilemma_path}") %>");
+<% else %>
+  $('#post-first-dilemma').html("");
+<% end %>
+
+$(document).ready(function(){
+  initializeTimers();
+});

@@ -1,0 +1,18 @@
+.container
+  .col-md-10
+    .row
+      h1 = "#{@dilemma.title}(##{@dilemma.id})"
+    .row
+      = render partial: 'form'
+      = link_to _('Back'), super_admin_dilemmas_path
+  .col-md-2
+    - if @dilemma.deleted_at
+      .text-danger
+        h4= _('Deleted at:')
+        p= @dilemma.deleted_at
+    h4= _('User:')
+    p= @dilemma.user
+    h4= _('Created at:')
+    p= @dilemma.created_at
+    - if @dilemma.deleted_at.nil?
+      = link_to _('Remove dilemma'), super_admin_dilemma_path(@dilemma), class: 'btn btn-danger', data: { confirm: _('Are you sure?') }, method: :delete

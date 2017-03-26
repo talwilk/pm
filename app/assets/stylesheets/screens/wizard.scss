@@ -1,0 +1,10 @@
+@import "globals";
+@import "forms";
+
+.uk-panel {
+  background:#fff;
+  border:1px solid $border-color;
+  position:relative;
+  padding:20px;
+  text-align:center;
+}

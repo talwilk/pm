@@ -1,0 +1,29 @@
+#add-dilemma
+  .uk-grid.grid-first
+    .uk-width-medium-1-1
+      h2 = _("#{t('dilemma.add_new_dilemma')}")
+  .uk-grid.uk-grid-large.grid-second
+    section.uk-width-medium-7-10
+      .uk-grid
+        .uk-width-medium-1-1
+          .holder class="#{t :dir}"
+            = render partial: 'form'
+      .uk-grid
+        .button-grid
+          .uk-width-medium-1-2.uk.width-small-1-1
+            button.secondary-button.small-button form="new_dilemma" type="reset"
+              =_("#{t('dilemma.cancel')}")
+          .uk-width-medium-1-2.uk.width-small-1-1.text-align class=" #{ t :dir}"
+            button.primary-button.small-button.less-padding form="new_dilemma" type="submit"
+              = _("#{t('dilemma.save_and_publish_dilemma')}")
+    .grid-spaced.uk-visible-small
+    aside.uk-width-medium-3-10
+      .uk-grid
+        .uk-width-medium-1-1
+          h3= _("#{t('dilemma.how_to_add_dilemma')}")
+          p= _("#{t('dilemma.get_best_solutions')}")
+      - if @sample_dilemmas.present?
+        .uk-grid
+          .uk-width-medium-1-1
+            h3= _("#{t('dilemma.check_out_sample_dilemmas')}")
+            = render 'sample_dilemmas'

@@ -1,0 +1,66 @@
+-if @current_plan.nil?
+  .uk-grid
+    .uk-width-medium-1-1.uk-text-center
+      h2 = _("#{t('payment_plan_transaction.your_billing_plan')}")
+  .uk-grid.uk-grid-medium.uk-flex.uk-flex-bottom
+    .uk-width-medium-1-3.uk-width-small-1-1
+      =link_to payment_plan_transaction_path(payment_plan: 'SMALL'), id: 'small-plan', class:'link-no-hover', method: :put
+        .uk-panel.uk-panel-box.billing-plan__box
+          .uk-panel-title
+            h3.billing-plan__title = t('payment_plans.SMALL')
+          .billing-plan__content
+            .billing-plan__price
+              .uk-flex.uk-flex-nowrap.uk-flex-center
+                p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+                p.billing-plan__amount=  _("29")
+                p.billing-plan__period = _("#{t('payment_plan_transaction.week')}")
+            button.primary-button.small-button = _("#{t('payment_plan_transaction.choose_plan')}")
+    .grid-spaced-medium.uk-visible-small
+    .uk-width-medium-1-3.uk-width-small-1-1.billing-plan__medium
+      .uk-panel.uk-panel-box.billing-plan__box
+        .uk-panel-title
+          h3.billing-plan__title = t('payment_plans.MEDIUM')
+        .billing-plan__content
+          .billing-plan__price
+            .uk-flex.uk-flex-nowrap.uk-flex-center
+              p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+              p.billing-plan__amount=  _("49")
+              p.billing-plan__period = _("#{t('payment_plan_transaction.week')}")
+          =link_to payment_plan_transaction_path(payment_plan: 'MEDIUM'), id: 'medium-plan', method: :put
+            button.primary-button.small-button = _("#{t('payment_plan_transaction.choose_plan')}")
+    .grid-spaced-medium.uk-visible-small
+    .uk-width-medium-1-3.uk-width-small-1-1
+      .uk-panel.uk-panel-box.billing-plan__box
+        .uk-panel-title
+          h3.billing-plan__title = t('payment_plans.LARGE')
+        .billing-plan__content
+          .billing-plan__price
+            .uk-flex.uk-flex-nowrap.uk-flex-center
+              p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+              p.billing-plan__amount=  _("79")
+              p.billing-plan__period = _("#{t('payment_plan_transaction.year')}")
+          =link_to payment_plan_transaction_path(payment_plan: 'LARGE'), id: 'large-plan', method: :put
+            button.primary-button.small-button = _("#{t('payment_plan_transaction.choose_plan')}")
+-else
+  .uk-grid
+    .uk-width-medium-9-10.uk-text-center.uk-container-center
+      .uk-panel.uk-panel-box.billing-plan__box
+        .uk-panel-title
+          h3.billing-plan__title = t("payment_plans.#{@current_user.payment_plan}")
+        .billing-plan__content
+          .billing-plan__price
+            .uk-flex.uk-flex-nowrap.uk-flex-center
+              - if @current_user.payment_plan == "SMALL"
+                p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+                p.billing-plan__amount=  _("29")
+                p.billing-plan__period = _("#{t('payment_plan_transaction.week')}")
+              - elsif @current_user.payment_plan == "MEDIUM"
+                p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+                p.billing-plan__amount=  _("49")
+                p.billing-plan__period = _("#{t('payment_plan_transaction.week')}")
+              - elsif @current_user.payment_plan == "LARGE"
+                p.billing-plan__currency= _("#{t('payment_plan_transaction.dollar')}")
+                p.billing-plan__amount=  _("79")
+                p.billing-plan__period = _("#{t('payment_plan_transaction.year')}")
+            div
+              p.billing-plan__indication = _("#{t('payment_plan_transaction.selected_beta_customer')}")

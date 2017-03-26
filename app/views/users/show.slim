@@ -1,0 +1,89 @@
+#profile-view
+  .uk-grid
+    .uk-width-medium-8-10.uk-container-center
+      .uk-grid
+        .uk-width-medium-1-1.uk-text-center
+          = image_tag @user.profile.avatar.edit_profile, class:'profile-view__avatar'
+          h2.profile-view__username= @user.profile.full_name
+          .profile-view__rank class="rank-#{@user.level}-xs"
+          p.profile-view__level.inline= SupportedUserLevel.find(@user.level)
+          - if policy(@user.profile).edit?
+            p.profile-view__points.tooltip title="<div class='uk-clearfix uk-flex uk-flex-middle tooltip-wrap'><div class='tooltip-content'>#{_("#{t('users.common.you_need')} %{points_to_next_level} #{t('users.common.points_to_get')} %{next_level}.") % {points_to_next_level: @points_to_next_level, next_level: @next_level} }</div><div class='uk-float-right'><a href='/gamification/'><button class='primary-button small-button tooltip-button'>#{t('users.common.learn_more')}</button></a></div></div>" = @user.total_points
+          - else
+            p.profile-view__points= @user.total_points
+          p=@user.profile.category_list.map { |key| SupportedCategory.find(key).name }.join(', ')
+          .user-badges
+            .uk-grid.uk-flex.uk-flex-center
+              - if @user.best_advice_badge?
+                div
+                  div class="badge-best_advice-#{@user.best_advice_badge}-md"
+              - if @user.like_advice_badge?
+                div
+                  div class="badge-like_advice-#{@user.like_advice_badge}-md"
+              - if @user.dilemma_advices_badge?
+                div
+                  div class="badge-dilemma_advice-#{@user.dilemma_advices_badge}-md"
+              - if @user.following_badge?
+                div
+                  div class="badge-following-#{@user.following_badge}-md"
+              - if @user.followed_badge?
+                div
+                  div class="badge-followed-#{@user.followed_badge}-md"
+      .uk-grid
+        .uk-width-medium-1-1
+          - if @user.guru?
+            p.profile-view__personal-link
+              a href="#{@user.profile.website_link}" target="_blank" = @user.profile.website_link
+          - if @user.guru?
+              - if @user.profile.show_email || @user.id == current_user.id
+                p.profile-view__personal-link= @user.email
+          - elsif !@user.guru? && @user.profile.show_email
+                p.profile-view__personal-link= @user.email
+          - if @user.guru?
+            p.profile-view__personal-link= @user.profile.address
+            - if (@user.country_iso == 'RD')
+              p= I18n.t("countries.#{@user.country_iso}")
+            - else
+              p= I18n.t(@user.country_iso, :scope => :countries)
+            - if @user.profile.show_mobile_number || @user.id == current_user.id
+              p= @user.profile.mobile_number
+            p.profile-view__personal-link= @user.profile.company
+            p.profile-view__personal-link= @user.profile.mantra
+          - if @user.profile.facebook_link.present?
+            = link_to '', @user.profile.facebook_link, target:'_blank', class:'profile-view__fb'
+          - if @user.profile.google_plus_link.present?
+            = link_to '', @user.profile.google_plus_link, target:'_blank', class:'profile-view__gp'
+          - if @user.profile.twitter_link.present?
+            = link_to '', @user.profile.twitter_link, target:'_blank', class:'profile-view__tw'
+          - if @user.profile.pinterest_link.present?
+            = link_to '', @user.profile.pinterest_link, target:'_blank', class:'profile-view__pt'
+          - if @user.profile.instagram_link.present?
+            = link_to '', @user.profile.instagram_link, target:'_blank', class:'profile-view__in'
+      - if @user_dilemmas.present? || @dilemmas_with_user_advices.present?
+        .uk-grid
+          .uk-width-medium-1-1
+            .profile-view__tab-holder
+              ul.uk-subnav.uk-subnav-pill.uk-flex.uk-flex-middle data-uk-switcher="{connect:'#profile-tab-content'}"
+                li
+                  a data-uk-switcher-item="0" href=""
+                    = _("#{t('users.common.dilemmas')}")
+                    span.inline = "(#{@user_dilemmas.total_count})"
+                - if params[:redirect_from] == "advices"
+                  li.uk-active
+                    a data-uk-switcher-item="1" href=""
+                      =_("#{t('users.common.advices')}")
+                      span.inline = "(#{@dilemmas_with_user_advices.total_count})"
+                - else
+                  li
+                    a data-uk-switcher-item="1" href=""
+                      =_("#{t('users.common.advices')}")
+                      span.inline = "(#{@dilemmas_with_user_advices.total_count})"
+              ul#profile-tab-content.uk-switcher
+                li#dilemmas-pagination
+                  = render 'dilemmas'
+                  #pagination-dilemmas-links
+                    = link_to_next_page(@user_dilemmas, '', remote: true, param_name: :dilemma_page, class: 'i load-more')
+                li#advices-pagination
+                  = render 'user_advices_dilemmas'
+                  #pagination-advices-links
+                    = link_to_next_page(@dilemmas_with_user_advices, '', remote: true, param_name: :advice_page, class:'i load-more')

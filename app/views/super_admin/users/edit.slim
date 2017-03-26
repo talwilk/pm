@@ -1,0 +1,20 @@
+.container
+  .col-md-10
+    .row
+      h1
+        = @user.profile.full_name
+        small = "(#{@user.role})"
+    .row
+      = render partial: 'form'
+      = link_to _('Back'), super_admin_users_path
+  .col-md-2
+    - if @user.deleted_at
+      .text-danger
+        h4= _('Cancelled at:')
+        p=  @user.deleted_at
+    h4= _('Signed up:')
+    p=  @user.created_at
+    h4= _('Points')
+    p= @user.total_points
+    = link_to _('Grant points'), new_super_admin_user_grant_point_path(@user), class: 'btn btn-primary'
+    = link_to _('Sign in as user'), sign_in_as_user_super_admin_user_path(@user), class: 'btn btn-info', target: '_blank'

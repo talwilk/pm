@@ -1,0 +1,13 @@
+he:
+  gamification_activities:
+    advice_like: 'משהו אהב את עצתך'
+    following: 'אתה עוקב אחרי משתמש נוסף'
+    followers: 'מתשמש נוסף עוקב אחריך'
+    social_share_of_dilemma: 'חלקת דילמה עם חבריך'
+    create_dilemma: 'פירסמת דילמה חדשה'
+    create_advice: 'העצת עיצה'
+    mark_favourite_advice: 'בחרת את העיצה המועדפת'
+    create_advice_with_media: 'העצת עיצה וצרפת מדיה'
+    your_advice_marked_as_favourite: 'עצתך סומנה כעיצה המועדפת'
+    register_as_guru: 'הצטרפת לקהילת הגורואים'
+    super_admin_grant_points: 'הוענקו לך נקודות ע"י מנהל המערכת'

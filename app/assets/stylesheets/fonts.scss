@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Gotham Medium';
+  src: asset-url('GothamMedium.eot');
+  src: asset-url('GothamMedium.eot?#iefix') format('embedded-opentype'),
+    asset-url('GothamMedium.woff') format('woff'),
+    asset-url('GothamMedium.ttf') format('truetype'),
+    asset-url('GothamMedium.svg#GothamMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Bold';
+  src: asset-url('GothamBold.eot');
+  src: asset-url('GothamBold.eot?#iefix') format('embedded-opentype'),
+    asset-url('GothamBold.woff') format('woff'),
+    asset-url('GothamBold.ttf') format('truetype'),
+    asset-url('GothamBold.svg#GothamBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  src: asset-url('GothamBook.eot');
+  src: asset-url('GothamBook.eot?#iefix') format('embedded-opentype'),
+    asset-url('GothamBook.woff') format('woff'),
+    asset-url('GothamBook.ttf') format('truetype'),
+    asset-url('GothamBook.svg#GothamBook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

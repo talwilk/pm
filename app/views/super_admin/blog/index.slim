@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      h1 = _('Blog')
+      h2 = link_to 'Create new blog post', new_super_admin_blog_path
+      - @posts.each do |post|
+        p= link_to post.title, blog_post_path(post.id), :target => "_blank"
+        span= link_to _('Edit'), edit_super_admin_blog_path(post.id)
+        p= link_to _('Delete'), super_admin_blog_path(post.id), method: :delete, :data => { :confirm => 'Are you sure you want to remove post?' }
+        br

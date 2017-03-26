@@ -1,0 +1,38 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;}
+</style>
+
+<p>
+  <h3>Project - New </h3></br>
+</p>
+
+<div class="project">
+	<%= form_for(@project, :url => {:controller => 'projects', :action => 'create'}) do |p| %>
+		<td><%= p.text_field :name, required: true %></td>
+    	<td><%= p.text_area :description, :rows => 3, :required => true %></td>
+    	<td><%= p.collection_select :type_id, Type.all, :id, :name, required: true, prompt: true %></td>
+    	<td><%= p.submit "Create" %></td>
+    <% end %>
+    	<h3>Task List for project type:
+    	 <%= @project.type.name %> </h3>
+    	<table style="width:50%">
+    		<tr>
+    			<td>Phase</td>
+				<td>Code</td>
+    			<td>Name</td>
+    			<td>Duration</td>
+    			<td>Cost</td>
+    		</tr>
+	    	<%  @tasks.each do |t| %>
+	    	<tr>
+				<td><%=	t.phase %></td>
+				<td><%=	t.code %></td>
+				<td><%=	t.name %></td>
+				<td><%=	t.est_duration_min %></td>
+				<td><%=	t.est_cost_min %></td>
+			</tr>
+	  		<% end  %>
+		</table>
+</div>

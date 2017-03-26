@@ -1,0 +1,87 @@
+= content_for :for_head do
+  = render 'meta_tags_social_media_partial'
+= content_for :for_body do
+  .fb-root
+.uk-grid.uk-grid-large
+  section.uk-width-medium-7-10
+    .uk-grid
+      .uk-width-medium-1-1
+        .uk-grid
+          .uk-width-medium-1-1
+            article.dilemma-item
+              .dilemma-item__header class = "#{ t :dir}"
+                .dilemma-item__share.uk-vertical-align data-uk-modal="{target:'#share-modal'}"
+                  .share-icon.uk-vertical-align-middle
+                  = render 'share_modal'
+                .dilemma-item__timer
+                  div.dilemma-item__remaining data-server="#{@dilemma.ends_at}" translation= "#{t('dilemma.closed_dilemma')}" days= "#{t('dilemma.days')}" hours= "#{t('dilemma.hours')}" minutes= "#{t('dilemma.minutes')}" remaining= "#{t('dilemma.to_go')}"
+              .dilemma-item__content
+                .dilemma-item__category
+                  = @dilemma.category_list.map { |key| SupportedCategory.find(key).name }.join(', ')
+                h2.dilemma-item__title= @dilemma.title
+                p.dilemma-item__description= @dilemma.description.html_safe
+                - if policy(@dilemma).signed_user?
+                  - if policy(@dilemma).edit?
+                    p= link_to _("#{t('dilemma.edit_dilemma')}"), edit_dilemma_path, id: 'edit_dilemma_link'
+                    p= link_to _("#{t('dilemma.remove_dilemma')}"), dilemma_path, method: :delete, id: 'remove_dilemma_link', :data => { :confirm => "#{t('dilemma.confirm_remove_dilemma')}" }
+              .dilemma-item__media
+                - if @dilemma.media.first != nil
+                  #slide-status 
+                    .currentItem
+                      .result
+                    span = _("/")
+                    .owlItems
+                      .result
+                  .owl-carousel.owl-theme class= "#{ t :dir}"
+                    - @dilemma.media.each do |media|
+                      - if !media.file.blank?
+                        div
+                          = responsive_image_tag media.file, class: 'responsive'
+                          - if media.media_description.present?
+                            .dilemma-item__media-description
+                              p= media.media_description
+                      - if !media.youtube_url.blank?
+                        div
+                          = render 'youtube_video', media: media
+                          - if media.media_description.present?
+                            .dilemma-item__media-description
+                              p= media.media_description
+        .uk-grid.uk-grid-small
+          .uk-width-medium-1-1
+            #add-dilemma-advice-form
+              - if policy(@dilemma).signed_user?
+                - if policy(@dilemma).add_advice?
+                  = render 'dilemma_advice_form'
+              - else
+                = render 'dilemma_advice_form'
+        - if @dilemma.favorite_dilemma_advice.present?
+          .uk-grid
+            .uk-width-medium-1-1
+              = render 'favorite_advice'
+        - else
+          - if @dilemma.user == current_user && @dilemma.favorite_advice_ends_at > Time.zone.now
+           .mark-indicator
+            = image_tag("mark-advice.png", alt: "#{t('dilemma.mark_advice_as_favourite')}", class: "mark-advice-icon")
+            span = _("#{t('dilemma.mark_solution_favourite')}")
+        - if @dilemma.advices.present?
+          .uk-grid.uk-grid-small
+            .uk-width-medium-1-1
+              = render 'dilemma_advices'
+        -if @same_category_dilemmas.present?
+          .uk-grid
+            .uk-width-medium-1-1
+              h3= _("#{t('dilemma.similar_dilemmas')}")
+              .uk-grid.uk-grid-medium data-uk-grid-match="{target:'.uk-panel'}"
+                = render 'similar_dilemmas'
+  .grid-spaced.uk-visible-small
+  aside.uk-width-medium-3-10
+    - if @user_dilemmas.size >= 1
+      h3
+        = _("#{t('dilemma.look_additional_dilemmas')}")
+        span = @dilemma.user.profile.full_name
+      = render 'other_dilemmas_by_same_user'
+    h3= _("#{t('dilemma.radar')}")
+    p= _("#{t('dilemma.found_for_you')}")
+    = render 'radar'
+  .grid-spaced.uk-visible-small
+= render 'javascripts_social_media_partial'

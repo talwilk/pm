@@ -1,0 +1,111 @@
+@import "globals";
+
+.profile-view {
+  &__avatar {
+    margin:0 auto;
+    text-align:center;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit: cover;
+  }
+  &__username {
+    margin-top:15px!important;
+    color:$main-font-color;
+    font-family:$regular;
+    font-size:18px;
+    padding-bottom:10px;
+  }
+  &__rank {
+    display:inline-block;
+    margin-right:10px;
+    margin-left: 10px;
+    vertical-align: top;
+  }
+  &__level {
+    display:inline-block;
+    margin:5px 0;
+    font-family:$book;
+    font-size:18px;
+    color:$brand-color;
+  }
+  &__points {
+    margin:10px 0;
+    font-family:$regular;
+    font-size:18px;
+    color:$main-font-color;
+  }
+  &__personal-link {
+    font-size:14px;
+  }
+}
+
+.profile-view__tab-holder {
+  background: #fff;
+  border: 1px solid #D3D9E9;
+  @include r(phone-max) {
+    margin-left:-11px;
+    margin-right:-11px;
+  }
+  .dashboard-dilemma-item {
+    @include r(phone-max) {
+      margin-left: -30px;
+      margin-right: -31px;
+    }
+  }
+  span.inline {
+    padding-left:4px;
+  }
+  #load-more-link-container {
+    margin:35px;
+  }
+}
+
+#profile-tab-content {
+  padding:30px;
+}
+
+#pagination-dilemmas-links,  #pagination-advices-links {
+  margin:20px 0 auto;
+  text-align:center;
+}
+
+.profile-view__fb {
+  display: inline-block;
+  background: asset-url('fb-profile.png') no-repeat;
+  width:24px;
+  height:24px;
+  margin-right:20px;
+}
+
+.profile-view__gp {
+  display: inline-block;
+  background: asset-url('gp-profile.png') no-repeat;
+  width:33px;
+  height:21px;
+  margin-right:20px;
+}
+
+.profile-view__tw {
+  display: inline-block;
+  background: asset-url('tw-profile.png') no-repeat;
+  width:26px;
+  height:22px;
+  margin-right:20px;
+}
+
+.profile-view__pt {
+  display: inline-block;
+  background: asset-url('pt-profile.png') no-repeat;
+  width:26px;
+  height:26px;
+  margin-right:20px;
+}
+
+.profile-view__in {
+  display: inline-block;
+  background: asset-url('in-profile.png') no-repeat;
+  width:25px;
+  height:25px;
+}
+

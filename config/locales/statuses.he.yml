@@ -1,0 +1,5 @@
+he:
+  statuses:
+    not_started: 'לא התחיל'
+    in_progress: 'בעבודה'
+    completed: 'הסתיים'

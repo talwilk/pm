@@ -1,0 +1,22 @@
+doctype html
+html dir= "#{t :dir}" lang= "#{params[:locale] }"
+  head
+    title #{t('title')}
+    = favicon_link_tag 'favicon.png', type: 'image/png'
+    = stylesheet_link_tag 'landing', media: 'all'
+    = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"
+  body dir= "#{t :dir}" lang= "#{params[:locale] }"
+    = javascript_include_tag 'landing'
+    = yield
+    #privacy-policy.uk-modal dir= "ltr"
+      .uk-modal-dialog
+        a.uk-modal-close.uk-close
+        div style="padding-top:25px;"
+          = render 'landing/privacy_policy'
+
+    #terms-conditions.uk-modal
+      .uk-modal-dialog
+        a.uk-modal-close.uk-close
+        div style="padding-top:25px;"
+          = render 'landing/terms_conditions'

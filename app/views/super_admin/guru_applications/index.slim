@@ -1,0 +1,61 @@
+.container
+  h1= _('Guru Applications')
+  .row
+    = form_tag super_admin_guru_applications_path, method: :get do
+      .col-md-3
+        = text_field_tag :search, params[:search], placeholder: 'Search for...'
+      .col-md-3
+        = select_tag :guru_app_filter, options_for_select([['Pending', 'pending'], ['Being reviewed', 'being_reviewed'], ['Accepted', 'accepted'], ['Rejected', 'rejected']], params[:guru_app_filter]), :prompt => 'All'
+      .col-md-3
+        = select_tag :sort_by, options_for_select([['Oldest', 'oldest'], ['Last name A-Z', 'last_name_a_z'], ['Last name Z-A', 'last_name_z_a']], params[:sort_by]), :prompt => 'Newest'
+      .col-md-3
+        = submit_tag _('Search'), title: nil, class: 'btn'
+  .row
+    h1#search-results-counter
+      - if @guru_applications.total_count == 0
+        = _('No results found')
+      - else
+        = "Search results: (#{@guru_applications.total_count})"
+  .table-responsive
+    table.table.table-condensed.table-hover
+      thead
+        tr
+          th= _('Full Name')
+          th= _('Signed up at')
+          th= _('Sign up way')
+          th= _('Country')
+          th= _('User type')
+          th= _('Application status')
+          th= _('Last update time')
+          th= _('Application is reviewed by')
+          th= _('Actions')
+      tbody
+        - @guru_applications.each do |guru_application|
+          tr
+            td= link_to guru_application.user.profile.full_name, super_admin_guru_application_path(guru_application)
+            td= guru_application.created_at.strftime("%d-%m-%Y")
+            td= guru_application.user.signup_way.camelize
+            - if (guru_application.user.country_iso == 'RD')
+              td= I18n.t("countries.#{guru_application.user.country_iso}")
+            - else
+              td= I18n.t(guru_application.user.country_iso, :scope => :countries)
+            td= guru_application.user.role.camelize
+            td
+              - if guru_application.pending?
+                = _('Pending')
+              - elsif guru_application.being_reviewed?
+                = _('Being reviewed')
+              - elsif guru_application.rejected?
+                = _('Rejected')
+              - elsif guru_application.accepted?
+                = _('Accepted')
+            td= guru_application.updated_at
+            td= guru_application.reviewer if guru_application.reviewer_id
+            td
+              = link_to _('Show'), super_admin_guru_application_path(guru_application), class: 'btn btn-sm btn-primary'
+              - if guru_application.pending?
+                = link_to _('Review'), start_guru_application_review_super_admin_guru_application_path(guru_application), method: :patch, class: 'btn btn-sm btn-warning'
+              - if guru_application.being_reviewed?
+                = link_to _('Reject'), reject_guru_application_super_admin_guru_application_path(guru_application), method: :patch, class: 'btn btn-sm btn-danger'
+                = link_to _('Accept'), accept_guru_application_super_admin_guru_application_path(guru_application), method: :patch, class: 'btn btn-sm btn-success'
+  = paginate @guru_applications

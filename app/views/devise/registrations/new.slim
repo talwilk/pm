@@ -1,0 +1,46 @@
+.uk-grid
+  .uk-width-medium-4-5.uk-align-center
+    .devise-wrapper.custom
+      h2.uk-text-center
+        = _("#{t('devise.registrations.welcome_dilemma')}")
+      .holder
+        .uk-grid.uk-grid-divider
+          .uk-width-medium-1-2
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = f.error_notification
+              .uk-form
+                .uk-form-row
+                  = f.input :email, label: _("#{t('devise.registrations.email')}"), required: true, autofocus: true
+                .uk-form-row
+                  = f.input :password, label: _("#{t('devise.registrations.password')}"), required: true, hint: (_("#{@minimum_password_length} #{t('devise.registrations.minimum_characters')}") if @minimum_password_length)
+              .form-actions
+                = f.button :submit, _("#{t('devise.registrations.sign_up')}"), class:'primary-button medium-button block-button-xs'
+              .uk-grid
+                .uk-width-medium-3-4.uk-width-small-1-1
+                  .terms-and-conditions
+                    p
+                      = _("#{t('devise.registrations.acknowledgements_and_agreements')}")
+                    a href="#terms-conditions" data-uk-modal=""
+                      = _("#{t('devise.registrations.terms_conditions')}")
+                    p
+                      = _("#{t('devise.registrations.and')}")
+                    a href="#privacy-policy" data-uk-modal=""
+                      = _("#{t('devise.registrations.privacy_policy')}")
+          .uk-width-medium-1-2.social-login-holder
+            = render "devise/shared/social_login"
+        .uk-grid.sign-up-bottom
+          .uk-width-medium-1-1
+            hr
+            .uk-text-center
+              = render "devise/shared/links"
+#privacy-policy.uk-modal
+  .uk-modal-dialog
+    a.uk-modal-close.uk-close
+    div style="padding-top:25px;"
+      = render 'landing/privacy_policy'
+
+#terms-conditions.uk-modal
+  .uk-modal-dialog
+    a.uk-modal-close.uk-close
+    div style="padding-top:25px;"
+      = render 'landing/terms_conditions'

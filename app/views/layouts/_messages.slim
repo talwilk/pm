@@ -1,0 +1,11 @@
+- flash.each do |name, msg|
+  - if name == 'confirmed'
+  - elsif name == 'free_user'
+  - elsif name == 'payment'
+  - elsif name == 'gamification'
+    = content_tag :div, msg, :id => "flash_gamification", class:'gamification-notice tooltip', :"title" => "#{msg}"
+  - else msg.is_a?(String)
+    div class=("uk-alert uk-alert-#{name.to_s == 'notice' ? 'success' : 'danger'}") data-uk-alert=""
+      a.uk-alert-close.uk-close href=""
+      = content_tag :div, msg, id: "flash_#{name}"
+

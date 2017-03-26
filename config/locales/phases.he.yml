@@ -1,0 +1,14 @@
+he:
+  phases:
+    01_goals: 'הצבת יעדים'
+    02_finance: 'מימון'
+    03_purchase: 'רכישה'
+    04_design: 'תיכנון'
+    05_license: 'רישוי'
+    06_detailed_design: 'תיכנון מפורט'
+    08_choose_constructor: 'בחירת קבלן'
+    10_build_skeleton: 'בניה - שלד'
+    11_build_gmar: 'בניה - גמרים'
+    15_shelter: 'ממד'
+    18_development: 'פיתוח'
+    20_completion: 'סיום'

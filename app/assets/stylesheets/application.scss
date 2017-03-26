@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+
+ *= require jquery.countdown
+ *= require select2
+ *= require select2-bootstrap
+ *= require avatar_upload
+ *= require user_profile
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
+ *= require froala-custom
+ *= require plugins/char_counter.min
+ *= require plugins/emoticons.min.css
+ *= require uikit
+ *= require uikit/components/tooltip
+ *= require uikit/components/progress
+ *= require tooltipster.bundle.min
+ *= require owl.carousel
+ *= require owl.theme
+ *= require carousel
+ *= require fonts
+ *= require globals
+ *= require sprite
+ *= require tabs
+ *= require tooltip
+ *= require buttons
+ *= require forms
+ *= require select
+ *= require checkbox
+ *= require tables
+ *= require devise/shared
+ *= require alerts
+ *= require progress
+ *= require helpers
+ *= require navigation
+ *= require modals
+ *= require_tree ./screens
+ *= require main
+ *= require footer
+ *= require font-awesome
+ */

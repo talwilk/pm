@@ -1,0 +1,14 @@
+doctype html
+html dir= "#{t :dir}" lang= "#{params[:locale] }"
+  head
+    title #{t('title')}
+    = favicon_link_tag 'favicon.png', type: 'image/png'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"
+  body dir= "#{t :dir}" lang= "#{params[:locale] }"
+    = render partial: 'layouts/messages'
+    .uk-container.uk-container-center
+      = yield
+    == rjv_tags
+    = javascript_include_tag 'application'

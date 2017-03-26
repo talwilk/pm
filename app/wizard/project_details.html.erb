@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag "forms" %>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "project.js" %>
+<% end %>
+
+<body>
+	<div id="guru-registration">
+		<div class="uk-grid">
+			<div class="uk-container-center">
+				<div class="uk-text-center">
+					<h4 id="project_header"><%= _("#{t('wizard.project_cong_1')}") %></h4>
+					<h2><%= _("#{t('wizard.project_cong_2')}") %></h2>
+				</div>
+				<div class="uk-panel-space"></div>
+				<div class="uk-grid uk-width-medium-1-1 holder"><%= simple_form_for(@project, :url => projects_path, :method => :update) do |f| %>
+						<%= f.input :name, label: _("#{t('create_project.l_name')}") %>
+						<%= f.input :build, label: _("#{t('create_project.l_lot')}"), placeholder: _("#{t('create_project.size_hint')}") %>
+						<%= f.input :orig_budget, label: _("#{t('create_project.l_budget')}") , placeholder: _("#{t('create_project.cur_hint')}") %>
+						<%= puts " **** signin #{@provide_signin_info}" %>
+						<% if @provide_signin_info %>
+							<%= f.input :email, label: _("#{t('create_project.l_email')}") %>
+						<% end %>
+						<%= f.input :address, label: _("#{t('create_project.l_address')}") %>
+						<%= f.input :plot, label: _("#{t('create_project.l_plot')}") , placeholder: _("#{t('create_project.size_hint')}") %>
+
+						<div class="button-grid" hidden="true">
+							<div class="secondery-button mini-button" id="projects-details-button" hidden="true">
+							<%= link_to _("#{t('create_project.l_more')}") %></div>
+						</div>
+
+						<div id="additional_info">
+							<div  id = "datepicker" hidden="true"><%= f.input :orig_start_date, as: :date, order: [:day, :month, :year] %></div>
+							<div hidden="true"><%= f.input :qna_id, label: "qan id /// to hide" %><%= f.input :type_id, label: _("#{t('create_project.l_project_type')}") %></div>
+						</div>
+
+						<div class="uk-align-left uk-margin-large">
+							<%= f.submit _("#{t('common.submit')}"), class:'primary-button mini-button' %>
+						</div>
+					<% end %>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>

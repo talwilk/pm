@@ -1,0 +1,18 @@
+# DO NOT CHANGE THIS FILE, EDIT CONFIGURATIONS AT application.yml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: dilemma_guru_dev
+  host: localhost
+  username: postgres
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+test:
+  <<: *default
+  database: <%= ENV['DATABASE_DATABASE'] %>
+production:
+  <<: *default
+# DO NOT CHANGE THIS FILE, EDIT CONFIGURATIONS AT application.yml

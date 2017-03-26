@@ -1,0 +1,5 @@
+h1= _('Grant points for %{user_full_name}') % { user_full_name: @user.profile.full_name }
+= simple_form_for @grant_user_points_form, url: super_admin_user_grant_points_path, method: :post  do |f|
+  = f.input :points_amount
+  = f.input :super_admin_granted_points_description
+  = f.submit 'Grant points', class: 'btn btn-primary'

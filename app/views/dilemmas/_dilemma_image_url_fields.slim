@@ -1,0 +1,8 @@
+.nested-fields.uk-width-medium-1-3.uk-animation-fade
+  div
+    .uk-hidden
+      = f.input :image_url, readonly: true
+    = image_tag '', id: 'img_url_upload', size: '300'
+    = f.input :media_description, as: :text, label: false, placeholder: _("#{t('dilemma.enter_media_description')}")
+    = link_to_remove_association _("#{t('dilemma.remove')}"), f, class:'remove-media'
+

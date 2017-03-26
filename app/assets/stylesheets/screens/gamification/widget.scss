@@ -1,0 +1,28 @@
+@import "globals";
+
+.gamification-widget {
+  position:relative;
+  border:1px solid $border-color;
+  background:#fff;
+  padding:20px;
+  &__current-points {
+    font-family:$bold;
+    display:inline;
+  }
+  &__current-rank {
+    background:asset-url('gamification-widget-active-bg');
+    width:31px;
+    height:43px;
+    padding:2px;
+  }
+  &__rank {
+    margin-left:6px;
+    margin-right: 6px
+  }
+  &__next-level {
+    color:#932b5b;
+    padding-left:6px;
+    padding-right:6px;
+  }
+}
+

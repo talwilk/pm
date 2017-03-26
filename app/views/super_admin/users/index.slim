@@ -1,0 +1,54 @@
+.container
+  h1= _('Users & Gurus')
+  .row
+    = form_tag super_admin_users_path, method: :get do
+      .col-md-3
+        = text_field_tag :search, params[:search], placeholder: 'Search for...'
+      .col-md-3
+        = select_tag :user_country_filter, options_for_select(Country.where(country_iso: User.group(:country_iso).pluck(:country_iso)).map{|c| [c.to_s, c.country_iso]}, params[:user_country_filter]), :prompt => 'All'
+      .col-md-2
+        = select_tag :user_type_filter, options_for_select([['Regular user', 'user'], ['Guru', 'guru']], params[:user_type_filter]), :prompt => 'All'
+      .col-md-2
+        = select_tag :sort_by, options_for_select([['Oldest', 'oldest'], ['Last name A-Z', 'last_name_a_z'], ['Last name Z-A', 'last_name_z_a']], params[:sort_by]), :prompt => 'Newest'
+      .col-md-1
+        = submit_tag _('Search'), title: nil, class: 'btn'
+  .row
+    h1#search-results-counter
+      - if @users.total_count == 0
+        = _('No results found')
+      - else
+        = "Search results: (#{@users.total_count})"
+  .table-responsive
+    table.table.table-condensed.table-hover
+      thead
+        tr
+          th= _('Email')
+          th= _('Full Name')
+          th= _('Signed up at')
+          th= _('Sign up way')
+          th= _('Country')
+          th= _('User type')
+          th= _('Points')
+          th= _('Actions')
+      tbody
+        - @users.each do |user|
+          tr
+            td
+              - if user.deleted_at.nil?
+                = user.email
+              - else
+                .text-danger = user.email
+            td= link_to user.profile.full_name, edit_super_admin_user_path(user)
+            td= user.created_at.strftime("%d-%m-%Y")
+            td= user.signup_way.camelize
+            - if (user.country_iso == 'RD')
+              td= I18n.t("countries.#{user.country_iso}")
+            - else
+              td= I18n.t(user.country_iso, :scope => :countries)
+            td= user.role.camelize
+            td= user.total_points
+            td
+              = link_to _('Edit'), edit_super_admin_user_path(user), class: 'btn btn-sm btn-primary'
+              - if !user.deleted?
+                = link_to _('Delete'), super_admin_user_path(user), method: :delete, class: 'btn btn-sm btn-primary'
+  = paginate @users
