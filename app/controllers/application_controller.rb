@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u|
+    devise_parameter_sanitizer.permit(:sign_up) do |u|
       sanitized_params = %i(
         email
         experience
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
       u.permit(sanitized_params)
     end
 
-    devise_parameter_sanitizer.for(:account_update) do |u|
+    devise_parameter_sanitizer.permit(:account_update) do |u|
       sanitized_params = %i(
         email
         experience
