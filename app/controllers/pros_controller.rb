@@ -88,15 +88,15 @@ private
   	#end
 
 	def send_pro_invitation_email
-		puts "*** Sending Pro inviation Email..."
+		puts "!!! In COMMENT - NOT Sending Pro inviation Email..."
 
 		#@form = ProInvitationForm.new(invitation_params)
 
-	    if UserMailer.pro_invitation_email(@pro).deliver_now
-	    	puts "Pro Email sent"
-	    else
-	    	puts "ERROR in sending Pro email"
-	    end
+	    #if UserMailer.pro_invitation_email(@pro).deliver_now
+	    #	puts "Pro Email sent"
+	    #else
+	    #	puts "ERROR in sending Pro email"
+	    #end
 	end
 
 end
