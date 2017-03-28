@@ -127,7 +127,7 @@
 												<%= _("#{t('common.hint_cur')}") %>
 											</br></p>
 											<p id = "show_notes"><%= _("#{t('task.notes')}") %>
-											<%=  text_area_tag ':x.notes' %></p>
+											<%=  x.notes %></p>
 											<p>
 												<i><%=	link_to _("#{t('common.edit')}") , edit_project_task_path(@project,x) %></></i>
 											 | <i><%=	link_to _("#{t('common.delete')}"), project_task_path(@project, x), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i>

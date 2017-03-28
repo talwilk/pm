@@ -29,8 +29,7 @@ en:
       guru_confirm_with_free_dilemma:
         subject: "Quality control. Pesky but necessary."
         welcome: "%{user},"
-        content_1: "We hear that you want to become a Dilemma Guru. This can be a daunting and grueling journey. Just kidding! We try to make it as easy and pain free as possible! We do have to give you a bit of a test run, but it’s worth it!
-                    There is a wealth of new clientele just waiting to learn from you."
+        content_1: "We hear that you want to become a Dilemma Guru. This can be a daunting and grueling journey. Just kidding! We try to make it as easy and pain free as possible! We do have to give you a bit of a test run, but it’s worth it! There is a wealth of new clientele just waiting to learn from you."
         content_2: "We like to ensure the quality of our experts, so we personally evaluate each and every Guru. If you would like to make the process go a little faster, go ahead and post some advice on the site for us to review. Otherwise, you will hear back from our team within 5 business days."
         content_3: "While your application is being reviewed, feel free to explore the Dilemma Guru site and see what we’re all about."
         content_4_html: "While you wait, %{href} a dilemma solution - on us!"
@@ -192,5 +191,5 @@ en:
         content: "We're gald to inform you that you were add to Dilemma Guru! you can see the details"
         link_href: "in this link"
         subject: "Someone told us you're expert!"
-      super_admin_mailer:
-        new_person_wants_to_be_a_guru: "New person wants to be a Guru!"
+    super_admin_mailer:
+      new_person_wants_to_be_a_guru: "New person wants to be a Guru!"

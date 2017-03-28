@@ -83,7 +83,7 @@ before_action :get_project, only: [:create, :new]
 
  	private
  	def task_params
-       	params.require(:task).permit(:code, :name, :phase, :description, :duration, :cost, :status, :est_duration_min, :est_duration_max, :est_cost_min, :est_cost_max, :category, :predecessor, :manual_ind, :ptype, :project_id, :pro_id, pro_attributes:[:id, :first_name, :last_name, :company_name, :email, :mobile_phone, :phone, :project_id]) 
+       	params.require(:task).permit(:code, :name, :phase, :description, :duration, :cost, :status, :est_duration_min, :est_duration_max, :est_cost_min, :est_cost_max, :category, :predecessor, :manual_ind, :ptype, :notes, :project_id, :pro_id, pro_attributes:[:id, :first_name, :last_name, :company_name, :email, :mobile_phone, :phone, :project_id]) 
   	end
  	
   	def get_ranges
