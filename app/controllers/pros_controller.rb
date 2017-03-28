@@ -22,13 +22,13 @@ def new
 end
 
 def create
-		puts "***    In Tasks#create"
+		puts "***    In Pro#create"
 		@pro = Pro.new(session[:pro_id])
 		@pro.project_id = params[:project_id]
 		#puts " **   task_id : #{params[:task_id]}"	
 		session[:pro]=@pro.attributes
 		@temp = @pro.company_name
-		puts "$$$$ pro id #{@temp}"
+		#puts "$$$$ pro id #{@temp}"
 		if @pro.company_name.to_i > 0
 			@task.pro_id = @pro.company_name.to_i
 			@task.save!
