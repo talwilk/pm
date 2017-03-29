@@ -2,7 +2,7 @@ class GuruRegistrationForm
   include ActiveModel::Model
   include ActiveModel::Serialization
 
-  attr_accessor :email, :password, :username, :ip_address, :first_name, :last_name, :address, :mobile_number, :mantra, :category_list, :experience
+  attr_accessor :email, :password, :username, :ip_address, :first_name, :last_name, :address, :mobile_number, :mantra, :category_list, :experience, :role
 
   validate :validate_email_uniqueness
   validate :validate_user
@@ -24,7 +24,8 @@ class GuruRegistrationForm
       password: password,
       signup_way: 'guru',
       username: username,
-      registration_ip_address: ip_address
+      registration_ip_address: ip_address,
+      role: 'guru'
     }
   end
 
@@ -75,7 +76,8 @@ class GuruRegistrationForm
       last_name: nil,
       address: nil,
       mobile_number: nil,
-      mantra: nil
+      mantra: nil,
+      role: nil
     }
   end
 
