@@ -32,6 +32,7 @@ class GuruRegistrationsController < ApplicationController
       :mobile_number,
       :mantra,
       :experience,
+      :role,
       category_list: []
     )
   end
