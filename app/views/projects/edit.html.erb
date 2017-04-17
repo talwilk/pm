@@ -11,21 +11,21 @@
 				<h2><%=  %></h2></br>
 			</div>
 			
-			<div class="uk-grid">
+			<div class="uk-grid uk-width-medium-1-1 holder">
 				<%= simple_form_for(@project, :url => {:controller => 'projects', :action => 'update'}) do |f| %>
 						<%= f.input :name, label: _("#{t('project.name')}") %>
 						<%= f.label _("#{t('project.type')}") %>
-						<%= f.collection_select :type_id, Type.all, :id, :name, prompt: true %>
+						<!-- <%= f.collection_select :type_id, Type.all, :id, :name, prompt: true %> -->
 						<%= f.input :description, label: _("#{t('project.description')}") %>
 						<%= f.input :plot, label: _("#{t('project.plot')}") %>
 						<%= f.input :build, label: _("#{t('project.lot')}") %>
 						<!-- f.date_select :orig_start_date, label: _("#{t('project.start_date')}") -->
-						<div class="uk-text-left">
-								<%= f.button :submit, _("#{t('dilemma.icon_common.update')}"), class:'primary-button mini-button' %>	
+						<div class="uk-align-left uk-margin-large">
+							<%= f.button :submit, _("#{t('dilemma.icon_common.update')}"), class:'primary-button mini-button' %>
+							<%= link_to _("#{t('common.back')}"), project_path(@project) %></br>	
 						</div>
 				<% end %>
 				</br>
-				<%= link_to _("#{t('common.back')}"), project_path(@project) %></br>
 			</div>
 		</div>
 	 </div>
