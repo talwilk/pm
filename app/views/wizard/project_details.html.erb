@@ -14,14 +14,14 @@
 				<div class="uk-panel-space"></div>
 				<div class="uk-grid uk-width-medium-1-1 holder"><%= simple_form_for(@project, :url => projects_path, :method => :update) do |f| %>
 						<%= f.input :name, label: _("#{t('create_project.l_name')}") %>
-						<%= f.input :build, placeholder: _("#{t('create_project.size_hint')}"), label: _("#{t('create_project.l_lot')}") %>
-						<%= f.input :orig_budget, label: _("#{t('create_project.l_budget')}") , placeholder: _("#{t('create_project.cur_hint')}") %>
+						<%= f.input :build, placeholder: "גודל במר", label: _("#{t('create_project.l_lot')}") %>
+						<%= f.input :orig_budget, label: _("#{t('create_project.l_budget')}") , placeholder: "מחיר בשקלים" %>
 						<%= puts " **** signin #{@provide_signin_info}" %>
 						<% if @provide_signin_info %>
 							<%= f.input :email, label: _("#{t('create_project.l_email')}") %>
 						<% end %>
 						<%= f.input :address, label: _("#{t('create_project.l_address')}") %>
-						<%= f.input :plot, label: _("#{t('create_project.l_plot')}") , placeholder: _("#{t('create_project.size_hint')}") %>
+						<%= f.input :plot, label: _("#{t('create_project.l_plot')}") , placeholder: "גודל במר" %>
 						<div class="button-grid" hidden="true">
 							<div class="secondery-button mini-button" id="projects-details-button" hidden="true">
 							<%= link_to _("#{t('create_project.l_more')}") %></div>
