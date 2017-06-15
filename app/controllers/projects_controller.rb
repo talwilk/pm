@@ -154,7 +154,10 @@ class ProjectsController < ApplicationController
 			@task.category =t.category
 			@task.predecessor =t.predecessor
 			@task.status =t.status
-			@task.task_tips = t.task_tips
+			puts "*** tips #{t.task_tips}"
+			if !t.task_tips.nil?
+				@task.task_tips = t.task_tips.gsub! '|', '"'
+			end
 			@task.recommend = t.recommend
 			@task.start_date = @project.orig_start_date
 			@task.cur_start_date = @project.orig_start_date

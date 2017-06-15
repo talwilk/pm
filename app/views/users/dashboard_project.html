@@ -48,12 +48,11 @@
 						<th class="uk-width-1-10"></th>
 						<th class="uk-width-2-10 uk-text-right">
 							<%= _("#{t('project.tasks')}") %></th>
-						<th class="uk-width-1-10 uk-text-right">
-							<%= _("#{t('project.end_date')}") %></th>
+						<th class="uk-width-1-10 uk-text-right"></th>
 						<th class="uk-width-2-10 uk-text-right">
 							<%=  _("#{t('project.cost')}") %></th>
 						<th class="uk-width-2-10"></th>
-						<th class="uk-width-1-10"></th>
+						<th class="uk-width-1-10"><%= _("#{t('project.pro')}") %></th>
 						<th class="uk-width-1-10"></th>
 					</tr>
 					<tr  class="table_header uk-h3">
@@ -61,8 +60,7 @@
 						<th class="uk-width-2-10 uk-text-right">
 							<%= @complete_task_count %> /
 							<%= @task_count %> </th>
-						<th class="uk-width-1-10 uk-text-right">
-							<%= @total_end_date %></th>
+						<th class="uk-width-1-10 uk-text-right"></th>
 						<th class="uk-width-2-10 uk-text-right">
 							<%= @total_cost %> / 
 							<%= @total_paid %> 
@@ -92,6 +90,7 @@
 		  									<%= if (!x.cost.nil?) then x.cost else "0" end %>
 		  									<%= "/" %>
 		  									<%= if (!x.paid.nil?) then x.paid else "0" end %>
+		  									<%= _("#{t('common.hint_cur')}") %>
 		  								<% end %>
 	  								</td>
 									<td class="uk-width-2-10 uk-text-right" id="create_pro"><%=	if !x.pro.nil? then 
