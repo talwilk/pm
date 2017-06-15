@@ -26,7 +26,7 @@ t99 = Type.create( code: 'Error', name: 'Error', description: 'Error')
 
 # puts "There are now #{Taskindex.count} rows in the Taskindex table"
 
-# csv_text = File.read(Rails.root.join('lib', 'seeds', 'task_list_notepad.csv'))
+# csv_text = File.read(Rails.root.join('lib', 'seeds', 'task_db.csv'))
 # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-8')
 # csv.each do |row|
 
@@ -34,15 +34,15 @@ t99 = Type.create( code: 'Error', name: 'Error', description: 'Error')
 #   t.code = row['code']
 #   t.phase = row['phase']
 #   t.name = row['name']
-#   t.category = row['category_code']
+#   t.category = row['category']
 #   t.description = row['description']
 #   t.recommend = row['recommendations']
-#   t.est_duration_min = row['duration_low']
-#   t.est_duration_max = row['duration_high']
-#   t.est_cost_min = row['cost_low']
-#   t.est_cost_max = row['cost_high']
-#   t.ptype = row['type']
-#   t.task_tips = row['tip']
+#   t.est_duration_min = row['est_duration_min']
+#   t.est_duration_max = row['est_duration_max']
+#   t.est_cost_min = row['est_cost_min']
+#   t.est_cost_max = row['est_cost_max']
+#   t.ptype = row['ptype']
+#   t.task_tips = row['task_tips']
 #   t.status = "not_started"
 #   t.save
 #   puts "#{t.code}, #{t.name} saved"
