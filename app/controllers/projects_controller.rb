@@ -153,7 +153,7 @@ class ProjectsController < ApplicationController
 			@task.est_cost_max =t.est_cost_max
 			@task.category =t.category
 			@task.predecessor =t.predecessor
-			@task.status =t.status
+			@task.status = 'not_started'
 			puts "*** tips #{t.task_tips}"
 			if !t.task_tips.nil?
 				@task.task_tips = t.task_tips.gsub! '|', '"'
