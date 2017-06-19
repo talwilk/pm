@@ -5,14 +5,14 @@
 		<p class="uk-text-right"><%= _("#{t('wizard.q1_welcome')}") %></p></br>
 		<table>
 			<tr>
-				<td class="uk-width-1-3"><%= link_to image_tag("wizard/pm_house_blue.png"), next_wizard_path(:q => '2'), method: :put %></td>
+				<td class="uk-width-1-3"><%= link_to image_tag("wizard/pm_house_blue.png"), next_wizard_path(:q => '2', :qna_id => @qna_id), method: :put %></td>
 				<td class="uk-width-1-3"> <%= _("#{t('wizard.or')}") %></td>
-				<td class="uk-width-1-3"><%= link_to image_tag("wizard/pm_apartment_blue.png"), next_wizard_path(:q => '1'), method: :put %></td>
+				<td class="uk-width-1-3"><%= link_to image_tag("wizard/pm_apartment_blue.png"), next_wizard_path(:q => '1', :qna_id => @qna_id), method: :put %></td>
 			</tr>
 			<tr>
-				<td class="uk-width-1-3"><%= link_to @A2, next_wizard_path(:q => '2'), method: :put %> </td>
+				<td class="uk-width-1-3"><%= link_to @A2, next_wizard_path(:q => '2', :qna_id => @qna_id), method: :put %> </td>
 				<td class="uk-width-1-3"></td>
-				<td class="uk-width-1-3"><%= link_to @A1, next_wizard_path(:q => '1'), method: :put %></td>
+				<td class="uk-width-1-3"><%= link_to @A1, next_wizard_path(:q => '1', :qna_id => @qna_id), method: :put %></td>
 			</tr>
 		</table>
 		<div class="uk-text-right"><%= link_to _("#{t('common.skip')}"), wizard_path(:project_details) %></div>

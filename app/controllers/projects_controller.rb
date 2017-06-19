@@ -154,7 +154,6 @@ class ProjectsController < ApplicationController
 			@task.category =t.category
 			@task.predecessor =t.predecessor
 			@task.status = 'not_started'
-			puts "*** tips #{t.task_tips}"
 			if !t.task_tips.nil?
 				@task.task_tips = t.task_tips.gsub! '|', '"'
 			end
