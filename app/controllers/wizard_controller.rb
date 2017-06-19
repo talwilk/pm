@@ -32,9 +32,13 @@ class WizardController < ApplicationController
 				@qna = Qna.find(params[:qna_id])
 			end
 			@project = Project.new(session[:project_id])
-			@project.qna_id = @qna.id
-			session[:project]=@project.attributes
-			def_proj_type
+			if !@qna.nil?
+				@project.qna_id = @qna.id
+				session[:project]=@project.attributes
+				def_proj_type
+			else
+				@project_type = "Error"
+			end
 			if !is_user_signed
 				@provide_signin_info = true
 			end
