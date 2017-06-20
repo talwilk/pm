@@ -1,9 +1,9 @@
-# IsoCountryCodes.for_select.each do |country_iso|
-#   Country.create(country_iso: country_iso[1])
-# end
-# Country.create(country_iso: "RD", enabled_at: Time.zone.now)
+ IsoCountryCodes.for_select.each do |country_iso|
+   Country.create(country_iso: country_iso[1])
+ end
+ Country.create(country_iso: "RD", enabled_at: Time.zone.now)
 
-# SuperAdmin.create!(email: "master@dilemma.guru", password: "password", full_name: "Super Admin")
+ SuperAdmin.create!(email: "master@dilemma.guru", password: "password", full_name: "Super Admin")
 
 t1 = Type.create( code: 'ApBuyChoose', name: 'Looking for new appartment', description: 'Customer looking for a new appartment')
 t2 = Type.create( code: 'ApBuyPlanExe', name: 'Buy and remodel appartment - plan and execute', description: 'Customer buying  and remodeling an appartment - planning and executing')
