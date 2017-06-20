@@ -170,9 +170,9 @@ class ProjectsController < ApplicationController
 			#end
 			#@task.ptype =t.ptype
 			if @task.save
-				puts "*** Task saved"
+#				puts "*** Task saved"
 			else 
-				puts "***  Task not save"
+#				puts "***  Task not save"
 				render action: "new"
 			end
   		end	

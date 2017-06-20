@@ -13,7 +13,7 @@
               = f.error_notification
               .uk-form
                 .uk-form-row
-                  = f.input :email, label: "#{t('devise.sessions.email')}", required: false, autofocus: true
+                  = f.input :email, label: "#{t('devise.sessions.email')}", required: false, autofocus: true, input_html: { :value => params[:email] }
                 .uk-form-row
                   = f.input :password, label: "#{t('devise.sessions.password')}", required: false
                 .uk-form-row class="#{t :dir}"

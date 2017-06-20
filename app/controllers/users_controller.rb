@@ -61,18 +61,18 @@ class UsersController < ApplicationController
     puts "user #{@user.role}"
     if @user.role == 'regular'
       @user_projects = Project.where(user_id: @user.id).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)
-      @project = @user_projects.first
-      puts "user profile - by user id #{@project}"
-      #if @project.nil?
-      #  @user_projects = Project.where(email: @user.email).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)
-      #  @project = @user_projects.first
-        #puts "user profile - by email #{@project.id}"
-      #  if !@project.nil? || !@project.user_id.empty?
-      #    puts "no user id"
-      #    @project.user_id = @user.id
-      #    @project.save!
-      #  end
-      #end
+      if !@user_projects.empty?
+        @project = @user_projects.first
+        puts "user profile - by user id"
+      else
+        @user_projects = Project.where(email: @user.email).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)
+        if !@user_projects.nil?
+          @project = @user_projects.first
+          puts "user profile - by user email"
+          @project.user_id = @user.id
+          @project.save!
+        end
+      end
       if !@project.nil? 
         puts "project #{@project.id}"
         get_task_list
