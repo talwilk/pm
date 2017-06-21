@@ -399,7 +399,7 @@ he:
     mantra: "מנטרה"
     mobile_number: "מספר טלפון נייד"
     experience: "ניסיון"
-    category_list: "ברשימת הקטגוריות"
+    category_list: "תחומי המתחות"
     phone_number_format: "5678 234 1 0"
   home:
     close: "סגור"
@@ -1119,6 +1119,7 @@ he:
   task:
     phase: "שלב: "
     name: "כותרת: "
+    title: "כותרת"
     description: "תיאור: "
     code: "קוד: "
     category: "קטגוריה: "
@@ -1149,7 +1150,7 @@ he:
     phone: "טלפון: "
   guru_db:
     welcome: "ברוך הבא "
-    with_tasks_note: "ראה את המשימות אשר פתחו עבורך לקוחותיך"
+    with_tasks_note: "רשימת המשימות שנפתחו עבורך על ידי לקוחותיך"
     without_tasks_note: "טרם נפתחו עבורך משימות. הזמן את לקוחותיך להצטרף לויבו..."
   common:
     are_you_sure: "האם אתב בטוח?"

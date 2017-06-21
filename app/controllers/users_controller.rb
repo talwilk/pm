@@ -98,41 +98,41 @@ class UsersController < ApplicationController
     
     @tasks_hash = {}    
     
-      @tasks = Task.joins(:pro).where('pros.user_id' => @user.id)
-      #@tasks = Task.where(pro_id: pro.id).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)  
+    @tasks = Task.joins(:pro).where('pros.user_id' => @user.id)
+    #@tasks = Task.where(pro_id: pro.id).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)  
 
-      if !@tasks.nil?
-        @tasks.order(:project_id, :code)
-        
-        @tasks.each do |t|
-          case t.status
-            when 'not_started'
-              t.image_url = "wizard/pending.png"
-            when 'in_progress'
-              t.image_url = "wizard/in_progress.png"
-            when 'completed'
-              t.image_url = "wizard/completed.png"
-            else
-              t.image_url = "Error"
-          end
-
-          @project = Project.where(id: t.project_id).first
-          @customer = User.where(id: @project.user_id).first
-          @customer_profile = UserProfile.where(id: @customer.id).first
-          @project_string =  @project.id.to_s + "|" + @project.name + "|" + @project.address + "|" + @customer_profile.full_name
-          puts "project string #{@project_string}"
-
-          dilemma_array(t)
-
-          #@tasks_hash[t.project_id] ||= {}
-          @tasks_hash[@project_string] ||= {}
-          #@tasks_hash[t.project_id] ||= []
-          #@tasks_hash[t.project_id] << @project_string
-          @tasks_hash[@project_string][t.id] ||= []
-            @tasks_hash[@project_string][t.id] << t 
+    if !@tasks.nil?
+      @tasks.order(:project_id, :code)
+      
+      @tasks.each do |t|
+        case t.status
+          when 'not_started'
+            t.image_url = "wizard/pending.png"
+          when 'in_progress'
+            t.image_url = "wizard/in_progress.png"
+          when 'completed'
+            t.image_url = "wizard/completed.png"
+          else
+            t.image_url = "Error"
         end
-      #@tasks_hash = @tasks_hash.sort_by {|a,b| a }
-      end  
+
+        @project = Project.where(id: t.project_id).first
+        @customer = User.where(id: @project.user_id).first
+        @customer_profile = UserProfile.where(id: @customer.id).first
+        @project_string =  @project.id.to_s + "|" + @project.name + "|" + @project.address + "|" + @customer_profile.full_name
+        puts "project string #{@project_string}"
+
+        dilemma_array(t)
+
+        #@tasks_hash[t.project_id] ||= {}
+        @tasks_hash[@project_string] ||= {}
+        #@tasks_hash[t.project_id] ||= []
+        #@tasks_hash[t.project_id] << @project_string
+        @tasks_hash[@project_string][t.id] ||= []
+          @tasks_hash[@project_string][t.id] << t 
+      end
+    #@tasks_hash = @tasks_hash.sort_by {|a,b| a }
+    end  
   end
 
   private
