@@ -177,10 +177,6 @@
           span style="color:#999999;"
             span style="font-family:lato;"  #{t('landing.user.fast')}
     #lp-code-164.lp-element.lp-code
-    #lp-pom-image-182.lp-element.lp-pom-image class="#{t :dir}"
-      .lp-pom-image-container
-        = form_tag dilemmas_path, class: 'search-dilemmas-filter', method: :get, remote: true do |f|
-          = select_tag :category, options_for_select(SupportedCategory.collection, params[:category]), class: "select2_special #{t :dir}", prompt: "#{t('landing.user.choose_dilemma_topic')}", multiple: false, onchange: "$('.search-dilemmas-filter').submit();"
     #lp-pom-text-192.lp-element.lp-pom-text.nlh style="height: auto;"
       p.lplh-38
         span style="font-size:24px;"
@@ -191,16 +187,6 @@
         span style="color:#922b5a;"
           span style="font-size:24px;"
             span style="font-family:lato;"  #{t('landing.user.home_improvement_gurus')}
-    #lp-pom-text-206.lp-element.lp-pom-text.nlh style="height: auto;"
-      p.lplh-34 style="text-align: center;"
-        span style="color:#696969;"
-          font face="lato"
-            span style="font-size: 31px;"  #{t('landing.user.get_problem_solved')} &amp; #{t('landing.user.easy')}
-    #lp-pom-image-207.lp-element.lp-pom-image
-      .lp-pom-image-container
-        .select2_transparent
-          = form_tag dilemmas_path, class: 'search-dilemmas-filter2', method: :get, remote: true do |f|
-            = select_tag :category, options_for_select(SupportedCategory.collection, params[:category]), prompt: "#{t('landing.user.choose_dilemma_topic')}", multiple: false, onchange: "$('.search-dilemmas-filter2').submit();"
     =link_to 'https://www.facebook.com/dilemma.guru/', target: '_blank'
       #lp-pom-image-2121.lp-element.lp-pom-image class="#{t :dir}"
         .lp-pom-image-container style="overflow: hidden;"
