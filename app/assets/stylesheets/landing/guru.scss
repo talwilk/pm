@@ -203,6 +203,8 @@ a {
   top: 52px;
   z-index:21;
   position:absolute;
+  margin-left: auto;
+  margin-right: auto;
 }
 #lp-pom-text-145 {
   display:block;
@@ -1189,7 +1191,21 @@ a {
   height:553px;
   position:relative;
 }
-#lp-pom-text-160 {
+#lp-pom-text-160.ltr {
+  display:block;
+  background:rgba(255,255,255,0);
+  -pie-background:rgba(255,255,255,0);
+  border-style:none;
+  behavior:url(/PIE.htc);
+  border-radius:0px;
+  left:153px;
+  top:3020px;
+  z-index:24;
+  width:643px;
+  height:24px;
+  position:absolute;
+}
+#lp-pom-text-160.rtl {
   display:block;
   background:rgba(255,255,255,0);
   -pie-background:rgba(255,255,255,0);
@@ -1908,12 +1924,16 @@ a {
   border-style:none;
   behavior:url(/PIE.htc);
   border-radius:0px;
-  width:150px;
-  height:150px;
+  width:191px;
+  height:147px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #lp-pom-image-22 .lp-pom-image-container img {
-  width:150px;
-  height:150px;
+  width:191px;
+  height:147px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #lp-pom-image-29 .lp-pom-image-container {
   border-style:none;
@@ -2315,6 +2335,8 @@ a {
     position:absolute;
     left:-1000000;
     visibility:none;
+    margin-left: auto;
+    margin-right: auto;
   }
   #lp-pom-image-29-holder {
     background-image:url(http://d9hhrg4mnvzow.cloudfront.net/www.dilemma.guru/gurus/3450c416-control_03k03k03k03k000000.png);
@@ -2507,6 +2529,8 @@ a {
     top:60px;
     z-index:21;
     position:absolute;
+    margin-left: auto;
+    margin-right: auto;
   }
   #lp-pom-text-145 {
     display:block;
@@ -3617,7 +3641,25 @@ a {
     height:1121px;
     position:relative;
   }
-  #lp-pom-text-160 {
+  #lp-pom-text-160.ltr {
+    display:block;
+    background:rgba(255,255,255,0);
+    -pie-background:rgba(255,255,255,0);
+    border-style:none;
+    behavior:url(/PIE.htc);
+    border-radius:0px;
+    left:10px;
+    top:3921px;
+    z-index:24;
+    width:326px;
+    height:48px;
+    transform:scale(0.92);
+    transform-origin:0 0;
+    -webkit-transform:scale(0.92);
+    -webkit-transform-origin:0 0;
+    position:absolute;
+  }
+  #lp-pom-text-160.rtl {
     display:block;
     background:rgba(255,255,255,0);
     -pie-background:rgba(255,255,255,0);
@@ -4400,12 +4442,16 @@ a {
     border-style:none;
     behavior:url(/PIE.htc);
     border-radius:0px;
-    width:237px;
-    height:74px;
+    width:134px;
+    height:103px;
+    margin-left: auto;
+    margin-right: auto;
   }
   #lp-pom-image-22 .lp-pom-image-container img {
-    width:237px;
-    height:74px;
+    width:134;
+    height:103px;
+    margin-left: auto;
+    margin-right: auto;
   }
   #lp-pom-image-29 .lp-pom-image-container {
     border-style:none;

@@ -176,11 +176,12 @@
       p[style="text-align: center;"]
         span[style="color: rgb(120, 120, 120); font-family: 'Open Sans', sans-serif; font-size: 16px; line-height: 8px; text-align: center;"]
           | #{t('landing.guru.others_think')}
-    #lp-pom-text-160.lp-element.lp-pom-text.nlh[style="height: auto;"]
-      p.lplh-24[style="text-align: center;"]
-        font[face="open sans"]
-          span[style="font-size: 16px;"]
-            | #{t('landing.guru.heavy_lifting')}
+    #lp-pom-text-160.lp-element.lp-pom-text.nlh[style="height: auto;" class="#{t :dir}"]
+      p[dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; text-align: center;"]
+        p.lplh-24[style="text-align: center;"]
+          font[face="open sans"]
+            span[style="font-size: 24px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"]
+              | #{t('landing.guru.heavy_lifting')}
     #lp-pom-image-161.lp-element.lp-pom-image class="#{t :dir}"
       .lp-pom-image-container[style="overflow: hidden;"]
         = image_tag("landing/e70ed5bf-no-liability_03n03l03c03l005000.png", alt:"")
@@ -366,15 +367,6 @@
     #lp-pom-image-231.lp-element.lp-pom-image
       .lp-pom-image-container[style="overflow: hidden;"]
         = image_tag("landing/3ffdee3d-white_0q40dw0q400100006x.png", alt:"")
-    #lp-pom-box-232.lp-element.lp-pom-box class="#(t :dir)"
-      #lp-pom-box-232-color-overlay
-      #lp-pom-text-233.lp-element.lp-pom-text.nlh[style="height: auto;" class="#{t :dir}"]
-        = form_tag dilemmas_path, method: :get do
-          = text_field_tag :search, params[:search],  placeholder: "#{t('landing.guru.search_for_title')}", class:'top-search-input'
-          = submit_tag '', title: nil, class: 'submit-search'
-      #lp-pom-image-234.lp-element.lp-pom-image.search-icon class="#{t :dir}"
-        .lp-pom-image-container[style="overflow: hidden; cursor:pointer;"]
-          = image_tag("landing/d91fffe9-search.png", alt:"")
     #lp-pom-image-238.lp-element.lp-pom-image
       .lp-pom-image-container[style="overflow: hidden;"]
         = image_tag("landing/8f5b2326-guru-chart_028029028029000000.png", alt:"")
