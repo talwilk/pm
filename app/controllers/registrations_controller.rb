@@ -18,6 +18,7 @@ class RegistrationsController < Devise::RegistrationsController
 
       service = ResolveGeolocationService.new(request.remote_ip)
       geo_data = service.call
+      puts "*** geo_data"
 
       if geo_data.empty?
         resource.country_iso = "IL"
@@ -28,12 +29,14 @@ class RegistrationsController < Devise::RegistrationsController
       end
 
       if resource.save
+        puts "*** resource save"
         set_login_attempt("email", true, resource.id)
       end
 
       yield resource if block_given?
 
       if resource.persisted?
+        puts "*** resource persisted"
         if resource.active_for_authentication?
           set_flash_message :notice, :signed_up
           sign_up(resource_name, resource)
