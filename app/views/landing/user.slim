@@ -330,10 +330,6 @@
     #lp-pom-image-249.lp-element.lp-pom-image
       .lp-pom-image-container style="overflow: hidden;"
         = image_tag("landing/b74c02be-arrow-down_01900p01800p000000.png", alt:"")
-    #lp-pom-box-254.lp-element.lp-pom-box class="#{t :dir}"
-      = form_tag dilemmas_path, method: :get do
-        = text_field_tag :search, params[:search],  placeholder: "#{t('landing.user.discover_dilemmas')}", class:'top-search-input'
-        = submit_tag '', title: nil, class: 'submit-search'
       #lp-pom-image-275.lp-element.lp-pom-image.search-icon class="#{t :dir}"
         .lp-pom-image-container style="overflow: hidden;"
           = image_tag("landing/d91fffe9-search_00o00o00o00o000000.png", alt:"#{t('landing.user.search')}""Search")
