@@ -76,6 +76,15 @@ before_action :get_project, only: [:create, :new]
 		end
 	end
 
+	def update_cost_paid
+		task = Task.find(params[:id])
+    if task.update_attributes(cost: params[:cost], paid: params[:paid])
+      render status: 200, json: true
+    else
+      render status: 400, json: true
+    end
+	end
+
 	def destroy
 		@task.destroy
 		redirect_to root_path

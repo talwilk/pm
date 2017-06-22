@@ -1,0 +1,78 @@
+<% if !@tasks_hash.nil? %>
+  <% @tasks_hash.each_entry do |phase, tasks| %>
+    <tr class="uk-h3 uk-align-right">
+      <td nowrap=""><%= SupportedPhase.find(phase).name %></td>
+    </tr>
+    <% tasks.each_entry do |id, t| %>
+      <%  t.each_entry do |x|  %>
+        <tr class="uk-h4">
+            <td class="uk-width-1-10">
+            <%= image_tag(x.image_url) %>
+            </td>
+            <td class="uk-width-2-10 uk-text-right show_task_details"><%= x.name %>
+            </td>
+            <td class="uk-width-1-10 uk-text-right"><%= x.cur_end_date %>
+            </td>
+            <td class="uk-width-2-10 uk-text-right ">
+              <a class="cost_paid_btn" href="#payment_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
+                <% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
+                  <%= if (!x.cost.nil?) then x.cost else "0" end %>
+                  <%= "/" %>
+                  <%= if (!x.paid.nil?) then x.paid else "0" end %>
+                  <%= _("#{t('common.hint_cur')}") %>
+                <% end %>
+              </a>
+            </td>
+          <td class="uk-width-2-10 uk-text-right" id="create_pro"><%= if !x.pro.nil? then 
+            (link_to (x.pro.full_name), project_task_pro_path(x.project,x,x.pro)) else (link_to _("#{t('project.pro')}"), new_project_task_pro_path(x.project,x)) end %></td>
+          <td class="uk-width-1-10 uk-text-right"><%= if x.dilemma_count==0 then ("") else image_tag('wizard/dg_logo.png') end %></td>
+          <td class="uk-width-1-10 uk-text-right">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+          </td> 
+        </tr>
+        <tr class="task_details" hidden="true">
+          <td class="task_details" colspan="7">
+            <div>
+              <p><%=  if !x.description.nil? then x.description end %></br></p>
+              <p><% if x.dilemma_count==0 then %> 
+                  <%= (_("#{t('project.no_dilemma_title')}")
+                  link_to _("#{t('project.here')}")+x.name, new_dilemma_path(:task_id => x.id)) %> 
+                <% else %>
+                  <% eval(x.dilemma_list).each do |id, title| %>
+                    <%= link_to title, dilemma_path(id) %></p>
+                  <% end %>
+                  <p><%= (link_to _("#{t('project.here_again')}")+x.name, new_dilemma_path(:task_id => x.id)) %> </p>
+                <% end %>
+              <p><%  if x.task_tips.to_s != "" then  %>
+                <%= _("#{t('task.tips')}") %>
+                <% eval(x.task_tips).each do |name, url| %></br>
+                  <i><%= link_to name, url, target: :_blank %></i>
+                <% end %></p>
+              <% end %>
+              <p><%= _("#{t('task.cost')}") %>
+                <%=  x.cost %>
+                <%= _("#{t('common.hint_cur')}") %>,
+                <%= _("#{t('task.paid')}") %>
+                <%=  x.paid %>
+                <%= _("#{t('common.hint_cur')}") %>
+              </br></p>
+              <p id = "show_notes"><%= _("#{t('task.notes')}") %>
+              <%=  x.notes %></p>
+              <p>
+                <i><%=  link_to _("#{t('common.edit')}") , edit_project_task_path(@project,x) %></></i>
+               | <i><%= link_to _("#{t('common.delete')}"), project_task_path(@project, x), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i>
+              </p>
+            </div>
+          </td>
+        </tr>
+        <tr class="add_pro_area" hidden="true">
+          <td class="add_pro_area" colspan="7">
+            <div class="uk-panel uk-form-width-medium">
+              <p>pro info</p>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

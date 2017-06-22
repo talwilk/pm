@@ -92,6 +92,8 @@ Rails.application.routes.draw do
     end 
   end
 
+  post "/update_cost_paid/:id", to: "tasks#update_cost_paid"
+
   
 
   get '/user', to: 'landing#user'
