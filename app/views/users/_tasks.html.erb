@@ -27,7 +27,9 @@
             (link_to (x.pro.full_name), project_task_pro_path(x.project,x,x.pro)) else (link_to _("#{t('project.pro')}"), new_project_task_pro_path(x.project,x)) end %></td>
           <td class="uk-width-1-10 uk-text-right"><%= if x.dilemma_count==0 then ("") else image_tag('wizard/dg_logo.png') end %></td>
           <td class="uk-width-1-10 uk-text-right">
-            <i class="fa fa-cog" aria-hidden="true"></i>
+            <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </a>
           </td> 
         </tr>
         <tr class="task_details" hidden="true">

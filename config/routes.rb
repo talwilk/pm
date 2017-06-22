@@ -88,9 +88,13 @@ Rails.application.routes.draw do
   resources :wizard 
   resources :projects do
     resources :tasks do
-      resources :pros
+      resources :pros do
+        post :assign_task, on: :collection
+      end
     end 
   end
+
+  post "/new_professional", to: "pros#new_professional"
 
   post "/update_cost_paid/:id", to: "tasks#update_cost_paid"
 
