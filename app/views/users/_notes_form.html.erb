@@ -1,0 +1,19 @@
+<div id='notes_form' class="mfp-hide white-popup uk-panel uk-panel-box uk-align-center">
+  <div class="uk-overflow-container">
+    <table class="uk-width-2-2 uk-text-right">
+      <tr>
+        <td>
+          <h1>Notes</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= text_area_tag "notes", '', rows: '5', style: 'width:100%' %>
+        </td>
+      </tr>
+    </table>
+    <div class="uk-text-left margin-left-12">
+      <%= submit_tag "Submit", id: "notes_submit", class:'primary-button mini-button' %>
+    </div>
+  </div>
+</div>

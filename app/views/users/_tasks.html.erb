@@ -58,8 +58,14 @@
                 <%=  x.paid %>
                 <%= _("#{t('common.hint_cur')}") %>
               </br></p>
-              <p id = "show_notes"><%= _("#{t('task.notes')}") %>
-              <%=  x.notes %></p>
+              <p id = "show_notes">
+                <i>
+                  <a class="notes_link" href="#notes_form" data-task-id="<%=x.id%>" data-notes="<%=x.notes%>">
+                    <%= _("#{t('task.notes')}") %>
+                  </a>
+                  <%=  x.notes %>
+                </i>
+              </p>
               <p>
                 <i><%=  link_to _("#{t('common.edit')}") , edit_project_task_path(@project,x) %></></i>
                | <i><%= link_to _("#{t('common.delete')}"), project_task_path(@project, x), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i>

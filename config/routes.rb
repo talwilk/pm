@@ -96,7 +96,7 @@ Rails.application.routes.draw do
 
   post "/new_professional", to: "pros#new_professional"
 
-  post "/update_cost_paid/:id", to: "tasks#update_cost_paid"
+  post "/update_task/:id", to: "tasks#update_task"
 
   
 

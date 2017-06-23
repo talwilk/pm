@@ -33,7 +33,7 @@ $(document).ready(function() {
     task_id = $(this).attr("task-id")
     $.ajax({
       type: "POST",
-      url: '/update_cost_paid/'+task_id,
+      url: '/update_task/'+task_id,
       data: {
         cost: $('#cost').val(),
         paid: $('#paid').val()
@@ -110,6 +110,43 @@ $(document).ready(function() {
         }
       }
     }
+  });
+
+  $('#show_notes .notes_link').click(function(){
+    $('#notes').val($(this).data("notes"))
+    $('#notes_submit').attr("task-id", $(this).data("task-id"))
+  });
+
+  $('#show_notes .notes_link').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    focus: '#notes',
+    callbacks: {
+      beforeOpen: function(elem) {
+        if($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#notes';
+        }
+      }
+    }
+  });
+
+  $('#notes_submit').click(function(){
+    task_id = $(this).attr("task-id")
+    $.ajax({
+      type: "POST",
+      url: '/update_task/'+task_id,
+      data: {
+        notes: $('#notes').val()
+      },
+      success: function(data) {
+        window.location.reload()
+      },
+      error: function(data) {
+        console.log(e)
+      }
+    });
   });
 
   // $("#show_notes").blur(function() {
