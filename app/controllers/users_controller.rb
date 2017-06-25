@@ -66,7 +66,7 @@ class UsersController < ApplicationController
         puts "user profile - by user id"
       else
         @user_projects = Project.where(email: @user.email).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)
-        if !@user_projects.nil?
+        if !@user_projects.empty?
           @project = @user_projects.first
           puts "user profile - by user email"
           @project.user_id = @user.id
