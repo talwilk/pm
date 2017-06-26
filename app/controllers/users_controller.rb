@@ -65,7 +65,7 @@ class UsersController < ApplicationController
         @project = @user_projects.first
         puts "user profile - by user id"
       else
-        @user_projects = Project.where(email: @user.email).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)
+        @user_projects = Project.where(email: @user.email.downcase).order(created_at: :desc).page(params[:dilemma_page]).per(USER_PROFILE_PER_PAGE)
         if !@user_projects.empty?
           @project = @user_projects.first
           puts "user profile - by user email"
@@ -87,12 +87,14 @@ class UsersController < ApplicationController
 
   def guru_dashboard
     
-    @pros = Pro.where(email: @user.email)
+    @pros = Pro.where(email: @user.email.downcase)
 
     if @pros.count > 0
       @pros.each do |pro| 
-        pro.user_id = @user.id
-        pro.save!
+        if pro.user_id.nil?
+          pro.user_id = @user.id
+          pro.save!
+        end
       end
     end
     
@@ -124,14 +126,10 @@ class UsersController < ApplicationController
 
         dilemma_array(t)
 
-        #@tasks_hash[t.project_id] ||= {}
         @tasks_hash[@project_string] ||= {}
-        #@tasks_hash[t.project_id] ||= []
-        #@tasks_hash[t.project_id] << @project_string
         @tasks_hash[@project_string][t.id] ||= []
           @tasks_hash[@project_string][t.id] << t 
       end
-    #@tasks_hash = @tasks_hash.sort_by {|a,b| a }
     end  
   end
 

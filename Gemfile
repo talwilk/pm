@@ -46,7 +46,9 @@ gem 'wysiwyg-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'wicked'
 gem 'font-awesome-rails'
-gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+#gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'activerecord-session_store'
 
 group :development do
   gem "better_errors"
