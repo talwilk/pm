@@ -153,8 +153,10 @@ class ProjectsController < ApplicationController
 			@task.est_cost_max =t.est_cost_max
 			@task.category =t.category
 			@task.predecessor =t.predecessor
-			@task.status =t.status
-			@task.task_tips = t.task_tips
+			@task.status = 'not_started'
+			if !t.task_tips.nil?
+				@task.task_tips = t.task_tips.gsub! '|', '"'
+			end
 			@task.recommend = t.recommend
 			@task.start_date = @project.orig_start_date
 			@task.cur_start_date = @project.orig_start_date
@@ -168,9 +170,9 @@ class ProjectsController < ApplicationController
 			#end
 			#@task.ptype =t.ptype
 			if @task.save
-				puts "*** Task saved"
+#				puts "*** Task saved"
 			else 
-				puts "***  Task not save"
+#				puts "***  Task not save"
 				render action: "new"
 			end
   		end	

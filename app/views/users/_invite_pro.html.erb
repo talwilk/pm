@@ -1,0 +1,28 @@
+<div id='invite_pro_form' class="mfp-hide white-popup uk-panel uk-panel-box uk-align-center">
+  <div class="uk-overflow-container">
+    <table class="uk-width-2-2 uk-text-right">
+      <tr>
+        <td>
+          <h1>Assignee</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag "Guru in charge" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= select_tag "guru", options_from_collection_for_select(Pro.where(project_id: @project.id), "id", "first_name"), :prompt => "Please select pro" %>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class="uk-text-left margin-left-12">
+      <%= submit_tag "Assign", id: "invite_pro_submit", class:'primary-button mini-button' %>
+      <a class="add_new_professional" href="#new_professional_form">
+        <%= button_tag "Add New Professional", class:'primary-button mini-button' %>
+      </a>
+    </div>
+  </div>
+</div>

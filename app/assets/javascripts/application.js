@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require uikit
+//= require jquery.magnific-popup.min.js
 //= require uikit/components/lightbox
 //= require jquery_ujs
 //= require jquery.infinite-pages

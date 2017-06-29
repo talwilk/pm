@@ -46,6 +46,7 @@ gem 'wysiwyg-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'wicked'
 gem 'font-awesome-rails'
+gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
 
 group :development do
   gem "better_errors"

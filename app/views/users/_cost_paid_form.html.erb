@@ -1,0 +1,36 @@
+<div id='payment_form' class="mfp-hide white-popup uk-panel uk-panel-box uk-align-center">
+  <div class="uk-overflow-container">
+    <table class="uk-width-2-2 uk-text-right">
+      <tr>
+        <td>
+          <h1>Budget</h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag "Cost" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= text_field_tag "cost",'', class: "form-control" %>
+        </td>
+      </tr>
+      <br>
+      <tr>
+        <td>
+          <%= label_tag "Paid" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= text_field_tag "paid",'', class: "form-control" %>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class="uk-text-left margin-left-12">
+      <%= submit_tag "Submit", id: "cost_paid_submit", class:'primary-button mini-button' %>
+    </div>
+  </div>
+</div>

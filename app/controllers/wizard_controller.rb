@@ -8,21 +8,37 @@ class WizardController < ApplicationController
 		case step
 		when :question_1
 			puts "** show Q1**"
+			if !params[:qna_id].nil?
+				find_qna
+			end
 			set_str(1)
 		when :question_2
 			puts "** show Q2**"
+			find_qna
+			set_str(2)
 		when :question_3
 			puts "**  show Q3**"
+			find_qna
+			set_str(3)
 		when :question_4
 			puts "**  show Q4**"
+			find_qna
+			set_str(4)
 		else :project_details
 			puts "**  show pd**"
 			#@qna = Qna.new(session[:qna_id])
-			@qna = Qna.find(params[:qna_id])
+			if !params[:qna_id].nil?
+				puts "not empty"
+				@qna = Qna.find(params[:qna_id])
+			end
 			@project = Project.new(session[:project_id])
-			@project.qna_id = @qna.id
-			session[:project]=@project.attributes
-			def_proj_type
+			if !@qna.nil?
+				@project.qna_id = @qna.id
+				session[:project]=@project.attributes
+				def_proj_type
+			else
+				@project_type = "Error"
+			end
 			if !is_user_signed
 				@provide_signin_info = true
 			end
@@ -35,12 +51,23 @@ class WizardController < ApplicationController
 		case step
 			when :question_2
 				puts "**   update Q2**"
-				@qna = Qna.new(session[:qna_id])
-				session[:qna]=@qna.attributes
-				@qna.q1 = params[:q]
-				@qna.save!
-				@qna_id=@qna.id
-				set_str(2)
+				if params[:qna_id].nil?
+					puts "new qna"
+					@qna = Qna.new(session[:qna_id])
+					session[:qna]=@qna.attributes
+					@qna.q1 = params[:q]
+					@qna.save!
+					@qna_id=@qna.id
+					set_str(2)
+				elsif
+					#puts "exist qna"
+					find_qna
+					#puts "after find_qna"
+					@qna.q1 = params[:q]
+					@qna.save!
+					#@qna_id=@qna.id
+					set_str(2)
+				end
 			when  :question_3
 				puts "**   update Q3**"
 				find_qna
@@ -89,10 +116,11 @@ class WizardController < ApplicationController
 	end
 
 	def find_qna
+		#puts "in find qna"
 		@qna = Qna.find(params[:qna_id])
 		session[:qna]=@qna.attributes
 		@qna_id=@qna.id
-		puts "***  in find_qna #{@qna.id}"
+		#puts "***  in find_qna #{@qna.id}"
 	end
 
 	def save_qna

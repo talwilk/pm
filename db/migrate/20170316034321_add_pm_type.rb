@@ -4,6 +4,7 @@ class AddPmType < ActiveRecord::Migration
 			t.string   :code
 			t.string   :name
 			t.string   :description
+			t.timestamps
 		end
 
 		create_table :qnas do |t|
@@ -11,6 +12,7 @@ class AddPmType < ActiveRecord::Migration
 			t.string   :q2
 			t.string   :q3
 			t.string   :q4
+			t.timestamps
 		end
 
 		create_table :taskindices do |t|
@@ -33,6 +35,7 @@ class AddPmType < ActiveRecord::Migration
 			t.string   :task_tips
 			t.string   :manual_ind
 			t.string   :task_type
-	  end
+			t.timestamps
+	 	end
 	end
 end

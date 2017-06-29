@@ -1,21 +1,22 @@
 class AddPmTypeB < ActiveRecord::Migration
   def change
   	create_table :projects do |t|
-			t.string   :name
-			t.string   :description
-			t.string   :address
-			t.date     :orig_start_date
-			t.date     :cur_start_date
-			t.string   :plot
-			t.string   :build
-			t.string   :orig_budget
-			t.string   :cur_budget
-			t.string   :email
-			t.string   :reserve
-			t.belongs_to :type
-			t.belongs_to :user
-			t.belongs_to :qna
-		end
+		t.string   :name
+		t.string   :description
+		t.string   :address
+		t.date     :orig_start_date
+		t.date     :cur_start_date
+		t.string   :plot
+		t.string   :build
+		t.string   :orig_budget
+		t.string   :cur_budget
+		t.string   :email
+		t.string   :reserve
+		t.belongs_to :type
+		t.belongs_to :user
+		t.belongs_to :qna
+  		t.timestamps
+	end
 
 	create_table :pros do |t|
 		t.string   :first_name
@@ -27,6 +28,7 @@ class AddPmTypeB < ActiveRecord::Migration
 		t.string   :category
 		t.belongs_to :project
 		t.belongs_to :user
+  		t.timestamps
 	end
 
 	create_table :tasks do |t|
@@ -60,6 +62,7 @@ class AddPmTypeB < ActiveRecord::Migration
 		t.date     :cur_end_date
 		t.belongs_to :project
 		t.belongs_to :pro
+  		t.timestamps
 	end
 	
 	add_reference :dilemmas, :task, index: true

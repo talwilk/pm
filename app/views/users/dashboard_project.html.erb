@@ -1,0 +1,81 @@
+<header>
+	<%= stylesheet_link_tag "screens/projects" %>
+	<% content_for :javascript_includes do %>
+	  <%= javascript_include_tag "project.js" %>
+	<% end %>
+</header>
+
+<body>	
+	<div class="uk-panel uk-panel-box">
+		<div class="uk-h1"><%=  @project.name %></div>
+		
+		<div class="uk-panel-space"></div>
+
+		<div class="uk-container uk-text-right">
+			<div>
+				<%=   _("#{t('project.description')}") %>
+				<%=  @project.description %></div>
+			<div> 
+				<%=   _("#{t('project.plot')}") %>
+				<%=  @project.plot %>
+				<%= _("#{t('common.hint_size')}") %></div>
+			<div>
+				<%=   _("#{t('project.lot')}") %>
+				<%=  @project.build %>
+				<%= _("#{t('common.hint_size')}") %></div>
+			<div>
+				<%=   _("#{t('project.start_date')}") %>
+				<%=  @project.orig_start_date %></div>
+			<div class="secondery-button medium-button" %>
+				<%= link_to _("#{t('common.edit')}"), edit_project_path(@project.id) %>
+			</div>
+		</div>
+
+		<div class="uk-panel-space"></div>
+
+		<div class="uk-container">
+			<i class="uk-h2"><%= _("#{t('project.my_task_list')}") %></i>
+			<i class="primary-button mini-button uk-align-left">
+				<%= link_to _("#{t('project.add_task')}"), new_project_task_path(@project) %>
+			</i>
+		</div>
+		<%= render partial: "cost_paid_form" %>
+		<%= render partial: "invite_pro" %>
+		<%= render partial: "new_professional" %>
+		<%= render partial: "notes_form" %>
+
+
+		<div class="uk-container">
+			<table class="uk-table uk-table-hover uk-width-10-10">
+				<thead>
+					<tr class="table_header uk-h4">
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-2-10 uk-text-right">
+							<%= _("#{t('project.tasks')}") %></th>
+						<th class="uk-width-1-10 uk-text-right"></th>
+						<th class="uk-width-2-10 uk-text-right">
+							<%=  _("#{t('project.cost')}") %></th>
+						<th class="uk-width-2-10"></th>
+						<th class="uk-width-1-10"><%= _("#{t('project.pro')}") %></th>
+						<th class="uk-width-1-10"></th>
+					</tr>
+					<tr  class="table_header uk-h3">
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-2-10 uk-text-right">
+							<%= @complete_task_count %> /
+							<%= @task_count %> </th>
+						<th class="uk-width-1-10 uk-text-right"></th>
+						<th class="uk-width-2-10 uk-text-right">
+							<%= @total_cost %> / 
+							<%= @total_paid %> 
+							<%= _("#{t('common.hint_cur')}") %></th>
+						<th class="uk-width-2-10"></th>
+						<th class="uk-width-1-10"></th>
+						<th class="uk-width-1-10"></th>
+					</tr>
+				</thead>
+				<%= render partial: "tasks" %>
+			</table>
+		</div>
+	</div>
+</body>

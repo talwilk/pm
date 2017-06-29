@@ -1,0 +1,64 @@
+<div id='new_professional_form' class="mfp-hide white-popup uk-panel uk-panel-box uk-align-center">
+  <div class="uk-overflow-container">
+    <%= form_tag('/new_professional', id: "new_professional") do %>
+      <%= hidden_field_tag "task_id", '' %>
+      <%= hidden_field_tag "project_id", @project.id %>
+      <table class="uk-width-2-2 uk-text-right">
+        <tr>
+          <td>
+            <h1>New Professional</h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= label_tag "#{t('pro.first')}" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= text_field_tag :first_name,'', class: 'form-control' %>
+            <%#= text_field_tag "cost",'', class: "form-control" %>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td>
+            <%= label_tag "#{t('pro.last')}" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= text_field_tag :last_name,'', class: 'form-control' %>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td>
+            <%= label_tag "#{t('pro.phone')}" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= text_field_tag :mobile_phone,'', class: 'form-control' %>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td>
+            <%= label_tag "#{t('pro.email')}" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= text_field_tag :email,'', class: 'form-control' %>
+          </td>
+        </tr>
+        <br>
+      </table>
+      <br>
+      <div class="uk-text-left margin-left-12">
+        <%= submit_tag "Submit", id: "new_professional_submit", class:'primary-button mini-button' %>
+      </div>
+    <% end %>
+  </div>
+</div>

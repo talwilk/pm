@@ -12,11 +12,15 @@
   color:#E3E3E5;
 }
 
-.task_row {
+.task_row, .show_task_details {
   cursor:pointer;
 }
 
 .task_details{
 	text-align: right;
 	margin-top: 10px;
+}
+
+.margin-left-12 {
+	margin-left: 12px;
 }
