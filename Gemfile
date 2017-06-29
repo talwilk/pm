@@ -47,6 +47,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'wicked'
 gem 'font-awesome-rails'
 gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+gem 'best_in_place', '~> 3.0.1'
 
 group :development do
   gem "better_errors"
