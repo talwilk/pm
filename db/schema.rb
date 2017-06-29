@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170123101307) do
+ActiveRecord::Schema.define(version: 20170318224247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +59,12 @@ ActiveRecord::Schema.define(version: 20170123101307) do
     t.string   "short_url"
     t.boolean  "closed_notification_sent",   default: false
     t.boolean  "reward_notification_sent",   default: false
+    t.integer  "task_id"
   end
 
   add_index "dilemmas", ["favorite_advice_ends_at"], name: "index_dilemmas_on_favorite_advice_ends_at", using: :btree
   add_index "dilemmas", ["favorite_dilemma_advice_id"], name: "index_dilemmas_on_favorite_dilemma_advice_id", using: :btree
+  add_index "dilemmas", ["task_id"], name: "index_dilemmas_on_task_id", using: :btree
   add_index "dilemmas", ["user_id"], name: "index_dilemmas_on_user_id", using: :btree
 
   create_table "guru_applications", force: :cascade do |t|
@@ -127,6 +129,42 @@ ActiveRecord::Schema.define(version: 20170123101307) do
     t.integer  "user_id",     null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.string  "address"
+    t.date    "orig_start_date"
+    t.date    "cur_start_date"
+    t.string  "plot"
+    t.string  "build"
+    t.string  "orig_budget"
+    t.string  "cur_budget"
+    t.string  "email"
+    t.string  "reserve"
+    t.integer "type_id"
+    t.integer "user_id"
+    t.integer "qna_id"
+  end
+
+  create_table "pros", force: :cascade do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "company_name"
+    t.string  "email"
+    t.string  "mobile_phone"
+    t.string  "phone"
+    t.string  "category"
+    t.integer "project_id"
+    t.integer "user_id"
+  end
+
+  create_table "qnas", force: :cascade do |t|
+    t.string "q1"
+    t.string "q2"
+    t.string "q3"
+    t.string "q4"
+  end
+
   create_table "super_admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -170,6 +208,67 @@ ActiveRecord::Schema.define(version: 20170123101307) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "taskindices", force: :cascade do |t|
+    t.string  "code"
+    t.string  "name"
+    t.string  "phase"
+    t.string  "description"
+    t.string  "recommend"
+    t.string  "status"
+    t.integer "duration"
+    t.integer "cost"
+    t.integer "est_duration_min"
+    t.integer "est_duration_max"
+    t.integer "est_cost_min"
+    t.integer "est_cost_max"
+    t.string  "category"
+    t.string  "predecessor"
+    t.string  "ptype"
+    t.string  "task_landing_page"
+    t.string  "task_tips"
+    t.string  "manual_ind"
+    t.string  "task_type"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string  "code"
+    t.string  "name"
+    t.string  "phase"
+    t.string  "description"
+    t.string  "notes"
+    t.string  "recommend"
+    t.string  "status"
+    t.string  "category"
+    t.string  "predecessor"
+    t.string  "ptype"
+    t.string  "manual_ind"
+    t.string  "task_type"
+    t.string  "task_landing_page"
+    t.string  "task_tips"
+    t.integer "est_duration_min"
+    t.integer "est_duration_max"
+    t.integer "est_cost_min"
+    t.integer "est_cost_max"
+    t.integer "duration"
+    t.integer "cost"
+    t.integer "paid"
+    t.integer "dilemma_count"
+    t.string  "dilemma_list"
+    t.string  "image_url"
+    t.date    "start_date"
+    t.date    "cur_start_date"
+    t.date    "orig_end_date"
+    t.date    "cur_end_date"
+    t.integer "project_id"
+    t.integer "pro_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "description"
+  end
 
   create_table "user_points_logs", force: :cascade do |t|
     t.integer  "user_id",                                null: false
