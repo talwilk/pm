@@ -46,8 +46,7 @@ $(document).ready(function() {
       type: "POST",
       url: '/update_task/'+task_id,
       data: {
-        cost: $('#cost').val(),
-        paid: $('#paid').val()
+        task: {cost: $('#cost').val(), paid: $('#paid').val()}
       },
       success: function(data) {
         window.location.reload()
@@ -149,7 +148,7 @@ $(document).ready(function() {
       type: "POST",
       url: '/update_task/'+task_id,
       data: {
-        notes: $('#notes').val()
+        task: {notes: $('#notes').val()}
       },
       success: function(data) {
         window.location.reload()

@@ -13,7 +13,7 @@
       </tr>
       <tr>
         <td>
-          <%= select_tag "#{t('task.guru')}", options_from_collection_for_select(Pro.where(project_id: @project.id), "id", "first_name"), :prompt => "#{t('task.select_pro')}" %>
+          <%= select_tag "#{t('task.guru')}", options_from_collection_for_select(Pro.where(project_id: @project.id), "id", "first_name"), :prompt => "#{t('task.select_pro')}", id: 'guru' %>
         </td>
       </tr>
     </table>
