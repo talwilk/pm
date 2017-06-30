@@ -24,3 +24,32 @@
 .margin-left-12 {
 	margin-left: 12px;
 }
+
+@media (max-width: 767px){
+  .dashboard_responsive {
+  	padding: 0px;
+  	.uk-table {
+  		td {
+  			font-weight: normal;
+  			font-size: 1.6rem;
+  			line-height: 30px;
+  			padding-left: 0px;
+  		}
+  		.uk-h3.uk-align-right {
+  			margin: 0px;
+  		}
+  		a.invite_pro_btn img {
+  			width: 85%;
+  		}
+  	}
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .dashboard_responsive {
+  	padding: 0px;
+  	.uk-table a.invite_pro_btn img {
+  		width: 45%;
+  	}
+  }
+}

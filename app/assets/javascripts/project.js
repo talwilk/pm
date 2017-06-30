@@ -63,6 +63,7 @@ $(document).ready(function() {
     $('#invite_pro_submit').attr("project-id", $(this).data("project-id"))
     $('.add_new_professional').attr("task-id", $(this).data("task-id"))
     $('.add_new_professional').attr("project-id", $(this).data("project-id"))
+    $('#guru').val($(this).data("pro-id")).trigger('change');
   });
 
   $('.invite_pro_btn').magnificPopup({

@@ -28,7 +28,7 @@
             (link_to (x.pro.full_name), project_task_pro_path(x.project,x,x.pro), target: '_blank') else (link_to _("#{t('project.pro')}"), new_project_task_pro_path(x.project,x), target: '_blank') end %></td>
           <td class="uk-width-1-10 uk-text-right">
             <%-if x.dilemma_count==0 then ("") %>
-              <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>">
+              <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.id%>">
                 <%= image_tag('add-media-icon.png', width: '25%')%> 
               </a>  
             <%-else%>
@@ -69,6 +69,7 @@
                 <i>
                   <a class="notes_link" href="#notes_form" data-task-id="<%=x.id%>" data-notes="<%=x.notes%>">
                     <%= _("#{t('task.notes')}") %>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                   </a>
                   <%=  x.notes %>
                 </i>
