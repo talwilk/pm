@@ -54,39 +54,39 @@
     #lp-pom-text-67.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
       .lplh-58
         span style="color:#ffffff;"
-          span style="font-size:22px;"
+          span style="font-size:22px; font-family: Arial;"
             span style="font-family:lato;"  #{t('landing.user.handy')}
       .lplh-20
         span style="color:#d4d4d4;"
-          span style="font-size:14px;"
-            span style="font-family:lato;"  #{t('landing.user.available_connected_device')}
+          span style="font-size:14px; font-family: Arial;"
+            span style="font-family:Ariel;"  #{t('landing.user.available_connected_device')}
     #lp-pom-text-68.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
       .lplh-58
         span style="color:#ffffff;"
-          span style="font-size:22px;"
+          span style="font-size:22px; font-family: Arial;"
             span style="font-family:lato;"  #{t('landing.user.easy')}
       .lplh-20
         span style="color:#d4d4d4;"
-          span style="font-size:14px;"
+          span style="font-size:14px; font-family: Arial;"
             span style="font-family:lato;"  #{t('landing.user.get_your_dilemma')}
     #lp-pom-text-69.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
       .lplh-58
         span style="color:#ffffff;"
           span style="font-size:22px;"
-            span style="font-family:lato;"  #{t('landing.user.on_demand')}
+            span style="font-family:Ariel;"  #{t('landing.user.on_demand')}
       .lplh-20
         span style="color:#d4d4d4;"
-          span style="font-size:14px;"
-            span style="font-family:lato;"  #{t('landing.user.committed_to_reply')}
+          span style="font-size:14px; font-family:Ariel;"
+            span style="font-family:Ariel;"  #{t('landing.user.committed_to_reply')}
     #lp-pom-text-70.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
       .lplh-58
         font color="#ffffff" face="lato"
-          span style="font-size: 22px;"  #{t('landing.user.comprehensive')}
+          span style="font-size: 22px; font-family:Ariel;"  #{t('landing.user.comprehensive')}
       .lplh-20
         font color="#d4d4d4" face="lato"  #{t('landing.user.industry_aspects')}&nbsp #{t('landing.user.get_all_your_dilemmas_solved')};
     #lp-pom-text-71.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
       .lplh-58
-        span style="color: rgb(255, 255, 255); font-family: lato; font-size: 22px;"  #{t('landing.user.diverse')}
+        span style="color: rgb(255, 255, 255); font-family: Ariel; font-size: 22px;"  #{t('landing.user.diverse')}
       .lplh-20
         span style="color: rgb(212, 212, 212);"
           span style="font-family: lato;"  #{t('landing.user.our')}&nbsp;
@@ -177,10 +177,6 @@
           span style="color:#999999;"
             span style="font-family:lato;"  #{t('landing.user.fast')}
     #lp-code-164.lp-element.lp-code
-    #lp-pom-image-182.lp-element.lp-pom-image class="#{t :dir}"
-      .lp-pom-image-container
-        = form_tag dilemmas_path, class: 'search-dilemmas-filter', method: :get, remote: true do |f|
-          = select_tag :category, options_for_select(SupportedCategory.collection, params[:category]), class: "select2_special #{t :dir}", prompt: "#{t('landing.user.choose_dilemma_topic')}", multiple: false, onchange: "$('.search-dilemmas-filter').submit();"
     #lp-pom-text-192.lp-element.lp-pom-text.nlh style="height: auto;"
       p.lplh-38
         span style="font-size:24px;"
@@ -191,16 +187,6 @@
         span style="color:#922b5a;"
           span style="font-size:24px;"
             span style="font-family:lato;"  #{t('landing.user.home_improvement_gurus')}
-    #lp-pom-text-206.lp-element.lp-pom-text.nlh style="height: auto;"
-      p.lplh-34 style="text-align: center;"
-        span style="color:#696969;"
-          font face="lato"
-            span style="font-size: 31px;"  #{t('landing.user.get_problem_solved')} &amp; #{t('landing.user.easy')}
-    #lp-pom-image-207.lp-element.lp-pom-image
-      .lp-pom-image-container
-        .select2_transparent
-          = form_tag dilemmas_path, class: 'search-dilemmas-filter2', method: :get, remote: true do |f|
-            = select_tag :category, options_for_select(SupportedCategory.collection, params[:category]), prompt: "#{t('landing.user.choose_dilemma_topic')}", multiple: false, onchange: "$('.search-dilemmas-filter2').submit();"
     =link_to 'https://www.facebook.com/dilemma.guru/', target: '_blank'
       #lp-pom-image-2121.lp-element.lp-pom-image class="#{t :dir}"
         .lp-pom-image-container style="overflow: hidden;"
@@ -344,10 +330,6 @@
     #lp-pom-image-249.lp-element.lp-pom-image
       .lp-pom-image-container style="overflow: hidden;"
         = image_tag("landing/b74c02be-arrow-down_01900p01800p000000.png", alt:"")
-    #lp-pom-box-254.lp-element.lp-pom-box class="#{t :dir}"
-      = form_tag dilemmas_path, method: :get do
-        = text_field_tag :search, params[:search],  placeholder: "#{t('landing.user.discover_dilemmas')}", class:'top-search-input'
-        = submit_tag '', title: nil, class: 'submit-search'
       #lp-pom-image-275.lp-element.lp-pom-image.search-icon class="#{t :dir}"
         .lp-pom-image-container style="overflow: hidden;"
           = image_tag("landing/d91fffe9-search_00o00o00o00o000000.png", alt:"#{t('landing.user.search')}""Search")
