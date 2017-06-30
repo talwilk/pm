@@ -1136,6 +1136,10 @@ he:
     show_task_details: "פרטי משימה - "
     project: "פרויקט: "
     create_new_title: "צור משימה חדשה עבור הפרויקט שלך"
+    budget: "תקציב: "
+    guru_in_charge: "גורו אחראי"
+    guru: "גורו"
+    select_pro: "בחר מקצוען"
   guru_dashboard:
     no_dilemma_title: "הלקוח שלך לא פתח דילמות למשימה זו"
     dilemma_title: "אלו הדילמות של הלקוח שלך למשימה זאת. למה שלא תעזור לו?"
@@ -1194,6 +1198,8 @@ he:
     or: "או"
     Im: "אני"
     my: "את ה"
+    assign: "לְהַקְצוֹת"
+    assignee: "נִמחֶה"
   create_project:
     l_name: "איך אתה קורא לפרויקט שלך?"
     l_lot: "כמה גדול הבית?"

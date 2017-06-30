@@ -78,7 +78,7 @@ before_action :get_project, only: [:create, :new]
 
 	def update_task
 		task = Task.find(params[:id])
-    if task.update(params.permit(:cost, :paid, :notes))
+    if task.update(params.permit(:cost, :paid, :notes, :name))
       render status: 200, json: true
     else
       render status: 400, json: true

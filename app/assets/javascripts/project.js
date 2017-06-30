@@ -1,11 +1,22 @@
 $(document).ready(function() {
-
+  jQuery(".best_in_place").best_in_place();
   $(".task_row").click(function() {
       $(this).next("tr.task_details").slideToggle("fast");
   });
 
   $(".show_task_details").click(function() {
     $(this).parent('tr').next("tr.task_details").slideToggle("fast");
+    
+    if($(this).children('i').hasClass('fa-plus'))
+    {
+      $(this).children('i').removeClass('fa-plus')
+      $(this).children('i').addClass('fa-minus')
+    }
+    else
+    {
+      $(this).children('i').addClass('fa-plus')
+      $(this).children('i').removeClass('fa-minus')
+    }
   });
 
   $('.cost_paid_btn').click(function(){

@@ -14,6 +14,8 @@
 //= require uikit
 //= require jquery.magnific-popup.min.js
 //= require uikit/components/lightbox
+//= require best_in_place
+//= require best_in_place.jquery-ui
 //= require jquery_ujs
 //= require jquery.infinite-pages
 //= require jquery.are-you-sure

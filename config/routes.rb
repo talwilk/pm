@@ -97,7 +97,8 @@ Rails.application.routes.draw do
   post "/new_professional", to: "pros#new_professional"
 
   post "/update_task/:id", to: "tasks#update_task"
-
+  put "/update_task/:id", to: "tasks#update_task", as: :task
+  # resources :tasks, only: [:update]
   
 
   get '/user', to: 'landing#user'
