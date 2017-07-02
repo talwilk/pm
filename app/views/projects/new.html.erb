@@ -10,8 +10,11 @@ table, th, td {
 
 <div class="project">
 	<%= form_for(@project, :url => {:controller => 'projects', :action => 'create'}) do |p| %>
-		<td><%= p.text_field :name, required: true %></td>
-    	<td><%= p.text_area :description, :rows => 3, :required => true %></td>
+		<td><%= p.text_field :name, required: true, placeholder: t("project.name") %></td>
+    	<td>
+            <%= p.text_area :description, :rows => 3, :required => true , placeholder: t("project.description")%>
+            
+        </td>
     	<td><%= p.collection_select :type_id, Type.all, :id, :name, required: true, prompt: true %></td>
     	<td><%= p.submit "Create" %></td>
     <% end %>

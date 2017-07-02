@@ -201,6 +201,7 @@ class UsersController < ApplicationController
     @total_paid = @tasks.sum(:paid) 
     @task_count = @tasks.count 
     @complete_task_count = @tasks.where(status: 'completed').count 
+    @project.orig_start_date ||= Date.new
     @total_end_date = @project.orig_start_date + @total_duration.days
   end
   
