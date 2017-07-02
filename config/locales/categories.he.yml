@@ -1,6 +1,7 @@
 he:
   categories:
     ac: 'מיזוג אויר'
+    aluminum: 'אלומיניום'
     appraising: 'שמאות'
     architecture: 'ארכיטכטורה'
     boiler: 'דוודים'
@@ -8,6 +9,7 @@ he:
     cladding: 'חיפויים'
     cleaning: 'ניקיון'
     contruction: 'הנדסת בנין'
+    const_constructor: 'קבלן בינוי'
     contruction_company: 'חברה משכנת'
     decks: 'דקים'
     demolition: 'הריסה'
@@ -48,6 +50,7 @@ he:
     qa: 'בדיקת איכות'
     railings: 'מעקות'
     real_estate_agent: 'סוכן נדלן'
+    regulation: 'רשויות'
     rendering: 'הדמייה'
     restoration: 'שיחזור'
     roofing: 'גג'
