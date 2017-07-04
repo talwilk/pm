@@ -1,8 +1,9 @@
 #lp-pom-block-8.lp-element.lp-pom-block
   #lp-pom-block-8-color-overlay
   .lp-pom-block-content
-    #lp-pom-text-28.lp-element.nlh class="#{wizard_class_name}"
-      = render partial: "landing/question_1"
+    - if !user_signed_in?
+      #lp-pom-text-28.lp-element.nlh class="#{wizard_class_name}"
+        = render partial: "landing/question_1"
     #lp-pom-text-30.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
       p.lplh-77
         span style="color:#ffffff;"

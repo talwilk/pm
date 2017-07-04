@@ -17,7 +17,7 @@
 						<%= f.input :build, placeholder: "גודל במר", label: _("#{t('create_project.l_lot')}") %>
 						<%= f.input :orig_budget, label: _("#{t('create_project.l_budget')}") , placeholder: "מחיר בשקלים" %>
 						<%= puts " **** signin #{@provide_signin_info}" %>
-						<% if @provide_signin_info %>
+						<% if @provide_signin_info && !@hide_email %>
 							<%= f.input :email, label: _("#{t('create_project.l_email')}") %>
 						<% end %>
 						<%= f.input :address, label: _("#{t('create_project.l_address')}") %>

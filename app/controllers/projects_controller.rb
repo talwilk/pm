@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def new
+		session[:hide_email] = true if !user_signed_in?
 		@project = Project.new(type_id: 8)
 		get_gen_task_list
 	end

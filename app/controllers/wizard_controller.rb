@@ -26,10 +26,12 @@ class WizardController < ApplicationController
 			find_qna
 			set_str(3)
 		when :question_4
+			@hide_email = session[:hide_email] if !user_signed_in?
 			puts "**  show Q4**"
 			find_qna
 			set_str(4)
 		else :project_details
+			@hide_email = session[:hide_email] if !user_signed_in?
 			puts "**  show pd**"
 			#@qna = Qna.new(session[:qna_id])
 			if !params[:qna_id].nil?
@@ -80,6 +82,7 @@ class WizardController < ApplicationController
 				@qna.save!
 				set_str(3)
 			when  :question_4
+				@hide_email = session[:hide_email] if !user_signed_in?
 				puts "**   update Q4**"
 				find_qna
 				@qna.q3 = params[:q]
@@ -91,6 +94,7 @@ class WizardController < ApplicationController
 				end
 				set_str(4)
 			else
+				@hide_email = session[:hide_email] if !user_signed_in?
 				puts "**   update ELSE**"
 				find_qna
 				@qna.q4 = params[:q]
