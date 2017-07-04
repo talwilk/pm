@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 	before_action :get_project , only: [:show, :update, :edit]
+	layout :wizard_layout
 
 	def get_project
 		puts "*** In Projects#get"
@@ -76,7 +77,16 @@ class ProjectsController < ApplicationController
 	def edit
 	end
 
-	private  
+	private
+
+	def wizard_layout
+		case action_name
+		when "new"
+			"project"
+		else
+			"application"
+		end
+	end
 
   	def project_params 
     	params.require(:project).permit(:name, :description, :add_street, :add_city, :add_country, :orig_start_date, :plot, :build, :address, :email, :orig_budget, :type_id, :user_id, :qna_id) 

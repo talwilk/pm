@@ -1,0 +1,35 @@
+doctype html
+html dir= "#{t :dir}" lang= "#{params[:locale] }"
+  head
+    title #{t('title')}
+    = favicon_link_tag 'favicon.png', type: 'image/png'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"
+    - if content_for? :for_head
+      = yield :for_head
+  body  dir= "#{t :dir}" lang= "#{params[:locale] }"
+    - if content_for? :for_body
+      = yield :for_body
+    = render partial: 'layouts/top_navigation'
+    - set_var 'FROALA_LICENSE_KEY', ENV['FROALA_LICENSE_KEY']
+    - set_var 'DILEMMA_DESCRIPTION', DILEMMA_DESCRIPTION
+    == rjv_tags
+    = javascript_include_tag 'application'
+    = render partial: 'layouts/messages'
+    - if current_user
+      - if !current_user.confirmed?
+        = render partial: 'devise/confirmations/unconfirmed_message'
+    = yield
+    = render partial: 'layouts/footer'
+    #privacy-policy.uk-modal
+      .uk-modal-dialog
+        a.uk-modal-close.uk-close
+        div style="padding-top:25px;"
+          = render 'landing/privacy_policy'
+
+    #terms-conditions.uk-modal
+      .uk-modal-dialog
+        a.uk-modal-close.uk-close
+        div style="padding-top:25px;"
+          = render 'landing/terms_conditions'
