@@ -17,4 +17,12 @@ module ApplicationHelper
 			end
 		end
 	end
+
+	def wizard_class_name
+		if "#{t :dir}" == "ltr"
+			return "rtl"
+		else
+			return "ltr"
+		end
+	end
 end

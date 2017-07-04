@@ -14,7 +14,12 @@ class WizardController < ApplicationController
 			set_str(1)
 		when :question_2
 			puts "** show Q2**"
-			find_qna
+			@qna = Qna.new(session[:qna_id])
+			session[:qna]=@qna.attributes
+			@qna.q1 = params[:q]
+			@qna.save!
+			@qna_id=@qna.id
+			@qna_id=@qna.id
 			set_str(2)
 		when :question_3
 			puts "**  show Q3**"
@@ -45,7 +50,7 @@ class WizardController < ApplicationController
 		end
     	render_wizard
     end
-	
+
 	def update
 		puts "****   in update "
 		case step
