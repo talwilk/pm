@@ -1,6 +1,7 @@
 en:
   categories:
     ac: 'Heating and Air conditioning'
+    aluminum: 'Aluminum'
     appraising: 'Appraising'
     architecture: 'Architecture'
     boiler: 'Boiler'
@@ -8,6 +9,7 @@ en:
     cladding: 'Cladding'
     cleaning: 'Cleaning'
     contruction: 'Construction'
+    const_constructor: 'Construction Constructor'
     contruction_company: 'Construction company'
     decks: 'Decks'
     demolition: 'Demolition'
@@ -48,6 +50,7 @@ en:
     qa: 'Quality assurance'
     railings: 'Railings'
     real_estate_agent: 'Real estate agent'
+    regulation: 'רשויות'
     rendering: 'Rendering'
     restoration: 'Restoration'
     roofing: 'Roofing'

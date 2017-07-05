@@ -37,51 +37,51 @@
 							<th class="uk-width-1-6"></th> 
 							<th class="uk-width-1-6"></th> 
 							<th class="uk-width-1-6"></th> 
-						</tr>
-							<% tasks.each_entry do |id, t| %>
-								<%	if !t.nil? then %>
-									<%	t.each_entry do |x|  %>
-										<tr class="task_row uk-width-6-6">
-		  									<td class="uk-width-1-6 uk-text-right"><%= image_tag(x.image_url) %></td>
-			  								<td class="uk-width-1-6 uk-text-right"><%= x.name %></td>
-			  								<td class="uk-width-1-6 uk-text-right"></td>
-			  								<td class="uk-width-1-6 uk-text-right">
-			  									<% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
-				  									<%= if (!x.cost.nil?) then x.cost else "0" end %>
-				  									<%= "/" %>
-				  									<%= if (!x.paid.nil?) then x.paid else "0" end %>
-				  								<% end %>
-			  								</td>
-			  								<td class="uk-width-1-6 uk-text-right"></td>
-			  								<td class="uk-width-1-6 uk-text-right"><%=	if x.dilemma_count==0 then ("0") else image_tag('wizard/dg_logo.png') end %></td>
-										</tr>
-										<tr class="task_details" hidden="true">
-											<td class="task_details" colspan="7">
-												<div>
-													<p><%=  if !x.description.nil? then x.description end %></br></p>
-													<p>	<%= _("#{t('task.cost')}") %>
-														<%=  x.cost %>
-														<%= _("#{t('common.hint_cur')}") %>,
-														<%= _("#{t('task.paid')}") %>
-														<%=  x.paid %>
-														<%= _("#{t('common.hint_cur')}") %>
-													</br></p>
-													<p id = "show_notes"><%= _("#{t('task.notes')}") %><%=  x.notes %></p>
-													<% if x.dilemma_count==0 then %> 
-														<p><%= _("#{t('guru_dashboard.no_dilemma_title')}") %></p>
-													<% else %>
-														<p><%= _("#{t('guru_dashboard.dilemma_title')}") %></p>
-														<p><% eval(x.dilemma_list).each do |id, title| %>
-															<%= link_to title, dilemma_path(id) %></p>
-													<% end %>
+						</tr>ט
+						<% tasks.each_entry do |id, t| %>
+							<%	if !t.nil? then %>
+								<%	t.each_entry do |x|  %>
+									<tr class="task_row uk-width-6-6">
+	  									<td class="uk-width-1-6 uk-text-right"><%= image_tag(x.image_url) %></td>
+		  								<td class="uk-width-1-6 uk-text-right"><%= x.name %></td>
+		  								<td class="uk-width-1-6 uk-text-right"></td>
+		  								<td class="uk-width-1-6 uk-text-right">
+		  									<% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
+			  									<%= if (!x.cost.nil?) then x.cost else "0" end %>
+			  									<%= "/" %>
+			  									<%= if (!x.paid.nil?) then x.paid else "0" end %>
+			  								<% end %>
+		  								</td>
+		  								<td class="uk-width-1-6 uk-text-right"></td>
+		  								<td class="uk-width-1-6 uk-text-right"><%=	if x.dilemma_count==0 then ("0") else image_tag('wizard/dg_logo.png') end %></td>
+									</tr>
+									<tr class="task_details" hidden="true">
+										<td class="task_details" colspan="7">
+											<div>
+												<p><%=  if !x.description.nil? then x.description end %></br></p>
+												<p>	<%= _("#{t('task.cost')}") %>
+													<%=  x.cost %>
+													<%= _("#{t('common.hint_cur')}") %>,
+													<%= _("#{t('task.paid')}") %>
+													<%=  x.paid %>
+													<%= _("#{t('common.hint_cur')}") %>
+												</br></p>
+												<p id = "show_notes"><%= _("#{t('task.notes')}") %><%=  x.notes %></p>
+												<% if x.dilemma_count==0 then %> 
+													<p><%= _("#{t('guru_dashboard.no_dilemma_title')}") %></p>
+												<% else %>
+													<p><%= _("#{t('guru_dashboard.dilemma_title')}") %></p>
+													<p><% eval(x.dilemma_list).each do |id, title| %>
+														<%= link_to title, dilemma_path(id) %></p>
 												<% end %>
-												</div>
-											</td>
-										</tr>
-									<% end %>
-								<%	end %>
-							<% end %>
+											<% end %>
+											</div>
+										</td>
+									</tr>
+								<% end %>
+							<%	end %>
 						<% end %>
+					<% end %>
 				</thead>
 			</table>
 		<% else %>
