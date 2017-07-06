@@ -20,7 +20,7 @@
 						<% if @provide_signin_info %>
 							<%= f.input :email, label: _("#{t('create_project.l_email')}") %>
 						<% end %>
-						<%= f.input :address, label: _("#{t('create_project.l_address')}") %>
+						<%= f.input :address, collection: SupportedCity.collection, label: _("#{t('create_project.l_address')}") %>
 						<%= f.input :plot, label: _("#{t('create_project.l_plot')}") , placeholder: "גודל במר" %>
 						<div class="button-grid" hidden="true">
 							<div class="secondery-button mini-button" id="projects-details-button" hidden="true">

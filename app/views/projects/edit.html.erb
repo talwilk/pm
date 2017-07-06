@@ -19,6 +19,7 @@
 						<%= f.input :description, label: _("#{t('project.description')}") %>
 						<%= f.input :plot, label: _("#{t('project.plot')}") %>
 						<%= f.input :build, label: _("#{t('project.lot')}") %>
+						<%= f.input :address, collection: SupportedCity.collection, label: _("#{t('create_project.l_address')}") %>
 						<!-- f.date_select :orig_start_date, label: _("#{t('project.start_date')}") -->
 						<div class="uk-align-right uk-margin-large">
 							<%= link_to _("#{t('common.back')}"), root_path %>   	

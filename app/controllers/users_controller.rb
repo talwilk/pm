@@ -201,7 +201,7 @@ class UsersController < ApplicationController
     @total_paid = @tasks.sum(:paid) 
     @task_count = @tasks.count 
     @complete_task_count = @tasks.where(status: 'completed').count 
-    @total_end_date = @project.orig_start_date + @total_duration.days
+    #@total_end_date = @project.orig_start_date + @total_duration.days
   end
   
   def set_env
