@@ -61,8 +61,8 @@ end
 
 def assign_task
 	task = Task.find(params[:task_id])
-	pro = Pro.find(params[:pro_id])
-  if task.update_attributes(pro_id: pro.id)
+	pro = Pro.find_by(id: params[:pro_id])
+  if pro.present? && task.update_attributes(pro_id: pro.id)
     render status: 200, json: true
   else
     render status: 400, json: true

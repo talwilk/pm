@@ -94,6 +94,7 @@ $(document).ready(function() {
         window.location.reload()
       },
       error: function(data) {
+        alert("Please Select Professional.")
         console.log(e)
       }
     });
