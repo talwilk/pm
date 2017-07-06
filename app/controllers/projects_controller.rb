@@ -47,6 +47,7 @@ class ProjectsController < ApplicationController
 	    	return
 	    end
 
+		session[:new_project_id] = @project.id
 		if @project.user_id.nil?
 			redirect_to new_user_registration_path(:email => @email)
 		else

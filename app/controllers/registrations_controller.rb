@@ -3,6 +3,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     puts "*** in create registration"
+    @project = Project.find_by(id: session[:new_project_id])
+    @project.update_attributes(email: sign_up_params[:email]) if @project.present?
     if deleted_user
       reopen_token_service = SendReopenAccountTokenService.new(deleted_user)
 
