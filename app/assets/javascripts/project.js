@@ -58,7 +58,8 @@ $(document).ready(function() {
   });
 
 
-  $('.invite_pro_btn').click(function(){
+  $('.invite_pro_btn').click(function(event){
+    event.preventDefault();
     $('#invite_pro_submit').attr("task-id", $(this).data("task-id"))
     $('#invite_pro_submit').attr("project-id", $(this).data("project-id"))
     $('.add_new_professional').attr("task-id", $(this).data("task-id"))

@@ -10,7 +10,7 @@
               <%= image_tag(x.image_url) %>
             </td>
             <td class="uk-width-2-10 uk-text-right">
-              <%= best_in_place x, :name, :as => :input %>
+              <%= best_in_place x, :name, :as => :input, inner_class: "#{mobile? ? 'task_name' : ''}" %>
             </td>
             <td class="uk-width-1-10 uk-text-right"><%= x.cur_end_date %>
             </td>
@@ -24,17 +24,26 @@
                 <% end %>
               </a>
             </td>
-          <td class="uk-width-2-10 uk-text-right" id="create_pro"><%= if !x.pro.nil? then 
-            (link_to (x.pro.full_name), project_task_pro_path(x.project,x,x.pro), target: '_blank') else (link_to _("#{t('project.pro')}"), new_project_task_pro_path(x.project,x), target: '_blank') end %></td>
-          <td class="uk-width-1-10 uk-text-right">
-            <%-if x.dilemma_count==0 then ("") %>
+          <td class="uk-width-2-10 uk-text-right" id="create_pro">
+            <% if !x.pro.nil? %>
               <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
-                <%= image_tag('add-media-icon.png', width: '25%')%> 
-              </a>  
-            <%-else%>
-             <%= image_tag('wizard/dg_logo.png') %>
-            <%end %>
+                <%= x.pro.full_name %>
+              </a>
+            <% else %>
+              <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
+                <%= t('project.pro') %>
+              </a>
+            <% end %>
           </td>
+          <!-- <td class="uk-width-1-10 uk-text-right">
+            <%#-if x.dilemma_count==0 then ("") %>
+              <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%#=x.pro.try(:id)%>">
+                <%#= image_tag('add-media-icon.png', width: '25%')%> 
+              </a>  
+            <%#-else%>
+             <%#= image_tag('wizard/dg_logo.png') %>
+            <%#end %>
+          </td> -->
           <td class="uk-width-1-10 uk-text-right show_task_details">
               <i class="fa fa-plus" aria-hidden="true"></i>
           </td> 

@@ -827,17 +827,20 @@ a {
     .uk-panel.uk-panel-box {
       height: 180px;
       width: 400px;
+      background: rgba(146, 44, 91, 0.09);
+      border: 1px white;
       padding: 30px 20px 30px 20px !important;
       p {
         text-align: right !important;
+        color: white !important;
       }
       table {
         position: absolute;
         left: 70px;
         bottom: 40px;
         line-height: 45px;
-        a {
-          color: #932b5b !important;
+        a, td {
+          color: white !important;
         }
       }
     }
@@ -861,17 +864,20 @@ a {
     .uk-panel.uk-panel-box {
       height: 180px;
       width: 400px;
+      background: rgba(146, 44, 91, 0.09);
+      border: 1px white;
       padding: 30px 20px 30px 20px !important;
       p {
         text-align: left !important;
+        color: white !important;
       }
       table {
         position: absolute;
         left: 70px;
         bottom: 40px;
         line-height: 45px;
-        a {
-          color: #932b5b !important;
+        a, td {
+          color: white !important;
         }
       }
     }

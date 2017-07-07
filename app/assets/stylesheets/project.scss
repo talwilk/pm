@@ -62,6 +62,17 @@
 	top: 130px;
 	#wizard_class {
 		width: 100%;
+    .uk-panel.uk-panel-box {
+      background: rgba(146, 44, 91, 0.09);
+      border: 1px white;
+      p {
+        text-align: left !important;
+        color: white !important;
+      }
+      a, td {
+        color: white !important;
+      }
+    }
 	}
 }
 #lp-pom-text-28.rtl{
@@ -70,6 +81,17 @@
 	top: 130px;
 	#wizard_class {
 		width: 100%;
+    .uk-panel.uk-panel-box {
+      background: rgba(146, 44, 91, 0.09);
+      border: 1px white;
+      p {
+        text-align: left !important;
+        color: white !important;
+      }
+      a, td {
+        color: white !important;
+      }
+    }
 	}
 }
 @media only screen and (max-width:768px){

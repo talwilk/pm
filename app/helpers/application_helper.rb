@@ -25,4 +25,8 @@ module ApplicationHelper
 			return "ltr"
 		end
 	end
+
+	def mobile?
+		request.user_agent =~ /Mobile|webOS/
+	end
 end
