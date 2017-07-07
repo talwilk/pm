@@ -1139,6 +1139,7 @@ en:
   task:
     phase: "Phase: "
     name: "Title: "
+    title: "Title"
     description: "Description: "
     code: "code: "
     category: "Category: "
