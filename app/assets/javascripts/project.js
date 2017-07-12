@@ -107,7 +107,7 @@ $(document).ready(function() {
     $('#new_professional #mobile_phone').val('')
     $('#new_professional #email').val('')
     $('#new_professional #task_id').val($(this).attr('task-id'))
-    $('#new_professional #project_id').val($(this).attr('project-id'))
+    // $('#new_professional #project_id').val($(this).attr('project-id'))
   });
 
   $('.add_new_professional').magnificPopup({
