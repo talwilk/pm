@@ -809,75 +809,77 @@ a {
   position:absolute;
 }
 
-#lp-pom-text-28.ltr {
-  display:block;
-  background:rgba(255,255,255,0);
-  border-style:none;
-  border-radius:0px;
-  left:20px;
-  top:132px;
-  z-index:71;
-  width: 450px;
-  height: 263px !important;
-  position: absolute;
-  #wizard_class {
-    margin: 0px;
-    width: inherit;
-    height: inherit;
-    .uk-panel.uk-panel-box {
-      height: 180px;
-      width: 400px;
-      background: rgba(146, 44, 91, 0.09);
-      border: 1px white;
-      padding: 30px 20px 30px 20px !important;
-      p {
-        text-align: right !important;
-        color: white !important;
-      }
-      table {
-        position: absolute;
-        left: 70px;
-        bottom: 40px;
-        line-height: 45px;
-        a, td {
+@media only screen and (min-width:768px){
+  #lp-pom-text-28.ltr {
+    display:block;
+    background:rgba(255,255,255,0);
+    border-style:none;
+    border-radius:0px;
+    left:20px;
+    top:132px;
+    z-index:71;
+    width: 450px;
+    height: 263px !important;
+    position: absolute;
+    #wizard_class {
+      margin: 0px;
+      width: inherit;
+      height: inherit;
+      .uk-panel.uk-panel-box {
+        height: 180px;
+        width: 400px;
+        background: rgba(146, 44, 91, 0.09);
+        border: 1px white;
+        padding: 30px 20px 30px 20px !important;
+        p {
+          text-align: right !important;
           color: white !important;
+        }
+        table {
+          position: absolute;
+          left: 70px;
+          bottom: 40px;
+          line-height: 45px;
+          a, td {
+            color: white !important;
+          }
         }
       }
     }
   }
-}
-#lp-pom-text-28.rtl {
-  display:block;
-  background:rgba(255,255,255,0);
-  border-style:none;
-  border-radius:0px;
-  right:20px;
-  top:132px;
-  z-index:71;
-  width: 450px;
-  height: 263px !important;
-  position: absolute;
-  #wizard_class {
-    margin: 0px;
-    width: inherit;
-    height: inherit;
-    .uk-panel.uk-panel-box {
-      height: 180px;
-      width: 400px;
-      background: rgba(146, 44, 91, 0.09);
-      border: 1px white;
-      padding: 30px 20px 30px 20px !important;
-      p {
-        text-align: left !important;
-        color: white !important;
-      }
-      table {
-        position: absolute;
-        left: 70px;
-        bottom: 40px;
-        line-height: 45px;
-        a, td {
+  #lp-pom-text-28.rtl {
+    display:block;
+    background:rgba(255,255,255,0);
+    border-style:none;
+    border-radius:0px;
+    right:20px;
+    top:132px;
+    z-index:71;
+    width: 450px;
+    height: 263px !important;
+    position: absolute;
+    #wizard_class {
+      margin: 0px;
+      width: inherit;
+      height: inherit;
+      .uk-panel.uk-panel-box {
+        height: 180px;
+        width: 400px;
+        background: rgba(146, 44, 91, 0.09);
+        border: 1px white;
+        padding: 30px 20px 30px 20px !important;
+        p {
+          text-align: left !important;
           color: white !important;
+        }
+        table {
+          position: absolute;
+          left: 70px;
+          bottom: 40px;
+          line-height: 45px;
+          a, td {
+            color: white !important;
+          }
         }
       }
     }
@@ -3448,6 +3450,50 @@ a {
     height:487px;
     position:relative;
   }
+
+  #lp-pom-text-28 {
+    display:block;
+    background:rgba(255,255,255,0);
+    border-style:none;
+    border-radius:0px;
+    left:6px;
+    top:302px;
+    z-index:71;
+    width: 450px;
+    height: 263px !important;
+    position: absolute;
+    #wizard_class {
+      margin: 0px;
+      width: inherit;
+      height: inherit;
+      .uk-panel.uk-panel-box {
+        height: 168px;
+        width: 308px;
+        background: rgba(146, 44, 91, 0.09);
+        border: 1px white;
+        padding: 0px !important;
+        p {
+          text-align: center !important;
+          color: white !important;
+          margin-top: 10px;
+        }
+        table {
+          position: absolute;
+          left: 6px;
+          bottom: 34px;
+          line-height: 27px;
+          a, td {
+            color: white !important;
+          }
+          img {
+            width: 70%;
+            height: 70%;
+          }
+        }
+      }
+    }
+  }
+
   #lp-pom-text-30.ltr {
     display:block;
     background:rgba(255,255,255,0);
