@@ -20,7 +20,7 @@
     = link_to root_path do
       #lp-pom-image-332.lp-element.lp-pom-image class=" #{ t :dir}"
         .lp-pom-image-container[style="overflow: hidden;"]
-          = image_tag("landing/da68145b-logo-dilemma-guru-white_04u01e04t01e000000.png", alt:"")
+          = image_tag("landing/vibo-logo.png", alt:"")
     #lp-pom-image-38.lp-element.lp-pom-image
       .lp-pom-image-container[style="overflow: hidden;"]
         = image_tag("landing/1dfb9c7e-feature-iphone_06s0dh06s0dh000000.png", alt:"")
@@ -291,13 +291,6 @@
           span[style="font-size:24px;"]
             span[style="font-family:lato;"]
               | #{t('landing.about.fingertips')}
-    #lp-pom-box-254.lp-element.lp-pom-box class=" #{ t :dir}"
-      = form_tag dilemmas_path, style:'padding-top:13px', method: :get do
-        = text_field_tag :search, params[:search],  placeholder: "#{t('landing.about.discover_dilemmas')}", class:'top-search-input'
-        = submit_tag '', title: nil, class: 'submit-search'
-      #lp-pom-image-275.lp-element.lp-pom-image class=" #{ t :dir}"
-        .lp-pom-image-container[style="overflow: hidden;"]
-          = image_tag("landing/d91fffe9-search_00o00o00o00o000000.png", alt:"")
     #lp-pom-image-260.lp-element.lp-pom-image
       .lp-pom-image-container[style="overflow: hidden;"]
         = image_tag("landing/d4c28874-author_028028028028000000.png", alt:"")
@@ -362,7 +355,7 @@
             span[style="font-size:14px;"]
               | #{t('landing.about.blog')}
     #lp-pom-text-323.lp-element.lp-pom-text.nlh[style="height: auto;" class=" #{ t :dir}"]
-      =link_to("https://dilemmaguru.freshdesk.com/support/home", target:'_blank')
+      =link_to("https://vibo.freshdesk.com/support/home", target:'_blank')
         p.lplh-22
           span[style="color:#922c5b;"]
             span[style="font-size:14px;"]
@@ -373,12 +366,12 @@
           span[style="color:#922c5b;"]
             span[style="font-size:14px;"]
               | #{t('landing.about.ranking')}
-    #lp-pom-text-327.lp-element.lp-pom-text.nlh[style="height: auto;" class=" #{ t :dir}"]
+    /#lp-pom-text-327.lp-element.lp-pom-text.nlh[style="height: auto;" class=" #{ t :dir}"]
       =link_to pricing_path
         p.lplh-22
           span[style="color:#922c5b;"]
             span[style="font-size:14px;"]
-              | #{t('landing.about.pricing')}
+              | #{t('landing.about.pricing')}/!
     #lp-pom-text-329.lp-element.lp-pom-text.nlh[style="height: auto;" class=" #{ t :dir}"]
       =link_to("https://dilemmaguru.freshdesk.com/support/tickets/new", target:'_blank')
         p.lplh-22

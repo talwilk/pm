@@ -53,8 +53,8 @@ header.top-navigation.uk-flex.uk-flex-middle
                             = link_to _("#{t('users.dashboard.edit_profile')}"), edit_profile_url
                           li
                             = link_to _("#{t('users.dashboard.ranks_and_activities')}"), gamification_path
-                          li
-                            = link_to _("#{t('users.dashboard.billing')}"), edit_payment_plan_transaction_path
+                          /li
+                            = link_to _("#{t('users.dashboard.billing')}"), edit_payment_plan_transaction_path/!
                           li
                             = link_to _("#{t('users.dashboard.change_password')}"), edit_user_registration_path
                           li
