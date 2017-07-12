@@ -43,6 +43,10 @@
   		}
   	}
   }
+
+  .uk-grid {
+    margin-left: 0px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px){
@@ -52,4 +56,12 @@
   		width: 45%;
   	}
   }
+}
+
+.margin-top-0 {
+  margin-top: 0px !important;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
 }
