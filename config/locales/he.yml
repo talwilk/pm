@@ -1198,8 +1198,8 @@ he:
     or: "או"
     Im: "אני"
     my: "את ה"
-    assign: "לְהַקְצוֹת"
-    assignee: "נִמחֶה"
+    assign: "שמור"
+    assignee: "בחירת בעל מקצוע"
   create_project:
     l_name: "איך אתה קורא לפרויקט שלך?"
     l_lot: "כמה גדול הבית?"
