@@ -3,7 +3,7 @@
     <%= form_tag('/new_professional', id: "new_professional") do %>
       <%= hidden_field_tag "task_id", '' %>
       <%= hidden_field_tag "project_id", @project.id %>
-      <table class="uk-width-2-2 uk-text-right">
+      <table class='uk-width-2-2 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
         <tr>
           <td>
             <h1><%= t('pro.create_pro_title') %></h1>

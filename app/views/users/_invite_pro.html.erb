@@ -1,6 +1,6 @@
 <div id='invite_pro_form' class="mfp-hide white-popup uk-panel uk-panel-box uk-align-center">
   <div class="uk-overflow-container">
-    <table class="uk-width-2-2 uk-text-right">
+    <table class='uk-width-2-2 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
       <tr>
         <td>
           <h1><%= t('common.assignee')%></h1>
