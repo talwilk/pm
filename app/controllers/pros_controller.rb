@@ -80,6 +80,7 @@ def new_professional
 		project_id: params[:project_id]
 	)
 	@task.update_attribute(:pro_id, @pro.id)
+	send_pro_invitation_email
 	redirect_to root_path
 end
 
@@ -112,15 +113,15 @@ private
   	#end
 
 	def send_pro_invitation_email
-		puts "!!! In COMMENT - NOT Sending Pro inviation Email..."
+		puts "*** Sending Pro inviation Email..."
 
 		#@form = ProInvitationForm.new(invitation_params)
 
-	    #if UserMailer.pro_invitation_email(@pro).deliver_now
-	    #	puts "Pro Email sent"
-	    #else
-	    #	puts "ERROR in sending Pro email"
-	    #end
+	    if UserMailer.pro_invitation_email(@pro).deliver_now
+	    	puts "Pro Email sent"
+	    else
+	    	puts "ERROR in sending Pro email"
+	    end
 	end
 
 end

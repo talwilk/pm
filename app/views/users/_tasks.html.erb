@@ -10,7 +10,7 @@
               <%= image_tag(x.image_url) %>
             </td>
             <td class="uk-width-2-10 uk-text-right">
-              <%= best_in_place x, :name, :as => :input, inner_class: "#{mobile? ? 'task_name' : ''}" %>
+              <%= best_in_place x, :name, :as => :input, inner_class: "#{mobile? ? 'task_name_home' : ''}" %>
             </td>
             <td class="uk-width-1-10 uk-text-right"><%= x.cur_end_date %>
             </td>
@@ -27,7 +27,7 @@
           <td class="uk-width-2-10 uk-text-right" id="create_pro">
             <% if !x.pro.nil? %>
               <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
-                <%= x.pro.full_name.truncate(12) %>
+                <%= x.pro.full_name.present? ? x.pro.full_name.truncate(12) : t('project.pro') %>
               </a>
             <% else %>
               <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
