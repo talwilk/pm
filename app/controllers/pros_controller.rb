@@ -122,7 +122,6 @@ private
         puts "ERROR in sending Pro email"
       end
     rescue Exception => e
-      redirect_to root_path
     end
   end
 
