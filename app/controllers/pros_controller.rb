@@ -113,15 +113,17 @@ private
   	#end
 
 	def send_pro_invitation_email
-		puts "*** Sending Pro inviation Email..."
-
-		#@form = ProInvitationForm.new(invitation_params)
-
-	    if UserMailer.pro_invitation_email(@pro).deliver_now
-	    	puts "Pro Email sent"
-	    else
-	    	puts "ERROR in sending Pro email"
-	    end
-	end
+    begin
+      puts "*** Sending Pro inviation Email..."
+      #@form = ProInvitationForm.new(invitation_params)
+      if UserMailer.pro_invitation_email(@pro).deliver_now
+        puts "Pro Email sent"
+      else
+        puts "ERROR in sending Pro email"
+      end
+    rescue Exception => e
+      redirect_to root_path
+    end
+  end
 
 end
