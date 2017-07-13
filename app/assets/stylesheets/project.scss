@@ -26,14 +26,6 @@
   width:944px;
   height:620px;
 }
-#lp-pom-block-8-color-overlay {
-  position:absolute;
-  background:rgba(146,44,91,0.15);
-  -pie-background:rgba(146,44,91,0.15);
-
-  height:620px;
-  width:100%;
-}
 
 #lp-pom-text-30.rtl {
   display:block;
@@ -59,43 +51,45 @@
   position:absolute;
 }
 
-#lp-pom-text-28.ltr{
-	position: absolute;
-	left: 180px;
-	top: 130px;
-	#wizard_class {
-		width: 100%;
-    .uk-panel.uk-panel-box {
-      background: rgba(146, 44, 91, 0.09);
-      border: 1px white;
-      p {
-        text-align: left !important;
-        color: white !important;
-      }
-      a, td {
-        color: white !important;
-      }
-    }
-	}
-}
-#lp-pom-text-28.rtl{
-	position: absolute;
-	right: 180px;
-	top: 130px;
-	#wizard_class {
-		width: 100%;
-    .uk-panel.uk-panel-box {
-      background: rgba(146, 44, 91, 0.09);
-      border: 1px white;
-      p {
-        text-align: left !important;
-        color: white !important;
-      }
-      a, td {
-        color: white !important;
+@media only screen and (min-width:769px) {
+  #lp-pom-block-182.ltr{
+    position: absolute;
+    left: 180px;
+    top: 210px;
+    #wizard_class {
+      width: 100%;
+      .uk-panel.uk-panel-box {
+        background: rgba(146, 44, 91, 0.09);
+        border: 1px white;
+        p {
+          text-align: left !important;
+          color: white !important;
+        }
+        a, td {
+          color: white !important;
+        }
       }
     }
-	}
+  }
+  #lp-pom-block-182.rtl{
+    position: absolute;
+    right: 180px;
+    top: 210px;
+    #wizard_class {
+      width: 100%;
+      .uk-panel.uk-panel-box {
+        background: rgba(146, 44, 91, 0.09);
+        border: 1px white;
+        p {
+          text-align: left !important;
+          color: white !important;
+        }
+        a, td {
+          color: white !important;
+        }
+      }
+    }
+  }
 }
 @media only screen and (max-width:768px){
 	#lp-pom-block-8 {
@@ -125,13 +119,11 @@
     width:320px;
     height:487px;
   }
-  #lp-pom-block-8-color-overlay {
-    position:absolute;
-    background:rgba(146,44,91,0.15);
-    -pie-background:rgba(146,44,91,0.15);
-
-    height:487px;
-    width:100%;
+}
+@media only screen and (max-width:767px) {
+  #lp-pom-block-182 {
+    #wizard_class {
+      margin-bottom: 0px !important;
+    }
   }
-  
 }
