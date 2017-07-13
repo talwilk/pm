@@ -152,7 +152,7 @@ class UsersController < ApplicationController
   def get_task_list
     puts "***  in Get Tasks"
     v_id = @project.id
-    @tasks = Task.where("tasks.project_id = :project_id", {:project_id => "#{v_id}"}).order(:phase, :code).order("created_at desc")
+    @tasks = Task.where("tasks.project_id = :project_id", {:project_id => "#{v_id}"}).order("created_at desc").order(:phase, :code)
     
     get_totals
 
