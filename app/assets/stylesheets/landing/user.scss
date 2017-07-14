@@ -809,13 +809,30 @@ a {
   position:absolute;
 }
 
+@media only screen and (min-width: 993px) {
+  #lp-pom-block-18-color-overlay.ltr {
+    left:191px;
+  }
+  #lp-pom-block-18-color-overlay.rtl {
+    right:191px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  #lp-pom-block-18-color-overlay.ltr {
+    left:191px;
+  }
+  #lp-pom-block-18-color-overlay.rtl {
+    right: 4%;
+  }
+}
+
 @media only screen and (min-width:768px){
   #lp-pom-block-18-color-overlay.ltr {
     display:block;
     background:rgba(255,255,255,0);
     border-style:none;
     border-radius:0px;
-    left:191px;
     top:132px;
     z-index:71;
     width: 450px;
@@ -852,7 +869,6 @@ a {
     background:rgba(255,255,255,0);
     border-style:none;
     border-radius:0px;
-    right:191px;
     top:132px;
     z-index:71;
     width: 450px;
@@ -3203,7 +3219,7 @@ a {
   width:187px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:767px) {
 
   #lp-pom-image-3311-holder {
     background-image:url(http://d9hhrg4mnvzow.cloudfront.net/www.dilemma.guru/-1/da68145b-logo-dilemma-guru-white_04u01e04t01e000000.png);
