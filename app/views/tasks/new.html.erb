@@ -3,56 +3,42 @@
 </header>
 
 <body>
-    <div class="uk-panel uk-panel-box uk-align-center">
-        
-        <div>
-            <h2><%=   _("#{t('task.create_new_title')}") %></h2></br>
-            <h4><%=   @project.name %></h4></br>
+    <main class="uk-container uk-container-center main-container">
+        <div class="uk-grid">
+            <div class="uk-width-medium-1-1 uk-text-center">
+                <h2><%=   _("#{t('task.create_new_title')}") %></h2>
+                <h3><%=   @project.name %></h3>
+            </div>
         </div>
 
-        <div class="uk-overflow-container">
-        	<%= simple_form_for([@project, @task], :url => {:controller => 'tasks', :action => 'create'}) do |t| %>
-
-                <table class="uk-width-2-2 uk-text-right">
-                    <tr>
-                        <td><%= _("#{t('task.phase')}") %> </td>
-                        <td><%= t.input :phase, collection: SupportedPhase.collection, label: false, error: 'Phase must be specify', :selected => '01_goals'  %></td>
-                    </tr><tr>
-                        <td><%= _("#{t('task.name')}") %></td>
-                        <td><%= t.input :name, label: false %></td>              
-                    </tr><tr>
-                        <td><%= _("#{t('task.description')}") %></td>
-                        <td><%= t.text_area :description, label: false, style: 'width:100%', rows: '5' %></td>   
-                    </tr><tr>
-                        <td><%= _("#{t('task.category')}") %> </td>
-                        <td><%= t.input :category, collection: SupportedCategory.collection, label: false, error: 'Category must be specify'  %></td>
-                    </tr><tr>
-                        <td><%= _("#{t('task.status')}") %> </td>
-                        <td><%= t.input :status, collection: SupportedStatus.collection, label: false, error: 'Status must be specify', :selected => 'not_started' %></td>
-                    </tr>
-                    <tr>
-                        <td><%= _("#{t('task.my_pro')}") %></td>
-                        <td><%= t.collection_select :pro_id, Pro.where(project_id: @project.id), :id, :full_name, {:prompt => _("#{t('common.select')}")} %></td>
-                    </tr>
-                    <tr>
-                        <td><%= _("#{t('task.duration')}") %>  </td>
-                        <td><%= t.input :duration, label: false %></td>
-                    </tr>
-                    <tr>
-                        <td><%= _("#{t('task.cost')}") %>  </td>
-                        <td><%= t.input :cost, label: false %></td>
-                    </tr>
-                    <tr>
-                        <td><%= _("#{t('task.paid')}") %>  </td>
-                        <td><%= t.input :paid, label: false %></td>
-                    </tr>
-                    <% t.input :project_id, :value => params[:project_id], label: false %>
-                </table>
-
-                <div class="uk-text-left">
-                    <%= t.button :submit, _("#{t('common.submit')}"), class:'primary-button mini-button' %>    
+        <div class="uk-grid ">
+            <div class="uk-container uk-width-medium-8-10 uk-container-center">
+                <%= simple_form_for([@project, @task], :url => {:controller => 'tasks', :action => 'create'}) do |t| %>
+                    <div class="uk-grid">
+                        <div class="uk-width-medium-1-1 holder rtl">
+                            <div class="uk-form-row string required new_task_name"><%= t.input :name, label: "#{t('task.name')}" %> </div>
+                            <div class="uk-form-row string new_task_label_description"><%= t.label "#{t('task.description')}" %> </div>
+                            <div class="uk-form-row string new_task_description"><%= t.text_area :description, style: "width:100%", rows: "5", label: "#{t('task.description')}" %> </div>
+                            <div class="uk-form-row string required new_task_phase"><%= t.input :phase, collection: SupportedPhase.collection, label: "#{t('task.phase')}" %> </div>
+                            <div class="uk-form-row string required new_task_category"><%= t.input :category, collection: SupportedCategory.collection, label: "#{t('task.category')}" %> </div>
+                            <div class="uk-form-row string required new_task_status"><%= t.input :status, collection: SupportedStatus.collection, label: "#{t('task.status')}", :selected => 'not_started' %> </div>
+                            <div class="uk-form-row string new_task_label_pro"><%= t.label "#{t('task.pro')}" %> </div>
+                            <div class="uk-form-row string new_task_pro"><%= t.collection_select :pro_id, Pro.where(project_id: @project.id), :id, :full_name, {:prompt => _("#{t('common.select')}")} %>  </div>
+                            <div class="uk-form-row integer new_task_duration"><%= t.input :duration, label: "#{t('task.duration')}", placeholder: "#{t('common.hint_duration')}" %> </div>
+                            <div class="uk-form-row integer new_task_cost"><%= t.input :cost, label: "#{t('task.cost')}", placeholder: "#{t('common.hint_cur')}" %> </div>
+                            <div class="uk-form-row integer new_task_paid"><%= t.input :paid, label: "#{t('task.paid')}", placeholder: "#{t('common.hint_cur')}" %> </div>
+                            <div><% t.input :project_id, :value => params[:project_id], label: false %></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="uk-grid ">
+            <div class="uk-container uk-width-medium-8-10 uk-container-center">
+                <div class="uk_grid uk-align-left">
+                    <div><%= t.button :submit, _("#{t('common.submit')}"), class:'primary-button mini-button' %></div>
                 </div>
+            </div>
             <% end %>
         </div>
-    </div>
+    </main>
 </body>

@@ -1153,7 +1153,7 @@ he:
     with_tasks_note: "רשימת המשימות שנפתחו עבורך על ידי לקוחותיך"
     without_tasks_note: "טרם נפתחו עבורך משימות. הזמן את לקוחותיך להצטרף לויבו..."
   common:
-    are_you_sure: "האם אתב בטוח?"
+    are_you_sure: "האם אתה בטוח?"
     edit: "עריכה"
     view: "הצגה"
     delete: "מחיקה"
@@ -1163,6 +1163,7 @@ he:
     days: "ימים"
     hint_size: "מ\"ר"
     hint_cur: "ש\"ח"
+    hint_duration: "ימים"
     select: "בחר"
     q21: "סוג פרויקט"
     a21: "קונה"
@@ -1194,7 +1195,7 @@ he:
     or: "או"
     Im: "אני"
     my: "את ה"
-  create_project:
+  w_create_project:
     l_name: "איך אתה קורא לפרויקט שלך?"
     l_lot: "כמה גדול הבית?"
     l_budget: "מה התקציב שלך?"

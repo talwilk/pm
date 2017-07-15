@@ -1,61 +1,51 @@
-<%= stylesheet_link_tag "forms" %>
+<header>
+    <%= stylesheet_link_tag "forms" %>
+</header>
 
-    <div class="uk-panel uk-panel-box uk-align-center">
-        <h2><%=   _("#{t('task.show_task_details')}") %> 
-            <%= @task.name %> 
-        </h2></br>
-        <div class="uk-container">
-            <%= simple_form_for(@task, :url => {:controller => 'tasks', :action => 'update'}) do |t| %>
-            <table class="uk-width-4-4 uk-text-right">
-                <tr>
-                    <td><%= _("#{t('task.name')}") %></td>
-                    <td><%= t.input :name, label: false %></td>              
-                </tr><tr>
-                    <td><%= _("#{t('task.description')}") %></td>
-                    <td><%= t.text_area :description, style: 'width:100%', rows: '5' %></td>   
-                </tr><tr>
-                    <td><%= _("#{t('task.pro')}") %></td>
-                    <td><%= _("#{t('task.my_pro')}") %>
-                        <%= t.collection_select :pro_id, Pro.where(project_id: @project.id), :id, :full_name, {:prompt => _("#{t('common.select')}")} %></td>
-                </tr><tr>
-                    <td><%= link_to _("#{t('task.add_pro')}"), new_project_task_pro_path(@project, @task)  %></td>   
-                </tr><tr>
-                    <td><%= _("#{t('task.category')}") %></td>
-                    <td><%= t.input :category, collection: SupportedCategory.collection, label: false %></td>
-                </tr><tr>
-                    <td><%= _("#{t('task.status')}") %></td>
-                    <td><%= t.input :status, collection: SupportedStatus.collection, label: false %></td>
-                </tr><tr>
-                    <td><%= _("#{t('task.phase')}") %></td>
-                    <td><%= t.input :phase, collection: SupportedPhase.collection, label: false %></td>
-                </tr><tr>    
-                    <td><%= _("#{t('task.duration')}") %></td>
-                    <td><%= t.input :duration, label: false, placeholder: _("#{t('common.days')}") %></td>
-                    <td><%= @range_duration %></td>
-                </tr><tr>
-                    <td><%= _("#{t('task.cost')}") %></td>
-                    <td><%= t.input :cost, label: false, placeholder: _("#{t('common.hint_cur')}") %></td>
-                    <td><%=  @range_cost %></td>
-                </tr><tr>
-                    <td><%= _("#{t('task.paid')}") %></td>
-                    <td><%= t.input :paid, label: false, placeholder: _("#{t('common.hint_cur')}") %></td>
-                </tr><tr>
-                    <td><%= _("#{t('task.notes')}") %></td>
-                    <td><%= t.text_area :notes, style: 'width:100%', rows: '5' %></td>
-                <!--
-                </tr><tr>
-                    <td><%= _("#{t('task.tips')}") %></td>
-                    <td><%= t.text_area :task_tips %></td>
-                </tr> -->
-         </table>
-                
+<body>
+    <main class="uk-container uk-container-center main-container">
 
-        <div>
-            <i class="uk-align-right"><%= link_to _("#{t('common.delete')}") , project_task_path(@project, @task), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i> 
-            <i class="uk-align-left"><%= t.button :submit, _("#{t('common.submit')}"), class:'primary-button mini-button' %></i>
-            <i class="uk-align-left"><%= link_to _("#{t('common.back')}"), root_path %></i> 
+        <div class="uk-grid">
+            <div class="uk-width-medium-1-1 uk-text-center">
+                <h2><%=   _("#{t('task.show_task_details')}") %> 
+                    <%= @task.name %> </h2>
+                <h3><%=   @project.name %></h3>
+            </div>
         </div>
-    
+
+
+        <div class="uk-grid ">
+            <div class="uk-container uk-width-medium-8-10 uk-container-center">
+                <%= simple_form_for(@task, :url => {:controller => 'tasks', :action => 'update'}) do |t| %>
+                    <div class="uk-grid">
+                        <div class="uk-width-medium-1-1 holder rtl">
+                            <div class="uk-form-row string required edit_task_name"><%= t.input :name, label: "#{t('task.name')}" %> </div>
+                            <div class="uk-form-row string edit_task_label_description"><%= t.label "#{t('task.description')}" %> </div>
+                            <div class="uk-form-row string edit_task_description"><%= t.text_area :description, style: "width:100%", rows: "5", label: "#{t('task.description')}" %> </div>
+                            <div class="uk-form-row string edit_task_label_pro"><%= t.label "#{t('task.pro')}" %> </div>
+                            <div class="uk-form-row string edit_task_pro"><%= t.collection_select :pro_id, Pro.where(project_id: @project.id), :id, :full_name, {:prompt => _("#{t('common.select')}")} %> </div>
+                            <div class="uk-form-row string edit_task_add_pro"><%= link_to _("#{t('task.add_pro')}"), new_project_task_pro_path(@project, @task)  %></div>   
+                            <div class="uk-form-row string required edit_task_phase"><%= t.input :phase, collection: SupportedPhase.collection, label: "#{t('task.phase')}" %> </div>
+                            <div class="uk-form-row string required edit_task_category"><%= t.input :category, collection: SupportedCategory.collection, label: "#{t('task.category')}" %> </div>
+                            <div class="uk-form-row string required edit_task_status"><%= t.input :status, collection: SupportedStatus.collection, label: "#{t('task.status')}", :selected => 'not_started' %> </div>
+                            <div class="uk-form-row integer edit_task_duration"><%= t.input :duration, label: "#{t('task.duration')}", placeholder: "#{t('common.hint_duration')}" %> </div>
+                            <div class="uk-form-row integer edit_task_cost"><%= t.input :cost, label: "#{t('task.cost')}", placeholder: "#{t('common.hint_cur')}" %> </div>
+                            <div class="uk-form-row integer edit_task_paid"><%= t.input :paid, label: "#{t('task.paid')}", placeholder: "#{t('common.hint_cur')}" %> </div>
+                            <div class="uk-form-row string edit_task_label_note"><%= t.label "#{t('task.notes')}" %> </div>
+                            <div class="uk-form-row string edit_task_note"><%= t.text_area :notes, style: "width:100%", rows: "5", label: "#{t('task.notes')}" %> </div>
+                        </div>    
+                    </div>
+            </div>
         </div>
-        <% end %>
-</div>
+        <div class="uk-grid ">  
+            <div class="uk-container uk-width-medium-8-10 uk-container-center">
+                <div class="uk_grid uk-align-left">
+                    <i class="uk-align-right"><%= link_to _("#{t('common.delete')}") , project_task_path(@project, @task), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i> 
+                    <i class="uk-align-left"><%= t.button :submit, _("#{t('common.submit')}"), class:'primary-button mini-button' %></i>
+                    <i class="uk-align-left"><%= link_to _("#{t('common.back')}"), root_path %></i> 
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </main>
+</body>

@@ -1183,4 +1183,5 @@ en:
     days: "days"
     hint_size: "sqm"
     hint_cur: "NIS"
+    hint_duration: "Days"
     select: "Select"
