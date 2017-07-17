@@ -61,7 +61,7 @@
             <td class="uk-width-medium-3-10 uk-width-large-3-10 uk-text-right uk-width-small-10-10" id="create_pro">
               <% if !x.pro.nil? %>
                 <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
-                  <%= x.pro.full_name.present? ? x.pro.full_name.truncate(12) : t('project.pro') %>
+                  <%= x.pro.full_name.present? ? x.pro.full_name : t('project.pro') %>
                 </a>
               <% else %>
                 <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
@@ -73,7 +73,7 @@
             <td class='uk-width-9-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>' id="create_pro">
               <% if !x.pro.nil? %>
                 <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
-                  <%= x.pro.full_name.present? ? x.pro.full_name.truncate(12) : t('project.pro') %>
+                  <%= x.pro.full_name.present? ? x.pro.full_name : t('project.pro') %>
                 </a>
               <% else %>
                 <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
