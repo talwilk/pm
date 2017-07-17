@@ -5,7 +5,11 @@ $(document).ready(function() {
   });
 
   $(".show_task_details").click(function() {
-    $(this).parents().find('tr.task_details').slideToggle("fast");
+    if ($('.mobile').data("mobile") == true) {
+      $(this).parent().parent('tr').next("tr.task_details").slideToggle("fast");
+    } else {
+      $(this).parent('tr').next("tr.task_details").slideToggle("fast");
+    }
     
     if($(this).children('i').hasClass('fa-plus'))
     {
