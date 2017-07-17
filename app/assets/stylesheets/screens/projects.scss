@@ -27,34 +27,10 @@
 
 @media (max-width: 767px){
   .dashboard_responsive {
-  	padding: 0px;
-  	.uk-table {
-  		td {
-  			font-weight: normal;
-  			font-size: 1.6rem;
-  			line-height: 30px;
-  			padding-left: 0px;
-  		}
-  		.uk-h3.uk-align-right {
-  			margin: 0px;
-  		}
-  		a.invite_pro_btn img {
-  			width: 85%;
-  		}
-  	}
+    padding: 0px;
   }
-
   .uk-grid {
     margin-left: 0px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px){
-  .dashboard_responsive {
-  	padding: 0px;
-  	.uk-table a.invite_pro_btn img {
-  		width: 45%;
-  	}
   }
 }
 
@@ -64,4 +40,21 @@
 
 .padding-bottom-15 {
   padding-bottom: 15px;
+}
+
+.margin-0 {
+  margin: 0px !important;
+}
+
+.task_table_heading {
+  background: #313747;
+  color: #E3E3E5;
+  tr {
+    border-top: none;
+    text-align: right;
+  }
+
+  td.text-align-left {
+    text-align: left;
+  }
 }

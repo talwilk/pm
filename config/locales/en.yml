@@ -1124,7 +1124,7 @@ en:
     duration: "Duration: "
     start_date: "Start Date:"
     end_date: "End Date:"
-    cost: "Cost: "
+    cost: "Cost "
     tasks: "tasks"
     my_task_list: "My Task List"
     p_new_title: "Project - New"
