@@ -5,7 +5,7 @@ $(document).ready(function() {
   });
 
   $(".show_task_details").click(function() {
-    $(this).parent('tr').next("tr.task_details").slideToggle("fast");
+    $(this).parents().find('tr.task_details').slideToggle("fast");
     
     if($(this).children('i').hasClass('fa-plus'))
     {
