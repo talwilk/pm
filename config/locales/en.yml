@@ -1190,3 +1190,5 @@ en:
     select: "Select"
     assign: "Assign"
     assignee: "Assignee"
+    hint_duration: "Days"
+    select: "Select"
