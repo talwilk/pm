@@ -1,7 +1,7 @@
 <% if !@tasks_hash.nil? %>
   <div class="mobile" data-mobile="<%= mobile? ? 'true' : 'false' %>"></div>
   <% @tasks_hash.each_entry do |phase, tasks| %>
-    <tr class='uk-h3 uk-grid margin-left-0-mobile padding-bottom-15 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
+    <tr class='uk-h3 uk-grid margin-left-0-mobile border-top-none padding-bottom-15 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
       <td nowrap=""><%= SupportedPhase.find(phase).name %></td>
     </tr>
     <% tasks.each_entry do |id, t| %>
