@@ -27,6 +27,13 @@ module ApplicationHelper
 	end
 
 	def mobile?
-		request.user_agent =~ /Mobile|webOS/
+		user_agent = request.env['HTTP_USER_AGENT'].downcase
+		if user_agent.index('ipad').present?
+			return false
+		elsif request.user_agent =~ /Mobile|webOS/
+			return true
+		else
+			false
+		end
 	end
 end
