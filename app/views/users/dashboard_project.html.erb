@@ -84,7 +84,24 @@
 					</table>
 				<% end %>
 				<table class="uk-table uk-table-hover uk-width-10-10">
-					<%= render partial: "tasks" %>
+					<% if !@tasks_hash.nil? %>
+						<div class="mobile" data-mobile="<%= mobile? ? 'true' : 'false' %>"></div>
+						<% @tasks_hash.each_entry do |phase, tasks| %>
+							<tr class='uk-h3 uk-grid margin-left-0-mobile border-top-none padding-bottom-15 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
+					      <td nowrap=""><%= SupportedPhase.find(phase).name %></td>
+					    </tr>
+					    <% tasks.each_entry do |id, t| %>
+					    	<%  t.each_entry do |x|  %>
+					    		<% if mobile? %>
+					    			<%= render partial: "tasks_mobile", locals: {x: x} %>
+					    		<% else %>
+					    			<%= render partial: "tasks", locals: {x: x} %>
+					    		<% end %>
+					    		<%= render partial: "task_detail", locals: {x: x} %>
+					    	<% end %>
+					    <% end %>
+						<% end %>
+					<% end %>
 				</table>
 			</div>	
 		</div>

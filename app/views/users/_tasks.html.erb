@@ -1,145 +1,34 @@
-<% if !@tasks_hash.nil? %>
-  <div class="mobile" data-mobile="<%= mobile? ? 'true' : 'false' %>"></div>
-  <% @tasks_hash.each_entry do |phase, tasks| %>
-    <tr class='uk-h3 uk-grid margin-left-0-mobile border-top-none padding-bottom-15 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
-      <td nowrap=""><%= SupportedPhase.find(phase).name %></td>
-    </tr>
-    <% tasks.each_entry do |id, t| %>
-      <%  t.each_entry do |x|  %>
-        <tr class="uk-grid margin-top-0 padding-bottom-15">
-          <td class="<%= mobile? ? 'uk-width-2-10' : 'uk-width-medium-1-10 uk-width-small-10-10 uk-width-large-1-10' %>">
-            <%= image_tag(x.image_url) %>
-          </td>
-          <% if mobile? %>
-            <td class='uk-width-7-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
-              <%= best_in_place x, :name, :as => :input %>
-            </td>
-            <td class="uk-width-1-10">
-              <span class="show_task_details">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </span>
-            </td>
-          <% else %>
-            <td class="uk-width-medium-2-10 uk-width-large-2-10 uk-text-right uk-width-small-10-10">
-              <%= best_in_place x, :name, :as => :input %>
-            </td>
-          <% end %>
-          <% if mobile? %>
-            <% if x.cur_end_date.present? %>
-              <td class='uk-width-9-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>'><%= x.cur_end_date %>
-              </td>
-              <td class='uk-width-1-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>'></td>
-            <% end %>
-          <% else %>
-            <td class='uk-width-medium-1-10 uk-width-large-1-10 uk-text-right uk-width-small-10-10'><%= x.cur_end_date %>
-            </td>
-          <% end %>
-          <% if !mobile? %>
-            <td class='uk-width-medium-2-10 uk-width-large-2-10 uk-text-right uk-width-small-10-10'>
-              <a class="cost_paid_btn" href="#payment_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
-                <% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
-                  <%= if (!x.cost.nil?) then x.cost else "0" end %>
-                  <%= "/" %>
-                  <%= if (!x.paid.nil?) then x.paid else "0" end %>
-                  <%= _("#{t('common.hint_cur')}") %>
-                <% end %>
-              </a>
-            </td>
-          <% else %>
-            <td class='uk-width-9-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
-              <a class="cost_paid_btn" href="#payment_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
-                <% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
-                  <%= if (!x.cost.nil?) then x.cost else "0" end %>
-                  <%= "/" %>
-                  <%= if (!x.paid.nil?) then x.paid else "0" end %>
-                  <%= _("#{t('common.hint_cur')}") %>
-                <% end %>
-              </a>
-            </td>
-            <td class='uk-width-1-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>'></td>
-          <% end %>
-          <% if !mobile? %>
-            <td class="uk-width-medium-3-10 uk-width-large-3-10 uk-text-right uk-width-small-10-10" id="create_pro">
-              <% if !x.pro.nil? %>
-                <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
-                  <%= x.pro.full_name.present? ? x.pro.full_name : t('project.pro') %>
-                </a>
-              <% else %>
-                <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
-                  <%= t('project.pro') %>
-                </a>
-              <% end %>
-            </td>
-          <% else %>
-            <td class='uk-width-9-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>' id="create_pro">
-              <% if !x.pro.nil? %>
-                <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
-                  <%= x.pro.full_name.present? ? x.pro.full_name : t('project.pro') %>
-                </a>
-              <% else %>
-                <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
-                  <%= t('project.pro') %>
-                </a>
-              <% end %>
-            </td>
-            <td class='uk-width-1-10 <%= wizard_class_name == "ltr" ? "uk-text-left" : "uk-text-right" %>'></td>
-          <% end %>
-          <% if !mobile? %>
-            <td class="uk-width-medium-1-10 uk-width-large-1-10 uk-text-right show_task_details uk-width-small-10-10">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </td>
-          <% end %>
-        </tr>
-        <tr class="task_details" hidden="true">
-          <td class="task_details" colspan="7">
-            <div>
-              <p><%=  if !x.description.nil? then x.description end %></br></p>
-              <p><% if x.dilemma_count==0 then %> 
-                  <%= (_("#{t('project.no_dilemma_title')}")
-                  link_to _("#{t('project.here')}")+x.name, new_dilemma_path(:task_id => x.id)) %> 
-                <% else %>
-                  <% eval(x.dilemma_list).each do |id, title| %>
-                    <%= link_to title, dilemma_path(id) %></p>
-                  <% end %>
-                  <p><%= (link_to _("#{t('project.here_again')}")+x.name, new_dilemma_path(:task_id => x.id)) %> </p>
-                <% end %>
-              <p><%  if x.task_tips.to_s != "" then  %>
-                <%= _("#{t('task.tips')}") %>
-                <% eval(x.task_tips).each do |name, url| %></br>
-                  <i><%= link_to name, url, target: :_blank %></i>
-                <% end %></p>
-              <% end %>
-              <p><%= _("#{t('task.cost')}") %>
-                <%=  x.cost %>
-                <%= _("#{t('common.hint_cur')}") %>,
-                <%= _("#{t('task.paid')}") %>
-                <%=  x.paid %>
-                <%= _("#{t('common.hint_cur')}") %>
-              </br></p>
-              <p id = "show_notes">
-                <i>
-                  <a class="notes_link" href="#notes_form" data-task-id="<%=x.id%>" data-notes="<%=x.notes%>">
-                    <%= _("#{t('task.notes')}") %>
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                  </a>
-                  <%=  x.notes %>
-                </i>
-              </p>
-              <p>
-                <i><%=  link_to _("#{t('common.edit')}") , edit_project_task_path(@project,x) %></></i>
-               | <i><%= link_to _("#{t('common.delete')}"), project_task_path(@project, x), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i>
-              </p>
-            </div>
-          </td>
-        </tr>
-        <tr class="add_pro_area" hidden="true">
-          <td class="add_pro_area" colspan="7">
-            <div class="uk-panel uk-form-width-medium">
-              <p>pro info</p>
-            </div>
-          </td>
-        </tr>
+<tr class="uk-grid margin-top-0 padding-bottom-15">
+  <td class="<%= mobile? ? 'uk-width-2-10' : 'uk-width-medium-1-10 uk-width-small-10-10 uk-width-large-1-10' %>">
+    <%= image_tag(x.image_url) %>
+  </td>
+  <td class="uk-width-medium-2-10 uk-width-large-2-10 uk-text-right uk-width-small-10-10">
+    <%= best_in_place x, :name, :as => :input %>
+  </td>
+  <td class='uk-width-medium-1-10 uk-width-large-1-10 uk-text-right uk-width-small-10-10'><%= x.cur_end_date %>
+  </td>
+  <td class='uk-width-medium-2-10 uk-width-large-2-10 uk-text-right uk-width-small-10-10'>
+    <a class="cost_paid_btn" href="#payment_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
+      <% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
+        <%= if (!x.cost.nil?) then x.cost else "0" end %>
+        <%= "/" %>
+        <%= if (!x.paid.nil?) then x.paid else "0" end %>
+        <%= _("#{t('common.hint_cur')}") %>
       <% end %>
+    </a>
+  </td>
+  <td class="uk-width-medium-3-10 uk-width-large-3-10 uk-text-right uk-width-small-10-10" id="create_pro">
+    <% if !x.pro.nil? %>
+      <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
+        <%= x.pro.full_name.present? ? x.pro.full_name : t('project.pro') %>
+      </a>
+    <% else %>
+      <a class="invite_pro_btn" href="#invite_pro_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
+        <%= t('project.pro') %>
+      </a>
     <% end %>
-  <% end %>
-<% end %>
+  </td>
+  <td class="uk-width-medium-1-10 uk-width-large-1-10 uk-text-right show_task_details uk-width-small-10-10">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+  </td>
+</tr>

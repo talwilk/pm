@@ -15,13 +15,6 @@
       <%=  _("#{t('project.cost')}") %></th>
     </td>
   </tr>
-  <tr class='uk-grid margin-0'>
-    <td class="uk-width-1-2 text-align-left">
-    </td>
-    <td class="uk-width-1-2">
-      <%= _("#{t('project.pro')}") %>
-    </td>
-  </tr>
 <% else %>
   <tr class='uk-grid margin-0'>
     <td class="uk-width-1-2">
@@ -37,13 +30,6 @@
     </td>
     <td class="uk-width-1-2 text-align-left">
       <%= @total_cost %> / <%= @total_paid %> <%= _("#{t('common.hint_cur')}") %>
-    </td>
-  </tr>
-  <tr class='uk-grid margin-0'>
-    <td class="uk-width-1-2">
-      <%= _("#{t('project.pro')}") %>
-    </td>
-    <td class="uk-width-1-2 text-align-left">
     </td>
   </tr>
 <% end %>
