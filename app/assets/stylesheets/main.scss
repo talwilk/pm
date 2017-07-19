@@ -29,6 +29,10 @@ h1,h2,h3,h4,h5,h6,p {
  line-height: 1.45;
 }
 
+.task_name_home {
+  width: 80px;
+}
+
 // Typography
 
 h1 {
@@ -60,7 +64,9 @@ p {
   color:#2d3344;
 }
 
-
+.color-white a {
+  color: white !important;
+}
 
 a, .uk-link {
   color:#932b5b;
@@ -122,4 +128,10 @@ font-size: 50px;
 
 select[multiple] {
   height:0;
+}
+
+@media only screen and (max-width: 390px) {
+    .no-mobile{
+        display: none;
+    }
 }

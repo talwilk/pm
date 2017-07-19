@@ -147,6 +147,12 @@ class UserMailer < Devise::Mailer
     mail to: @email, subject: I18n.t("emails.user_mailer.guru_invitation.subject")
   end
 
+  def pro_invitation_email(pro)
+    @pro = pro
+    @email = @pro.email
+    mail to: @email, subject: I18n.t("emails.user_mailer.pro_invitation_email.subject")
+  end
+
   private
 
   def set_name(form)

@@ -152,8 +152,7 @@ class UsersController < ApplicationController
   def get_task_list
     puts "***  in Get Tasks"
     v_id = @project.id
-    @tasks = Task.where("tasks.project_id = :project_id", {:project_id => "#{v_id}"})
-    @tasks.order(:phase, :code)
+    @tasks = Task.where("tasks.project_id = :project_id", {:project_id => "#{v_id}"}).order("created_at desc").order(:phase, :code)
     
     get_totals
 
@@ -201,7 +200,8 @@ class UsersController < ApplicationController
     @total_paid = @tasks.sum(:paid) 
     @task_count = @tasks.count 
     @complete_task_count = @tasks.where(status: 'completed').count 
-    #@total_end_date = @project.orig_start_date + @total_duration.days
+    @project.orig_start_date ||= Date.new
+    @total_end_date = @project.orig_start_date + @total_duration.days
   end
   
   def set_env

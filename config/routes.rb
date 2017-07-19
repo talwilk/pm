@@ -88,10 +88,17 @@ Rails.application.routes.draw do
   resources :wizard 
   resources :projects do
     resources :tasks do
-      resources :pros
+      resources :pros do
+        post :assign_task, on: :collection
+      end
     end 
   end
 
+  post "/new_professional", to: "pros#new_professional"
+
+  post "/update_task/:id", to: "tasks#update_task"
+  put "/update_task/:id", to: "tasks#update_task", as: :task
+  # resources :tasks, only: [:update]
   
 
   get '/user', to: 'landing#user'

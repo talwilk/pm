@@ -14,17 +14,24 @@ class WizardController < ApplicationController
 			set_str(1)
 		when :question_2
 			puts "** show Q2**"
-			find_qna
+			@qna = Qna.new(session[:qna_id])
+			session[:qna]=@qna.attributes
+			@qna.q1 = params[:q]
+			@qna.save!
+			@qna_id=@qna.id
+			@qna_id=@qna.id
 			set_str(2)
 		when :question_3
 			puts "**  show Q3**"
 			find_qna
 			set_str(3)
 		when :question_4
+			@hide_email = session[:hide_email] if !user_signed_in?
 			puts "**  show Q4**"
 			find_qna
 			set_str(4)
 		else :project_details
+			@hide_email = session[:hide_email] if !user_signed_in?
 			puts "**  show pd**"
 			#@qna = Qna.new(session[:qna_id])
 			if !params[:qna_id].nil?
@@ -45,7 +52,7 @@ class WizardController < ApplicationController
 		end
     	render_wizard
     end
-	
+
 	def update
 		puts "****   in update "
 		case step
@@ -75,6 +82,7 @@ class WizardController < ApplicationController
 				@qna.save!
 				set_str(3)
 			when  :question_4
+				@hide_email = session[:hide_email] if !user_signed_in?
 				puts "**   update Q4**"
 				find_qna
 				@qna.q3 = params[:q]
@@ -86,6 +94,7 @@ class WizardController < ApplicationController
 				end
 				set_str(4)
 			else
+				@hide_email = session[:hide_email] if !user_signed_in?
 				puts "**   update ELSE**"
 				find_qna
 				@qna.q4 = params[:q]

@@ -1,0 +1,28 @@
+<div id='invite_pro_form' class="mfp-hide white-popup uk-panel uk-panel-box uk-align-center">
+  <div class="uk-overflow-container">
+    <table class='uk-width-2-2 <%= "#{t :dir}" == "ltr" ? "uk-text-left" : "uk-text-right" %>'>
+      <tr>
+        <td>
+          <h1><%= t('common.assignee')%></h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= label_tag "#{t('task.guru_in_charge')}" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= select_tag "#{t('task.guru')}", options_from_collection_for_select(Pro.where(project_id: @project.id), "id", "full_name"), :prompt => "#{t('task.select_pro')}", id: 'guru' %>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div class="uk-text-left margin-left-12">
+      <%= submit_tag "#{t('common.assign')}", id: "invite_pro_submit", class:'primary-button mini-button' %>
+      <a class="add_new_professional" href="#new_professional_form">
+        <%= button_tag "#{t('layouts.invite_guru')}", class:'primary-button mini-button' %>
+      </a>
+    </div>
+  </div>
+</div>

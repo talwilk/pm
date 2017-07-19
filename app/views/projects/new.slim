@@ -1,0 +1,18 @@
+#lp-pom-block-8.lp-element.lp-pom-block
+  .lp-pom-block-content
+    #lp-pom-text-30.lp-element.lp-pom-text.nlh style="height: auto;" class="#{t :dir}"
+      p.lplh-77
+        span style="color:#ffffff;"
+          span style="font-family: lato; font-size: 48px;"  #{t('landing.user.solving')}
+      p.lplh-77
+        span style="color:#ffffff;"
+          span style="font-size:48px;"
+            font face="lato" #{t('landing.user.home_improvement')}
+      p.lplh-77
+        span style="color:#ffffff;"
+          span style="font-size:48px;"
+            font face="lato"  #{t('landing.user.problems')}&nbsp;
+#lp-pom-block-9.lp-element.lp-pom-block
+  - if !user_signed_in?
+    #lp-pom-block-182.lp-element.nlh class="#{wizard_class_name}"
+      = render partial: "landing/question_1"

@@ -1,0 +1,35 @@
+<% if "#{t :dir}" == "ltr" %>
+  <tr class='uk-grid margin-0'>
+    <td class="uk-width-1-2 text-align-left">
+      <%= @complete_task_count %> / <%= @task_count %>
+    </td>
+    <td class="uk-width-1-2">
+      <%= _("#{t('project.tasks')}") %>
+    </td>
+  </tr>
+  <tr class='uk-grid margin-0'>
+    <td class="uk-width-1-2 text-align-left">
+      <%= @total_cost %> / <%= @total_paid %> <%= _("#{t('common.hint_cur')}") %>
+    </td>
+    <td class="uk-width-1-2">
+      <%=  _("#{t('project.cost')}") %></th>
+    </td>
+  </tr>
+<% else %>
+  <tr class='uk-grid margin-0'>
+    <td class="uk-width-1-2">
+      <%= _("#{t('project.tasks')}") %>
+    </td>
+    <td class="uk-width-1-2 text-align-left">
+      <%= @complete_task_count %> / <%= @task_count %>
+    </td>
+  </tr>
+  <tr class='uk-grid margin-0'>
+    <td class="uk-width-1-2">
+      <%=  _("#{t('project.cost')}") %></th>
+    </td>
+    <td class="uk-width-1-2 text-align-left">
+      <%= @total_cost %> / <%= @total_paid %> <%= _("#{t('common.hint_cur')}") %>
+    </td>
+  </tr>
+<% end %>

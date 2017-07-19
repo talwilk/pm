@@ -5,6 +5,7 @@ class LandingController < ApplicationController
   end
 
   def user
+  	session[:hide_email] = false
   end
 
   def about

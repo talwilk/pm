@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 	before_action :get_project , only: [:show, :update, :edit]
+	layout :wizard_layout
 
 	def get_project
 		puts "*** In Projects#get"
@@ -8,6 +9,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def new
+		session[:hide_email] = true if !user_signed_in?
 		@project = Project.new(type_id: 8)
 		get_gen_task_list
 	end
@@ -45,6 +47,7 @@ class ProjectsController < ApplicationController
 	    	return
 	    end
 
+		session[:new_project_id] = @project.id
 		if @project.user_id.nil?
 			redirect_to new_user_registration_path(:email => @email)
 		else
@@ -76,7 +79,16 @@ class ProjectsController < ApplicationController
 	def edit
 	end
 
-	private  
+	private
+
+	def wizard_layout
+		case action_name
+		when "new"
+			"project"
+		else
+			"application"
+		end
+	end
 
   	def project_params 
     	params.require(:project).permit(:name, :description, :add_street, :add_city, :add_country, :orig_start_date, :plot, :build, :address, :email, :orig_budget, :type_id, :user_id, :qna_id) 

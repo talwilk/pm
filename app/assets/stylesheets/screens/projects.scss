@@ -12,11 +12,57 @@
   color:#E3E3E5;
 }
 
-.task_row {
+.task_row, .show_task_details {
   cursor:pointer;
 }
 
 .task_details{
 	text-align: right;
 	margin-top: 10px;
+}
+
+.margin-left-12 {
+	margin-left: 12px;
+}
+
+@media (max-width: 767px){
+  .dashboard_responsive {
+    padding: 0px;
+  }
+  .uk-grid {
+    margin-left: 0px;
+  }
+}
+
+.margin-top-0 {
+  margin-top: 0px !important;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+
+.margin-0 {
+  margin: 0px !important;
+}
+
+.task_table_heading {
+  background: #313747;
+  color: #E3E3E5;
+  tr {
+    border-top: none;
+    text-align: right;
+  }
+
+  td.text-align-left {
+    text-align: left;
+  }
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.border-top-none {
+  border-top: none;
 }

@@ -58,7 +58,32 @@ def show
 	@task_count = @tasks.count 
 	@total_cost = @tasks.sum(:cost) 
 end
- 
+
+def assign_task
+	task = Task.find(params[:task_id])
+	pro = Pro.find_by(id: params[:pro_id])
+  if pro.present? && task.update_attributes(pro_id: pro.id)
+    render status: 200, json: true
+  else
+    render status: 400, json: true
+  end
+end
+
+def new_professional
+	@project = Project.find(params[:project_id])
+	@task = Task.find(params[:task_id])
+	@pro = Pro.create(
+		first_name: params[:first_name],
+		last_name: params[:last_name],
+		email: params[:email],
+		mobile_phone: params[:mobile_phone],
+		project_id: params[:project_id]
+	)
+	@task.update_attribute(:pro_id, @pro.id)
+	send_pro_invitation_email
+	redirect_to root_path
+end
+
 def update
 	puts "***    In Pro#update"
 	if @pro.update_attributes(pro_params)
@@ -88,15 +113,16 @@ private
   	#end
 
 	def send_pro_invitation_email
-		puts "!!! In COMMENT - NOT Sending Pro inviation Email..."
-
-		#@form = ProInvitationForm.new(invitation_params)
-
-	    #if UserMailer.pro_invitation_email(@pro).deliver_now
-	    #	puts "Pro Email sent"
-	    #else
-	    #	puts "ERROR in sending Pro email"
-	    #end
-	end
+    begin
+      puts "*** Sending Pro inviation Email..."
+      #@form = ProInvitationForm.new(invitation_params)
+      if UserMailer.pro_invitation_email(@pro).deliver_now
+        puts "Pro Email sent"
+      else
+        puts "ERROR in sending Pro email"
+      end
+    rescue Exception => e
+    end
+  end
 
 end
