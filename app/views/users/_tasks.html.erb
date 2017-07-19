@@ -1,13 +1,19 @@
 <tr class="uk-grid margin-top-0 padding-bottom-15">
-  <td class="<%= mobile? ? 'uk-width-2-10' : 'uk-width-medium-1-10 uk-width-small-10-10 uk-width-large-1-10' %>">
-    <%= image_tag(x.image_url) %>
-  </td>
-  <td class="uk-width-medium-2-10 uk-width-large-2-10 uk-text-right uk-width-small-10-10">
+  <% if "#{t :dir}" == "ltr" %>
+    <td class="uk-width-medium-1-10">
+      <%= image_tag(x.image_url) %>
+    </td>
+  <% else %>
+    <td class="uk-width-medium-1-10 uk-text-right show_task_details">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </td>
+  <% end %>
+  <td class="uk-width-medium-2-10 uk-text-right">
     <%= best_in_place x, :name, :as => :input %>
   </td>
-  <td class='uk-width-medium-1-10 uk-width-large-1-10 uk-text-right uk-width-small-10-10'><%= x.cur_end_date %>
+  <td class='uk-width-medium-1-10 uk-text-right'><%= x.cur_end_date %>
   </td>
-  <td class='uk-width-medium-2-10 uk-width-large-2-10 uk-text-right uk-width-small-10-10'>
+  <td class='uk-width-medium-2-10 uk-text-right'>
     <a class="cost_paid_btn" href="#payment_form" data-cost="<%=cost(x)%>" data-paid="<%=paid(x)%>" data-task-id="<%=x.id%>">
       <% if (!x.cost.nil? || x.cost == "0") || (!x.paid.nil? || x.paid == "0" ) then %>
         <%= if (!x.cost.nil?) then x.cost else "0" end %>
@@ -17,7 +23,7 @@
       <% end %>
     </a>
   </td>
-  <td class="uk-width-medium-3-10 uk-width-large-3-10 uk-text-right uk-width-small-10-10" id="create_pro">
+  <td class="uk-width-medium-3-10 uk-text-right" id="create_pro">
     <% if !x.pro.nil? %>
       <a class="invite_pro_btn" href="#invite_pro_form" data-task-id="<%=x.id%>" data-project-id="<%=@project.id%>" data-pro-id="<%=x.pro.try(:id)%>">
         <%= x.pro.full_name.present? ? x.pro.full_name : t('project.pro') %>
@@ -28,7 +34,13 @@
       </a>
     <% end %>
   </td>
-  <td class="uk-width-medium-1-10 uk-width-large-1-10 uk-text-right show_task_details uk-width-small-10-10">
+  <% if "#{t :dir}" == "ltr" %>
+    <td class="uk-width-medium-1-10 uk-text-right show_task_details">
       <i class="fa fa-plus" aria-hidden="true"></i>
-  </td>
+    </td>
+  <% else %>
+    <td class="uk-width-medium-1-10">
+      <%= image_tag(x.image_url) %>
+    </td>
+  <% end %>
 </tr>
