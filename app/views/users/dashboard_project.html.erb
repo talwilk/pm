@@ -97,7 +97,15 @@
 					    		<% else %>
 					    			<%= render partial: "tasks", locals: {x: x} %>
 					    		<% end %>
-					    		<%= render partial: "task_detail", locals: {x: x} %>
+					    		<tr class="task_details" hidden="true" data-task-id="<%=x.id%>">
+					    		</tr>
+					    		<tr class="add_pro_area" hidden="true">
+									  <td class="add_pro_area" colspan="7">
+									    <div class="uk-panel uk-form-width-medium">
+									      <p>pro info</p>
+									    </div>
+									  </td>
+									</tr>
 					    	<% end %>
 					    <% end %>
 						<% end %>

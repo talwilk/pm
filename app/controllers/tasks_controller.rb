@@ -85,6 +85,12 @@ before_action :get_project, only: [:create, :new]
     end
 	end
 
+	def task_detail
+		@task = Task.find(params[:id])
+		dilemma_array(@task)
+		render layout: false
+	end
+
 	def destroy
 		@task.destroy
 		redirect_to root_path
@@ -107,5 +113,19 @@ before_action :get_project, only: [:create, :new]
 			range_duration = ""
 		end
 	end
+
+	def dilemma_array(t)
+    @dilemma_array = Dilemma.where(task_id: t.id)
+    t.dilemma_count = @dilemma_array.count 
+    @dilemma_hash = {}
+    if @dilemma_array.count > 0 
+      @dilemma_array.each do |dilemma|
+         @dilemma_id = dilemma.id
+         @dilemma_title = dilemma.title
+         @dilemma_hash[@dilemma_id] = @dilemma_title
+      end
+    end
+    t.dilemma_list = @dilemma_hash.inspect
+  end
   
 end

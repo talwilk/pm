@@ -7,7 +7,7 @@
       <%= best_in_place x, :name, :as => :input %>
     </td>
     <td class="uk-width-1-10">
-      <span class="show_task_details">
+      <span class="show_task_details" data-task-id="<%= x.id %>">
         <i class="fa fa-plus" aria-hidden="true"></i>
       </span>
     </td>
@@ -43,7 +43,7 @@
 <% else %>
   <tr class="uk-grid margin-top-0 padding-bottom-15">
     <td class="uk-width-1-10">
-      <span class="show_task_details">
+      <span class="show_task_details" data-task-id="<%= x.id %>">
         <i class="fa fa-plus" aria-hidden="true"></i>
       </span>
     </td>

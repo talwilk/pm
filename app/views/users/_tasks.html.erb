@@ -4,7 +4,7 @@
       <%= image_tag(x.image_url) %>
     </td>
   <% else %>
-    <td class="uk-width-medium-1-10 uk-text-right show_task_details">
+    <td class="uk-width-medium-1-10 uk-text-right show_task_details" data-task-id="<%= x.id %>">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </td>
   <% end %>
@@ -35,7 +35,7 @@
     <% end %>
   </td>
   <% if "#{t :dir}" == "ltr" %>
-    <td class="uk-width-medium-1-10 uk-text-right show_task_details">
+    <td class="uk-width-medium-1-10 uk-text-right show_task_details" data-task-id="<%= x.id %>">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </td>
   <% else %>

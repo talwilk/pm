@@ -5,21 +5,51 @@ $(document).ready(function() {
   });
 
   $(".show_task_details").click(function() {
-    if ($('.mobile').data("mobile") == true) {
-      $(this).parent().parent('tr').next("tr.task_details").slideToggle("fast");
-    } else {
-      $(this).parent('tr').next("tr.task_details").slideToggle("fast");
-    }
-    
+    task_id = $(this).data("task-id")
+    this_class = $(this)
     if($(this).children('i').hasClass('fa-plus'))
     {
-      $(this).children('i').removeClass('fa-plus')
-      $(this).children('i').addClass('fa-minus')
-    }
-    else
-    {
-      $(this).children('i').addClass('fa-plus')
-      $(this).children('i').removeClass('fa-minus')
+      $.ajax({
+        type: "GET",
+        url: '/task_detail/'+task_id,
+        dataType : 'html',
+        success: function(data) {
+          $('*[data-task-id='+task_id+']tr.task_details').html(data);
+          if ($('.mobile').data("mobile") == true) {
+            this_class.parent().parent('tr').next("tr.task_details").slideToggle("fast");
+          } else {
+            this_class.parent('tr').next("tr.task_details").slideToggle("fast");
+          }
+          this_class.children('i').removeClass('fa-plus')
+          this_class.children('i').addClass('fa-minus')
+
+          $('*[data-task-id='+task_id+']tr.task_details #show_notes .notes_link').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#notes',
+            callbacks: {
+              beforeOpen: function(elem) {
+                if($(window).width() < 700) {
+                  this.st.focus = false;
+                } else {
+                  this.st.focus = '#notes';
+                }
+              }
+            }
+          });
+        },
+        error: function(data) {
+          
+        }
+      });
+    } else {
+      this_class.children('i').addClass('fa-plus')
+      this_class.children('i').removeClass('fa-minus')
+      if ($('.mobile').data("mobile") == true) {
+        this_class.parent().parent('tr').next("tr.task_details").slideToggle("fast");
+      } else {
+        this_class.parent('tr').next("tr.task_details").slideToggle("fast");
+      }
     }
   });
 
@@ -128,58 +158,26 @@ $(document).ready(function() {
       }
     }
   });
+});
 
-  $('#show_notes .notes_link').click(function(){
-    $('#notes').val($(this).data("notes"))
-    $('#notes_submit').attr("task-id", $(this).data("task-id"))
-  });
+$(document).on('click', '#show_notes .notes_link', function(){
+  $('#notes').val($(this).data("notes"))
+  $('#notes_submit').attr("task-id", $(this).data("task-id"))
+});
 
-  $('#show_notes .notes_link').magnificPopup({
-    type: 'inline',
-    preloader: false,
-    focus: '#notes',
-    callbacks: {
-      beforeOpen: function(elem) {
-        if($(window).width() < 700) {
-          this.st.focus = false;
-        } else {
-          this.st.focus = '#notes';
-        }
-      }
+$(document).on('click', '#notes_submit', function(){
+  task_id = $(this).attr("task-id")
+  $.ajax({
+    type: "POST",
+    url: '/update_task/'+task_id,
+    data: {
+      task: {notes: $('#notes').val()}
+    },
+    success: function(data) {
+      window.location.reload()
+    },
+    error: function(data) {
+      console.log(e)
     }
   });
-
-  $('#notes_submit').click(function(){
-    task_id = $(this).attr("task-id")
-    $.ajax({
-      type: "POST",
-      url: '/update_task/'+task_id,
-      data: {
-        task: {notes: $('#notes').val()}
-      },
-      success: function(data) {
-        window.location.reload()
-      },
-      error: function(data) {
-        console.log(e)
-      }
-    });
-  });
-
-  // $("#show_notes").blur(function() {
-  //   $.ajax({
-  //       type: "POST",
-  //       url: '/projects/update_note',
-  //       data: { notes: $(this).notes() },
-  //       dataType: 'script'
-  //   })
-  // });
-// 
-//  $('.table_header').css(backgroundcolor);
-//  $(function() {
-//    $( "#datepicker" ).datepicker({
-//        minDate: 0
-//        dateFormat: 'dd-mm-YYYY'
-//     });
-//  });
 });

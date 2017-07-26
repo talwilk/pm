@@ -98,6 +98,7 @@ Rails.application.routes.draw do
 
   post "/update_task/:id", to: "tasks#update_task"
   put "/update_task/:id", to: "tasks#update_task", as: :task
+  get "/task_detail/:id", to: "tasks#task_detail", as: :task_detail
   # resources :tasks, only: [:update]
   
 

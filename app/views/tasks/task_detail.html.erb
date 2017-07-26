@@ -1,0 +1,40 @@
+<td class="task_details" colspan="7">
+  <div>
+    <p><%=  if !@task.description.nil? then @task.description end %></br></p>
+    <p><% if @task.dilemma_count==0 then %> 
+        <%= (_("#{t('project.no_dilemma_title')}")
+        link_to _("#{t('project.here')}")+@task.name, new_dilemma_path(:task_id => @task.id)) %> 
+      <% else %>
+        <% eval(@task.dilemma_list).each do |id, title| %>
+          <%= link_to title, dilemma_path(id) %></p>
+        <% end %>
+        <p><%= (link_to _("#{t('project.here_again')}")+@task.name, new_dilemma_path(:task_id => @task.id)) %> </p>
+      <% end %>
+    <p><%  if @task.task_tips.to_s != "" then  %>
+      <%= _("#{t('task.tips')}") %>
+      <% eval(@task.task_tips).each do |name, url| %></br>
+        <i><%= link_to name, url, target: :_blank %></i>
+      <% end %></p>
+    <% end %>
+    <p><%= _("#{t('task.cost')}") %>
+      <%=  @task.cost %>
+      <%= _("#{t('common.hint_cur')}") %>,
+      <%= _("#{t('task.paid')}") %>
+      <%=  @task.paid %>
+      <%= _("#{t('common.hint_cur')}") %>
+    </br></p>
+    <p id = "show_notes">
+      <i>
+        <a class="notes_link" href="#notes_form" data-task-id="<%=@task.id%>" data-notes="<%=@task.notes%>">
+          <%= _("#{t('task.notes')}") %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </a>
+        <%=  @task.notes %>
+      </i>
+    </p>
+    <p>
+      <i><%=  link_to _("#{t('common.edit')}") , edit_project_task_path(@task.project,@task) %></></i>
+     | <i><%= link_to _("#{t('common.delete')}"), project_task_path(@task.project, @task), data: {:confirm => _("#{t('common.are_you_sure')}")}, method: :delete %></i>
+    </p>
+  </div>
+</td>
